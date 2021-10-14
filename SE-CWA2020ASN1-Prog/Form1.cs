@@ -16,5 +16,10 @@ namespace SE_CWA2020ASN1_Prog
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
