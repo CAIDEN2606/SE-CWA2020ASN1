@@ -117,4 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lbl_Test.Text" xml:space="preserve">
+    <value>Remember to perform a fetch, and a pull, BEFORE, commiting any of your own changes :)
+
+- Fetch
+- Pull (If there's something to pull)
+
+- Commit All (Your changes, with a message)
+- Push (Pushes your Local changes onto GitHub</value>
+  </data>
 </root>

@@ -29,6 +29,7 @@ namespace SE_CWA2020ASN1_Prog
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.lbl_Test = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -38,10 +39,9 @@ namespace SE_CWA2020ASN1_Prog
             this.lbl_Test.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Test.Location = new System.Drawing.Point(12, 9);
             this.lbl_Test.Name = "lbl_Test";
-            this.lbl_Test.Size = new System.Drawing.Size(784, 25);
+            this.lbl_Test.Size = new System.Drawing.Size(784, 175);
             this.lbl_Test.TabIndex = 0;
-            this.lbl_Test.Text = "Remember to perform a fetch, and a pull, BEFORE, commiting any of your own change" +
-    "s :)";
+            this.lbl_Test.Text = resources.GetString("lbl_Test.Text");
             // 
             // Form1
             // 
