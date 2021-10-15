@@ -34,12 +34,13 @@ namespace SE_CWA2020ASN1_Prog
         }
 
         /// <summary>
-        /// Exit page without saving data warn user first to confirm action
+        /// Exit page without saving data
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btn_backSubHead_Click(object sender, EventArgs e)
         {
+
             var answer = MessageBox.Show("This will exit without saving. Are you sure?",
                 "Exit no save", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
@@ -47,7 +48,10 @@ namespace SE_CWA2020ASN1_Prog
             {
                 this.Close();
             }
-            
+            else
+            {
+                //nothing
+            }
         }
     }
 }
