@@ -21,5 +21,18 @@ namespace SE_CWA2020ASN1_Prog
         {
 
         }
+
+        private void btn_exitSystem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_actionComments_Click(object sender, EventArgs e)
+        {
+            ActionComments frmActComm = new ActionComments();
+            this.Hide();
+            frmActComm.ShowDialog();
+            this.Show();
+        }
     }
 }
