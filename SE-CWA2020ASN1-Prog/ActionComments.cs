@@ -20,13 +20,7 @@ namespace SE_CWA2020ASN1_Prog
 
         private void btn_confirmInspection_Click(object sender, EventArgs e)
         {
-            //
-            //rtx_comments.Text;
-            //rtx_action.Text;
-            //pics
-            Console.WriteLine(rtx_comments.Text);
-            Console.WriteLine(rtx_actionTaken.Text);
-            
+
         }
 
         private void btn_takePic_Click(object sender, EventArgs e)
