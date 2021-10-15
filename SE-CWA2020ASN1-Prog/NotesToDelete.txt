@@ -1,0 +1,4 @@
+﻿
+
+14/10/2021 created repos no.3 3 forms added and nav page 
+15/10/2021 added system.data.sqlite via nuget packages to solution
