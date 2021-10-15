@@ -82,10 +82,12 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // pic_logo
             // 
+            this.pic_logo.Image = global::SE_CWA2020ASN1_Prog.Properties.Resources.musk_logo;
             this.pic_logo.ImageLocation = "main.musk-logo.jpg";
             this.pic_logo.Location = new System.Drawing.Point(25, 12);
             this.pic_logo.Name = "pic_logo";
             this.pic_logo.Size = new System.Drawing.Size(183, 82);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_logo.TabIndex = 37;
             this.pic_logo.TabStop = false;
             // 
