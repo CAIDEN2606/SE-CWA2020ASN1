@@ -20,6 +20,12 @@ namespace SE_CWA2020ASN1_Prog
 
         private void btn_confirmInspection_Click(object sender, EventArgs e)
         {
+            //1st text box
+            //rtx_comments.Text;
+            //2nd text box
+            //rtx_actionTaken.Text;
+            //pics
+            //??
 
         }
 
