@@ -84,7 +84,7 @@ namespace SE_CWA2020ASN1_Prog
             // lbl_anzors
             // 
             this.lbl_anzors.AutoSize = true;
-            this.lbl_anzors.Location = new System.Drawing.Point(179, 384);
+            this.lbl_anzors.Location = new System.Drawing.Point(95, 384);
             this.lbl_anzors.Name = "lbl_anzors";
             this.lbl_anzors.Size = new System.Drawing.Size(52, 17);
             this.lbl_anzors.TabIndex = 4;
