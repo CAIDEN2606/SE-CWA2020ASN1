@@ -34,7 +34,6 @@ namespace SE_CWA2020ASN1_Prog
             this.lbl_Caiden = new System.Windows.Forms.Label();
             this.btn_actionComments = new System.Windows.Forms.Button();
             this.btn_exitSystem = new System.Windows.Forms.Button();
-            this.lbl_anzors = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_Test
@@ -81,21 +80,11 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_exitSystem.UseVisualStyleBackColor = true;
             this.btn_exitSystem.Click += new System.EventHandler(this.btn_exitSystem_Click);
             // 
-            // lbl_anzors
-            // 
-            this.lbl_anzors.AutoSize = true;
-            this.lbl_anzors.Location = new System.Drawing.Point(95, 384);
-            this.lbl_anzors.Name = "lbl_anzors";
-            this.lbl_anzors.Size = new System.Drawing.Size(52, 17);
-            this.lbl_anzors.TabIndex = 4;
-            this.lbl_anzors.Text = "Anzors";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 450);
-            this.Controls.Add(this.lbl_anzors);
             this.Controls.Add(this.btn_exitSystem);
             this.Controls.Add(this.btn_actionComments);
             this.Controls.Add(this.lbl_Caiden);
@@ -115,7 +104,6 @@ namespace SE_CWA2020ASN1_Prog
         private System.Windows.Forms.Label lbl_Caiden;
         private System.Windows.Forms.Button btn_actionComments;
         private System.Windows.Forms.Button btn_exitSystem;
-        private System.Windows.Forms.Label lbl_anzors;
     }
 }
 
