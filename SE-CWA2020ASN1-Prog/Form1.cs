@@ -34,5 +34,13 @@ namespace SE_CWA2020ASN1_Prog
             frmActComm.ShowDialog();
             this.Show();
         }
+
+        private void btn_goSafetyInspection_Click(object sender, EventArgs e)
+        {
+            SafetyInspection frmSafetyInspection = new SafetyInspection();
+            this.Hide();
+            frmSafetyInspection.ShowDialog();
+            this.Show();
+        }
     }
 }
