@@ -34,6 +34,7 @@ namespace SE_CWA2020ASN1_Prog
             this.lbl_Caiden = new System.Windows.Forms.Label();
             this.btn_actionComments = new System.Windows.Forms.Button();
             this.btn_exitSystem = new System.Windows.Forms.Button();
+            this.btn_goSafetyInspection = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Test
@@ -80,11 +81,22 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_exitSystem.UseVisualStyleBackColor = true;
             this.btn_exitSystem.Click += new System.EventHandler(this.btn_exitSystem_Click);
             // 
+            // btn_goSafetyInspection
+            // 
+            this.btn_goSafetyInspection.Location = new System.Drawing.Point(223, 364);
+            this.btn_goSafetyInspection.Name = "btn_goSafetyInspection";
+            this.btn_goSafetyInspection.Size = new System.Drawing.Size(159, 56);
+            this.btn_goSafetyInspection.TabIndex = 4;
+            this.btn_goSafetyInspection.Text = "go to safety inspection page";
+            this.btn_goSafetyInspection.UseVisualStyleBackColor = true;
+            this.btn_goSafetyInspection.Click += new System.EventHandler(this.btn_goSafetyInspection_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 450);
+            this.Controls.Add(this.btn_goSafetyInspection);
             this.Controls.Add(this.btn_exitSystem);
             this.Controls.Add(this.btn_actionComments);
             this.Controls.Add(this.lbl_Caiden);
@@ -104,6 +116,7 @@ namespace SE_CWA2020ASN1_Prog
         private System.Windows.Forms.Label lbl_Caiden;
         private System.Windows.Forms.Button btn_actionComments;
         private System.Windows.Forms.Button btn_exitSystem;
+        private System.Windows.Forms.Button btn_goSafetyInspection;
     }
 }
 
