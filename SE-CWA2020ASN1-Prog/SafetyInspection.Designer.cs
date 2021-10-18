@@ -54,7 +54,7 @@ namespace SE_CWA2020ASN1_Prog
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(182, 128);
+            this.label1.Location = new System.Drawing.Point(194, 141);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(152, 17);
             this.label1.TabIndex = 0;
@@ -212,11 +212,14 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // pic_logo
             // 
+            this.pic_logo.Image = global::SE_CWA2020ASN1_Prog.Properties.Resources.musk_logo;
             this.pic_logo.ImageLocation = "main.musk-logo.jpg";
+            this.pic_logo.InitialImage = global::SE_CWA2020ASN1_Prog.Properties.Resources.musk_logo;
             this.pic_logo.Location = new System.Drawing.Point(29, 26);
             this.pic_logo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(163, 66);
+            this.pic_logo.Size = new System.Drawing.Size(190, 89);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_logo.TabIndex = 38;
             this.pic_logo.TabStop = false;
             // 
