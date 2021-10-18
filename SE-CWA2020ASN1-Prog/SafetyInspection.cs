@@ -85,6 +85,11 @@ namespace SE_CWA2020ASN1_Prog
                 MessageBox.Show("Please, Enter your supervisor's name");
             }
         }
+
+        private void SafetyInspection_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
