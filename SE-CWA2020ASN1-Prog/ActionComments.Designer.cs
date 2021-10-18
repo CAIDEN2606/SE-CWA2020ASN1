@@ -50,50 +50,55 @@ namespace SE_CWA2020ASN1_Prog
             // lbl_picViewer
             // 
             this.lbl_picViewer.AutoSize = true;
-            this.lbl_picViewer.Location = new System.Drawing.Point(181, 456);
+            this.lbl_picViewer.Location = new System.Drawing.Point(161, 365);
             this.lbl_picViewer.Name = "lbl_picViewer";
-            this.lbl_picViewer.Size = new System.Drawing.Size(173, 20);
+            this.lbl_picViewer.Size = new System.Drawing.Size(154, 17);
             this.lbl_picViewer.TabIndex = 41;
             this.lbl_picViewer.Text = "Look into imageViewer ";
             // 
             // pic_viewer
             // 
-            this.pic_viewer.Location = new System.Drawing.Point(185, 489);
+            this.pic_viewer.Location = new System.Drawing.Point(164, 391);
+            this.pic_viewer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pic_viewer.Name = "pic_viewer";
-            this.pic_viewer.Size = new System.Drawing.Size(239, 173);
+            this.pic_viewer.Size = new System.Drawing.Size(212, 138);
             this.pic_viewer.TabIndex = 40;
             this.pic_viewer.TabStop = false;
             // 
             // vsc_actionTaken
             // 
-            this.vsc_actionTaken.Location = new System.Drawing.Point(452, 334);
+            this.vsc_actionTaken.Location = new System.Drawing.Point(402, 267);
             this.vsc_actionTaken.Name = "vsc_actionTaken";
-            this.vsc_actionTaken.Size = new System.Drawing.Size(26, 119);
+            this.vsc_actionTaken.Size = new System.Drawing.Size(26, 95);
             this.vsc_actionTaken.TabIndex = 39;
             this.vsc_actionTaken.Visible = false;
             // 
             // vsc_comments
             // 
-            this.vsc_comments.Location = new System.Drawing.Point(452, 161);
+            this.vsc_comments.Location = new System.Drawing.Point(402, 129);
             this.vsc_comments.Name = "vsc_comments";
-            this.vsc_comments.Size = new System.Drawing.Size(26, 130);
+            this.vsc_comments.Size = new System.Drawing.Size(26, 104);
             this.vsc_comments.TabIndex = 38;
             this.vsc_comments.Visible = false;
             // 
             // pic_logo
             // 
+            this.pic_logo.Image = global::SE_CWA2020ASN1_Prog.Properties.Resources.musk_logo;
             this.pic_logo.ImageLocation = "main.musk-logo.jpg";
-            this.pic_logo.Location = new System.Drawing.Point(25, 12);
+            this.pic_logo.Location = new System.Drawing.Point(22, 10);
+            this.pic_logo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(183, 82);
+            this.pic_logo.Size = new System.Drawing.Size(163, 66);
+            this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_logo.TabIndex = 37;
             this.pic_logo.TabStop = false;
             // 
             // btn_deletePic
             // 
-            this.btn_deletePic.Location = new System.Drawing.Point(25, 537);
+            this.btn_deletePic.Location = new System.Drawing.Point(22, 430);
+            this.btn_deletePic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_deletePic.Name = "btn_deletePic";
-            this.btn_deletePic.Size = new System.Drawing.Size(116, 52);
+            this.btn_deletePic.Size = new System.Drawing.Size(103, 42);
             this.btn_deletePic.TabIndex = 36;
             this.btn_deletePic.Text = "Delete picture";
             this.btn_deletePic.UseVisualStyleBackColor = true;
@@ -101,9 +106,10 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_backSubHead
             // 
-            this.btn_backSubHead.Location = new System.Drawing.Point(25, 610);
+            this.btn_backSubHead.Location = new System.Drawing.Point(22, 488);
+            this.btn_backSubHead.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_backSubHead.Name = "btn_backSubHead";
-            this.btn_backSubHead.Size = new System.Drawing.Size(116, 52);
+            this.btn_backSubHead.Size = new System.Drawing.Size(103, 42);
             this.btn_backSubHead.TabIndex = 35;
             this.btn_backSubHead.Text = "Exit no save";
             this.btn_backSubHead.UseVisualStyleBackColor = true;
@@ -111,9 +117,10 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_confirmInspection
             // 
-            this.btn_confirmInspection.Location = new System.Drawing.Point(362, 103);
+            this.btn_confirmInspection.Location = new System.Drawing.Point(322, 82);
+            this.btn_confirmInspection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_confirmInspection.Name = "btn_confirmInspection";
-            this.btn_confirmInspection.Size = new System.Drawing.Size(116, 52);
+            this.btn_confirmInspection.Size = new System.Drawing.Size(103, 42);
             this.btn_confirmInspection.TabIndex = 34;
             this.btn_confirmInspection.Text = "Confirm inspection";
             this.btn_confirmInspection.UseVisualStyleBackColor = true;
@@ -121,9 +128,10 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_takePic
             // 
-            this.btn_takePic.Location = new System.Drawing.Point(25, 466);
+            this.btn_takePic.Location = new System.Drawing.Point(22, 373);
+            this.btn_takePic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_takePic.Name = "btn_takePic";
-            this.btn_takePic.Size = new System.Drawing.Size(116, 52);
+            this.btn_takePic.Size = new System.Drawing.Size(103, 42);
             this.btn_takePic.TabIndex = 33;
             this.btn_takePic.Text = "Take a picture";
             this.btn_takePic.UseVisualStyleBackColor = true;
@@ -131,52 +139,54 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // rtx_actionTaken
             // 
-            this.rtx_actionTaken.Location = new System.Drawing.Point(25, 334);
+            this.rtx_actionTaken.Location = new System.Drawing.Point(22, 267);
+            this.rtx_actionTaken.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtx_actionTaken.Name = "rtx_actionTaken";
-            this.rtx_actionTaken.Size = new System.Drawing.Size(453, 119);
+            this.rtx_actionTaken.Size = new System.Drawing.Size(403, 96);
             this.rtx_actionTaken.TabIndex = 32;
             this.rtx_actionTaken.Text = "";
             // 
             // lbl_enterAction
             // 
             this.lbl_enterAction.AutoSize = true;
-            this.lbl_enterAction.Location = new System.Drawing.Point(25, 302);
+            this.lbl_enterAction.Location = new System.Drawing.Point(22, 242);
             this.lbl_enterAction.Name = "lbl_enterAction";
-            this.lbl_enterAction.Size = new System.Drawing.Size(139, 20);
+            this.lbl_enterAction.Size = new System.Drawing.Size(123, 17);
             this.lbl_enterAction.TabIndex = 31;
             this.lbl_enterAction.Text = "Enter action taken";
             // 
             // lbl_insertComments
             // 
             this.lbl_insertComments.AutoSize = true;
-            this.lbl_insertComments.Location = new System.Drawing.Point(25, 135);
+            this.lbl_insertComments.Location = new System.Drawing.Point(22, 108);
             this.lbl_insertComments.Name = "lbl_insertComments";
-            this.lbl_insertComments.Size = new System.Drawing.Size(173, 20);
+            this.lbl_insertComments.Size = new System.Drawing.Size(151, 17);
             this.lbl_insertComments.TabIndex = 30;
             this.lbl_insertComments.Text = "Insert comments below";
             // 
             // rtx_comments
             // 
-            this.rtx_comments.Location = new System.Drawing.Point(25, 161);
+            this.rtx_comments.Location = new System.Drawing.Point(22, 129);
+            this.rtx_comments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtx_comments.Name = "rtx_comments";
-            this.rtx_comments.Size = new System.Drawing.Size(453, 130);
+            this.rtx_comments.Size = new System.Drawing.Size(403, 105);
             this.rtx_comments.TabIndex = 29;
             this.rtx_comments.Text = "";
             // 
             // lbl_sbheadingTitle
             // 
             this.lbl_sbheadingTitle.AutoSize = true;
-            this.lbl_sbheadingTitle.Location = new System.Drawing.Point(214, 12);
+            this.lbl_sbheadingTitle.Location = new System.Drawing.Point(190, 10);
             this.lbl_sbheadingTitle.Name = "lbl_sbheadingTitle";
-            this.lbl_sbheadingTitle.Size = new System.Drawing.Size(104, 20);
+            this.lbl_sbheadingTitle.Size = new System.Drawing.Size(93, 17);
             this.lbl_sbheadingTitle.TabIndex = 28;
             this.lbl_sbheadingTitle.Text = "Sub-heading:\r\n";
             // 
             // ActionComments
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 672);
+            this.ClientSize = new System.Drawing.Size(458, 538);
             this.Controls.Add(this.lbl_picViewer);
             this.Controls.Add(this.pic_viewer);
             this.Controls.Add(this.vsc_actionTaken);
@@ -191,6 +201,7 @@ namespace SE_CWA2020ASN1_Prog
             this.Controls.Add(this.lbl_insertComments);
             this.Controls.Add(this.rtx_comments);
             this.Controls.Add(this.lbl_sbheadingTitle);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ActionComments";
             this.Text = "ActionComments";
             ((System.ComponentModel.ISupportInitialize)(this.pic_viewer)).EndInit();
