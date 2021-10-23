@@ -18,14 +18,25 @@ namespace SE_CWA2020ASN1_Prog
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Save comments, action comments and pics to sqlite intervention table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_confirmInspection_Click(object sender, EventArgs e)
         {
+            
             //1st text box
             //rtx_comments.Text;
             //2nd text box
             //rtx_actionTaken.Text;
             //pics
-            //??
+            //pic_viewer.Image
+            BusinessMetaLayer ml = BusinessMetaLayer.instance();
+            //m_intervention =
+            //Console.WriteLine(rtx_comments.Text); works
+
+
 
         }
 
