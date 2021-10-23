@@ -27,19 +27,19 @@ namespace SE_CWA2020ASN1_Prog
 
         private string m_supervisorName;
         public string Supervisor_Name { get { return m_supervisorName; } set { m_supervisorName = value; } }
+    }
 
-
-        //public class InspectionArea
-        //{
+    public class InspectionArea : Inspection
+    {
         private string m_workareaName;
         public string Work_Area { get { return m_workareaName; } set { m_workareaName = value; } }
 
         private string m_inspectionSummary;
         public string Inspection_Summary { get { return m_inspectionSummary; } set { m_inspectionSummary = value; } }
 
-        //}
-    }
-        public class Intervention //: InspectionArea
+
+
+        public class Intervention
         {
             private string m_subheadingName;
             public string Subheading_Name { get { return m_subheadingName; } set { m_subheadingName = value; } }
@@ -56,7 +56,7 @@ namespace SE_CWA2020ASN1_Prog
             //private string m_inspectionPicture;
             //public string Inspection_Picture { get { return m_inspectionPicture; } set { m_inspectionPicture = value; } }
 
-
         }
-    //}
+    }
+
 }
