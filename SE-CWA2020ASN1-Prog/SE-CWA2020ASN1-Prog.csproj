@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutMusk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutMusk.Designer.cs">
+      <DependentUpon>AboutMusk.cs</DependentUpon>
+    </Compile>
     <Compile Include="ActionComments.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     <Compile Include="SafetyInspection.Designer.cs">
       <DependentUpon>SafetyInspection.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AboutMusk.resx">
+      <DependentUpon>AboutMusk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ActionComments.resx">
       <DependentUpon>ActionComments.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +120,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\musk-logo.jpg" />
+    <None Include="Resources\Planet9.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

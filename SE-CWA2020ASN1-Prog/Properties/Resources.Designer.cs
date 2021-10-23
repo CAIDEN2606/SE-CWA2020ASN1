@@ -69,5 +69,15 @@ namespace SE_CWA2020ASN1_Prog.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Planet9 {
+            get {
+                object obj = ResourceManager.GetObject("Planet9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
