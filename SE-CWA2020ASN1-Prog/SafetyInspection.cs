@@ -34,7 +34,7 @@ namespace SE_CWA2020ASN1_Prog
 
         private void btn_Enter_Click(object sender, EventArgs e)
             {
-                ActionComments frmActComm = new ActionComments();
+                InspectionSubmission frmActComm = new InspectionSubmission();
                 this.Hide();
                 frmActComm.ShowDialog();
                 this.Show();

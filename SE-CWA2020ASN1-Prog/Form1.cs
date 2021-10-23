@@ -27,19 +27,29 @@ namespace SE_CWA2020ASN1_Prog
             this.Close();
         }
 
-        private void btn_actionComments_Click(object sender, EventArgs e)
-        {
-            ActionComments frmActComm = new ActionComments();
-            this.Hide();
-            frmActComm.ShowDialog();
-            this.Show();
-        }
-
+       
+        //1st form
         private void btn_goSafetyInspection_Click(object sender, EventArgs e)
         {
             SafetyInspection frmSafetyInspection = new SafetyInspection();
             this.Hide();
             frmSafetyInspection.ShowDialog();
+            this.Show();
+        }
+        //2nd form
+        private void btn_InspectionSubmission_Click(object sender, EventArgs e)
+        {
+            InspectionSubmission frmActComm = new InspectionSubmission();
+            this.Hide();
+            frmActComm.ShowDialog();
+            this.Show();
+        }
+        //3rd form
+        private void btn_actionComments_Click(object sender, EventArgs e)
+        {
+            ActionComments frmActComm = new ActionComments();
+            this.Hide();
+            frmActComm.ShowDialog();
             this.Show();
         }
     }
