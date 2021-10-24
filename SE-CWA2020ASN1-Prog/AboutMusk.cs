@@ -15,11 +15,11 @@ namespace SE_CWA2020ASN1_Prog
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
-            this.lbl_ProductName.Text = AssemblyProduct;
-            this.lbl_Version.Text = String.Format("Version {0}", AssemblyVersion);
-            this.lbl_Copyright.Text = AssemblyCopyright;
-            this.lbl_CompanyName.Text = AssemblyCompany;
-            this.txt_Description.Text = AssemblyDescription;
+            this.labelProductName.Text = AssemblyProduct;
+            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
+            this.labelCopyright.Text = AssemblyCopyright;
+            this.labelCompanyName.Text = AssemblyCompany;
+            this.textBoxDescription.Text = AssemblyDescription;
         }
 
         #region Assembly Attribute Accessors

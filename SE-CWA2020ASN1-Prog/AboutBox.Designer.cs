@@ -1,7 +1,7 @@
 ﻿
 namespace SE_CWA2020ASN1_Prog
 {
-    partial class AboutMusk
+    partial class AboutBox
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,14 @@ namespace SE_CWA2020ASN1_Prog
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutMusk));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutBox));
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
-            this.labelProductName = new System.Windows.Forms.Label();
-            this.labelVersion = new System.Windows.Forms.Label();
-            this.labelCopyright = new System.Windows.Forms.Label();
-            this.labelCompanyName = new System.Windows.Forms.Label();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.lbl_ProductName = new System.Windows.Forms.Label();
+            this.lbl_Version = new System.Windows.Forms.Label();
+            this.lbl_Copyright = new System.Windows.Forms.Label();
+            this.lbl_CompanyName = new System.Windows.Forms.Label();
+            this.txt_Description = new System.Windows.Forms.TextBox();
             this.okButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
@@ -47,11 +47,11 @@ namespace SE_CWA2020ASN1_Prog
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67F));
             this.tableLayoutPanel.Controls.Add(this.logoPictureBox, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.labelProductName, 1, 0);
-            this.tableLayoutPanel.Controls.Add(this.labelVersion, 1, 1);
-            this.tableLayoutPanel.Controls.Add(this.labelCopyright, 1, 2);
-            this.tableLayoutPanel.Controls.Add(this.labelCompanyName, 1, 3);
-            this.tableLayoutPanel.Controls.Add(this.textBoxDescription, 1, 4);
+            this.tableLayoutPanel.Controls.Add(this.lbl_ProductName, 1, 0);
+            this.tableLayoutPanel.Controls.Add(this.lbl_Version, 1, 1);
+            this.tableLayoutPanel.Controls.Add(this.lbl_Copyright, 1, 2);
+            this.tableLayoutPanel.Controls.Add(this.lbl_CompanyName, 1, 3);
+            this.tableLayoutPanel.Controls.Add(this.txt_Description, 1, 4);
             this.tableLayoutPanel.Controls.Add(this.okButton, 1, 5);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(14, 14);
@@ -80,67 +80,67 @@ namespace SE_CWA2020ASN1_Prog
             this.logoPictureBox.TabIndex = 12;
             this.logoPictureBox.TabStop = false;
             // 
-            // labelProductName
+            // lbl_ProductName
             // 
-            this.labelProductName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelProductName.Location = new System.Drawing.Point(214, 0);
-            this.labelProductName.Margin = new System.Windows.Forms.Padding(9, 0, 4, 0);
-            this.labelProductName.MaximumSize = new System.Drawing.Size(0, 26);
-            this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(406, 26);
-            this.labelProductName.TabIndex = 19;
-            this.labelProductName.Text = "Product Name : Inspection Form";
-            this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_ProductName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_ProductName.Location = new System.Drawing.Point(214, 0);
+            this.lbl_ProductName.Margin = new System.Windows.Forms.Padding(9, 0, 4, 0);
+            this.lbl_ProductName.MaximumSize = new System.Drawing.Size(0, 26);
+            this.lbl_ProductName.Name = "lbl_ProductName";
+            this.lbl_ProductName.Size = new System.Drawing.Size(406, 26);
+            this.lbl_ProductName.TabIndex = 19;
+            this.lbl_ProductName.Text = "Product Name: Inspection Form";
+            this.lbl_ProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelVersion
+            // lbl_Version
             // 
-            this.labelVersion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelVersion.Location = new System.Drawing.Point(214, 40);
-            this.labelVersion.Margin = new System.Windows.Forms.Padding(9, 0, 4, 0);
-            this.labelVersion.MaximumSize = new System.Drawing.Size(0, 26);
-            this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(406, 26);
-            this.labelVersion.TabIndex = 0;
-            this.labelVersion.Text = "Version : 1.0.1";
-            this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_Version.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_Version.Location = new System.Drawing.Point(214, 40);
+            this.lbl_Version.Margin = new System.Windows.Forms.Padding(9, 0, 4, 0);
+            this.lbl_Version.MaximumSize = new System.Drawing.Size(0, 26);
+            this.lbl_Version.Name = "lbl_Version";
+            this.lbl_Version.Size = new System.Drawing.Size(406, 26);
+            this.lbl_Version.TabIndex = 0;
+            this.lbl_Version.Text = "Version: 1.0.1";
+            this.lbl_Version.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelCopyright
+            // lbl_Copyright
             // 
-            this.labelCopyright.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCopyright.Location = new System.Drawing.Point(214, 80);
-            this.labelCopyright.Margin = new System.Windows.Forms.Padding(9, 0, 4, 0);
-            this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 26);
-            this.labelCopyright.Name = "labelCopyright";
-            this.labelCopyright.Size = new System.Drawing.Size(406, 26);
-            this.labelCopyright.TabIndex = 21;
-            this.labelCopyright.Text = "Copyright ©Edwin James Group 2020";
-            this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_Copyright.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_Copyright.Location = new System.Drawing.Point(214, 80);
+            this.lbl_Copyright.Margin = new System.Windows.Forms.Padding(9, 0, 4, 0);
+            this.lbl_Copyright.MaximumSize = new System.Drawing.Size(0, 26);
+            this.lbl_Copyright.Name = "lbl_Copyright";
+            this.lbl_Copyright.Size = new System.Drawing.Size(406, 26);
+            this.lbl_Copyright.TabIndex = 21;
+            this.lbl_Copyright.Text = "Copyright: ©Edwin James Group 2020";
+            this.lbl_Copyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelCompanyName
+            // lbl_CompanyName
             // 
-            this.labelCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelCompanyName.Location = new System.Drawing.Point(214, 120);
-            this.labelCompanyName.Margin = new System.Windows.Forms.Padding(9, 0, 4, 0);
-            this.labelCompanyName.MaximumSize = new System.Drawing.Size(0, 26);
-            this.labelCompanyName.Name = "labelCompanyName";
-            this.labelCompanyName.Size = new System.Drawing.Size(406, 26);
-            this.labelCompanyName.TabIndex = 22;
-            this.labelCompanyName.Text = "Company Name : Musk Process Services";
-            this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbl_CompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_CompanyName.Location = new System.Drawing.Point(214, 120);
+            this.lbl_CompanyName.Margin = new System.Windows.Forms.Padding(9, 0, 4, 0);
+            this.lbl_CompanyName.MaximumSize = new System.Drawing.Size(0, 26);
+            this.lbl_CompanyName.Name = "lbl_CompanyName";
+            this.lbl_CompanyName.Size = new System.Drawing.Size(406, 26);
+            this.lbl_CompanyName.TabIndex = 22;
+            this.lbl_CompanyName.Text = "Company Name: Musk Process Services";
+            this.lbl_CompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBoxDescription
+            // txt_Description
             // 
-            this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDescription.Location = new System.Drawing.Point(214, 165);
-            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(9, 5, 4, 5);
-            this.textBoxDescription.Multiline = true;
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.ReadOnly = true;
-            this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDescription.Size = new System.Drawing.Size(406, 193);
-            this.textBoxDescription.TabIndex = 23;
-            this.textBoxDescription.TabStop = false;
-            this.textBoxDescription.Text = resources.GetString("textBoxDescription.Text");
+            this.txt_Description.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_Description.Location = new System.Drawing.Point(214, 165);
+            this.txt_Description.Margin = new System.Windows.Forms.Padding(9, 5, 4, 5);
+            this.txt_Description.Multiline = true;
+            this.txt_Description.Name = "txt_Description";
+            this.txt_Description.ReadOnly = true;
+            this.txt_Description.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txt_Description.Size = new System.Drawing.Size(406, 193);
+            this.txt_Description.TabIndex = 23;
+            this.txt_Description.TabStop = false;
+            this.txt_Description.Text = resources.GetString("txt_Description.Text");
             // 
             // okButton
             // 
@@ -154,7 +154,7 @@ namespace SE_CWA2020ASN1_Prog
             this.okButton.Text = "&OK";
             this.okButton.Click += new System.EventHandler(this.okButton_Click);
             // 
-            // AboutMusk
+            // AboutBox
             // 
             this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -165,12 +165,12 @@ namespace SE_CWA2020ASN1_Prog
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AboutMusk";
+            this.Name = "AboutBox";
             this.Padding = new System.Windows.Forms.Padding(14);
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AboutMusk";
+            this.Text = "AboutBox";
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
@@ -182,11 +182,11 @@ namespace SE_CWA2020ASN1_Prog
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private System.Windows.Forms.PictureBox logoPictureBox;
-        private System.Windows.Forms.Label labelProductName;
-        private System.Windows.Forms.Label labelVersion;
-        private System.Windows.Forms.Label labelCopyright;
-        private System.Windows.Forms.Label labelCompanyName;
-        private System.Windows.Forms.TextBox textBoxDescription;
+        private System.Windows.Forms.Label lbl_ProductName;
+        private System.Windows.Forms.Label lbl_Version;
+        private System.Windows.Forms.Label lbl_Copyright;
+        private System.Windows.Forms.Label lbl_CompanyName;
+        private System.Windows.Forms.TextBox txt_Description;
         private System.Windows.Forms.Button okButton;
     }
 }
