@@ -59,6 +59,27 @@ namespace SE_CWA2020ASN1_Prog
             this.lbl_Work_Area = new System.Windows.Forms.Label();
             this.rtb_Total = new System.Windows.Forms.RichTextBox();
             this.lbl_Total = new System.Windows.Forms.Label();
+            this.chk_Subcontractor2 = new System.Windows.Forms.CheckBox();
+            this.chk_Intervention2 = new System.Windows.Forms.CheckBox();
+            this.chk_Best_Practice2 = new System.Windows.Forms.CheckBox();
+            this.chk_Subcontractor3 = new System.Windows.Forms.CheckBox();
+            this.chk_Intervention3 = new System.Windows.Forms.CheckBox();
+            this.chk_Best_Practice3 = new System.Windows.Forms.CheckBox();
+            this.chk_Subcontractor4 = new System.Windows.Forms.CheckBox();
+            this.chk_Intervention4 = new System.Windows.Forms.CheckBox();
+            this.chk_Best_Practice4 = new System.Windows.Forms.CheckBox();
+            this.chk_Subcontractor5 = new System.Windows.Forms.CheckBox();
+            this.chk_Intervention5 = new System.Windows.Forms.CheckBox();
+            this.chk_Best_Practice5 = new System.Windows.Forms.CheckBox();
+            this.chk_Subcontractor6 = new System.Windows.Forms.CheckBox();
+            this.chk_Intervention6 = new System.Windows.Forms.CheckBox();
+            this.chk_Best_Practice6 = new System.Windows.Forms.CheckBox();
+            this.chk_Subcontractor7 = new System.Windows.Forms.CheckBox();
+            this.chk_Intervention7 = new System.Windows.Forms.CheckBox();
+            this.chk_Best_Practice7 = new System.Windows.Forms.CheckBox();
+            this.chk_Subcontractor8 = new System.Windows.Forms.CheckBox();
+            this.chk_Intervention8 = new System.Windows.Forms.CheckBox();
+            this.chk_Best_Practice8 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -307,7 +328,7 @@ namespace SE_CWA2020ASN1_Prog
             // chk_Best_Practice
             // 
             this.chk_Best_Practice.AutoSize = true;
-            this.chk_Best_Practice.Location = new System.Drawing.Point(186, 387);
+            this.chk_Best_Practice.Location = new System.Drawing.Point(716, 101);
             this.chk_Best_Practice.Name = "chk_Best_Practice";
             this.chk_Best_Practice.Size = new System.Drawing.Size(113, 21);
             this.chk_Best_Practice.TabIndex = 60;
@@ -317,7 +338,7 @@ namespace SE_CWA2020ASN1_Prog
             // chk_Intervention
             // 
             this.chk_Intervention.AutoSize = true;
-            this.chk_Intervention.Location = new System.Drawing.Point(303, 388);
+            this.chk_Intervention.Location = new System.Drawing.Point(833, 102);
             this.chk_Intervention.Name = "chk_Intervention";
             this.chk_Intervention.Size = new System.Drawing.Size(104, 21);
             this.chk_Intervention.TabIndex = 61;
@@ -327,7 +348,7 @@ namespace SE_CWA2020ASN1_Prog
             // chk_Subcontractor
             // 
             this.chk_Subcontractor.AutoSize = true;
-            this.chk_Subcontractor.Location = new System.Drawing.Point(413, 388);
+            this.chk_Subcontractor.Location = new System.Drawing.Point(943, 102);
             this.chk_Subcontractor.Name = "chk_Subcontractor";
             this.chk_Subcontractor.Size = new System.Drawing.Size(126, 21);
             this.chk_Subcontractor.TabIndex = 62;
@@ -370,11 +391,243 @@ namespace SE_CWA2020ASN1_Prog
             this.lbl_Total.TabIndex = 66;
             this.lbl_Total.Text = "Overall Total";
             // 
+            // chk_Subcontractor2
+            // 
+            this.chk_Subcontractor2.AutoSize = true;
+            this.chk_Subcontractor2.Location = new System.Drawing.Point(943, 138);
+            this.chk_Subcontractor2.Name = "chk_Subcontractor2";
+            this.chk_Subcontractor2.Size = new System.Drawing.Size(126, 21);
+            this.chk_Subcontractor2.TabIndex = 69;
+            this.chk_Subcontractor2.Text = "Sub-Contractor";
+            this.chk_Subcontractor2.UseVisualStyleBackColor = true;
+            // 
+            // chk_Intervention2
+            // 
+            this.chk_Intervention2.AutoSize = true;
+            this.chk_Intervention2.Location = new System.Drawing.Point(833, 138);
+            this.chk_Intervention2.Name = "chk_Intervention2";
+            this.chk_Intervention2.Size = new System.Drawing.Size(104, 21);
+            this.chk_Intervention2.TabIndex = 68;
+            this.chk_Intervention2.Text = "Intervention";
+            this.chk_Intervention2.UseVisualStyleBackColor = true;
+            // 
+            // chk_Best_Practice2
+            // 
+            this.chk_Best_Practice2.AutoSize = true;
+            this.chk_Best_Practice2.Location = new System.Drawing.Point(716, 137);
+            this.chk_Best_Practice2.Name = "chk_Best_Practice2";
+            this.chk_Best_Practice2.Size = new System.Drawing.Size(113, 21);
+            this.chk_Best_Practice2.TabIndex = 67;
+            this.chk_Best_Practice2.Text = "Best Practice";
+            this.chk_Best_Practice2.UseVisualStyleBackColor = true;
+            // 
+            // chk_Subcontractor3
+            // 
+            this.chk_Subcontractor3.AutoSize = true;
+            this.chk_Subcontractor3.Location = new System.Drawing.Point(943, 173);
+            this.chk_Subcontractor3.Name = "chk_Subcontractor3";
+            this.chk_Subcontractor3.Size = new System.Drawing.Size(126, 21);
+            this.chk_Subcontractor3.TabIndex = 72;
+            this.chk_Subcontractor3.Text = "Sub-Contractor";
+            this.chk_Subcontractor3.UseVisualStyleBackColor = true;
+            // 
+            // chk_Intervention3
+            // 
+            this.chk_Intervention3.AutoSize = true;
+            this.chk_Intervention3.Location = new System.Drawing.Point(833, 173);
+            this.chk_Intervention3.Name = "chk_Intervention3";
+            this.chk_Intervention3.Size = new System.Drawing.Size(104, 21);
+            this.chk_Intervention3.TabIndex = 71;
+            this.chk_Intervention3.Text = "Intervention";
+            this.chk_Intervention3.UseVisualStyleBackColor = true;
+            this.chk_Intervention3.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // chk_Best_Practice3
+            // 
+            this.chk_Best_Practice3.AutoSize = true;
+            this.chk_Best_Practice3.Location = new System.Drawing.Point(716, 172);
+            this.chk_Best_Practice3.Name = "chk_Best_Practice3";
+            this.chk_Best_Practice3.Size = new System.Drawing.Size(113, 21);
+            this.chk_Best_Practice3.TabIndex = 70;
+            this.chk_Best_Practice3.Text = "Best Practice";
+            this.chk_Best_Practice3.UseVisualStyleBackColor = true;
+            // 
+            // chk_Subcontractor4
+            // 
+            this.chk_Subcontractor4.AutoSize = true;
+            this.chk_Subcontractor4.Location = new System.Drawing.Point(943, 207);
+            this.chk_Subcontractor4.Name = "chk_Subcontractor4";
+            this.chk_Subcontractor4.Size = new System.Drawing.Size(126, 21);
+            this.chk_Subcontractor4.TabIndex = 75;
+            this.chk_Subcontractor4.Text = "Sub-Contractor";
+            this.chk_Subcontractor4.UseVisualStyleBackColor = true;
+            // 
+            // chk_Intervention4
+            // 
+            this.chk_Intervention4.AutoSize = true;
+            this.chk_Intervention4.Location = new System.Drawing.Point(833, 207);
+            this.chk_Intervention4.Name = "chk_Intervention4";
+            this.chk_Intervention4.Size = new System.Drawing.Size(104, 21);
+            this.chk_Intervention4.TabIndex = 74;
+            this.chk_Intervention4.Text = "Intervention";
+            this.chk_Intervention4.UseVisualStyleBackColor = true;
+            // 
+            // chk_Best_Practice4
+            // 
+            this.chk_Best_Practice4.AutoSize = true;
+            this.chk_Best_Practice4.Location = new System.Drawing.Point(716, 206);
+            this.chk_Best_Practice4.Name = "chk_Best_Practice4";
+            this.chk_Best_Practice4.Size = new System.Drawing.Size(113, 21);
+            this.chk_Best_Practice4.TabIndex = 73;
+            this.chk_Best_Practice4.Text = "Best Practice";
+            this.chk_Best_Practice4.UseVisualStyleBackColor = true;
+            // 
+            // chk_Subcontractor5
+            // 
+            this.chk_Subcontractor5.AutoSize = true;
+            this.chk_Subcontractor5.Location = new System.Drawing.Point(943, 242);
+            this.chk_Subcontractor5.Name = "chk_Subcontractor5";
+            this.chk_Subcontractor5.Size = new System.Drawing.Size(126, 21);
+            this.chk_Subcontractor5.TabIndex = 78;
+            this.chk_Subcontractor5.Text = "Sub-Contractor";
+            this.chk_Subcontractor5.UseVisualStyleBackColor = true;
+            // 
+            // chk_Intervention5
+            // 
+            this.chk_Intervention5.AutoSize = true;
+            this.chk_Intervention5.Location = new System.Drawing.Point(833, 242);
+            this.chk_Intervention5.Name = "chk_Intervention5";
+            this.chk_Intervention5.Size = new System.Drawing.Size(104, 21);
+            this.chk_Intervention5.TabIndex = 77;
+            this.chk_Intervention5.Text = "Intervention";
+            this.chk_Intervention5.UseVisualStyleBackColor = true;
+            // 
+            // chk_Best_Practice5
+            // 
+            this.chk_Best_Practice5.AutoSize = true;
+            this.chk_Best_Practice5.Location = new System.Drawing.Point(716, 241);
+            this.chk_Best_Practice5.Name = "chk_Best_Practice5";
+            this.chk_Best_Practice5.Size = new System.Drawing.Size(113, 21);
+            this.chk_Best_Practice5.TabIndex = 76;
+            this.chk_Best_Practice5.Text = "Best Practice";
+            this.chk_Best_Practice5.UseVisualStyleBackColor = true;
+            // 
+            // chk_Subcontractor6
+            // 
+            this.chk_Subcontractor6.AutoSize = true;
+            this.chk_Subcontractor6.Location = new System.Drawing.Point(943, 277);
+            this.chk_Subcontractor6.Name = "chk_Subcontractor6";
+            this.chk_Subcontractor6.Size = new System.Drawing.Size(126, 21);
+            this.chk_Subcontractor6.TabIndex = 81;
+            this.chk_Subcontractor6.Text = "Sub-Contractor";
+            this.chk_Subcontractor6.UseVisualStyleBackColor = true;
+            // 
+            // chk_Intervention6
+            // 
+            this.chk_Intervention6.AutoSize = true;
+            this.chk_Intervention6.Location = new System.Drawing.Point(833, 277);
+            this.chk_Intervention6.Name = "chk_Intervention6";
+            this.chk_Intervention6.Size = new System.Drawing.Size(104, 21);
+            this.chk_Intervention6.TabIndex = 80;
+            this.chk_Intervention6.Text = "Intervention";
+            this.chk_Intervention6.UseVisualStyleBackColor = true;
+            // 
+            // chk_Best_Practice6
+            // 
+            this.chk_Best_Practice6.AutoSize = true;
+            this.chk_Best_Practice6.Location = new System.Drawing.Point(716, 276);
+            this.chk_Best_Practice6.Name = "chk_Best_Practice6";
+            this.chk_Best_Practice6.Size = new System.Drawing.Size(113, 21);
+            this.chk_Best_Practice6.TabIndex = 79;
+            this.chk_Best_Practice6.Text = "Best Practice";
+            this.chk_Best_Practice6.UseVisualStyleBackColor = true;
+            // 
+            // chk_Subcontractor7
+            // 
+            this.chk_Subcontractor7.AutoSize = true;
+            this.chk_Subcontractor7.Location = new System.Drawing.Point(943, 312);
+            this.chk_Subcontractor7.Name = "chk_Subcontractor7";
+            this.chk_Subcontractor7.Size = new System.Drawing.Size(126, 21);
+            this.chk_Subcontractor7.TabIndex = 84;
+            this.chk_Subcontractor7.Text = "Sub-Contractor";
+            this.chk_Subcontractor7.UseVisualStyleBackColor = true;
+            // 
+            // chk_Intervention7
+            // 
+            this.chk_Intervention7.AutoSize = true;
+            this.chk_Intervention7.Location = new System.Drawing.Point(833, 312);
+            this.chk_Intervention7.Name = "chk_Intervention7";
+            this.chk_Intervention7.Size = new System.Drawing.Size(104, 21);
+            this.chk_Intervention7.TabIndex = 83;
+            this.chk_Intervention7.Text = "Intervention";
+            this.chk_Intervention7.UseVisualStyleBackColor = true;
+            // 
+            // chk_Best_Practice7
+            // 
+            this.chk_Best_Practice7.AutoSize = true;
+            this.chk_Best_Practice7.Location = new System.Drawing.Point(716, 311);
+            this.chk_Best_Practice7.Name = "chk_Best_Practice7";
+            this.chk_Best_Practice7.Size = new System.Drawing.Size(113, 21);
+            this.chk_Best_Practice7.TabIndex = 82;
+            this.chk_Best_Practice7.Text = "Best Practice";
+            this.chk_Best_Practice7.UseVisualStyleBackColor = true;
+            // 
+            // chk_Subcontractor8
+            // 
+            this.chk_Subcontractor8.AutoSize = true;
+            this.chk_Subcontractor8.Location = new System.Drawing.Point(943, 347);
+            this.chk_Subcontractor8.Name = "chk_Subcontractor8";
+            this.chk_Subcontractor8.Size = new System.Drawing.Size(126, 21);
+            this.chk_Subcontractor8.TabIndex = 87;
+            this.chk_Subcontractor8.Text = "Sub-Contractor";
+            this.chk_Subcontractor8.UseVisualStyleBackColor = true;
+            // 
+            // chk_Intervention8
+            // 
+            this.chk_Intervention8.AutoSize = true;
+            this.chk_Intervention8.Location = new System.Drawing.Point(833, 347);
+            this.chk_Intervention8.Name = "chk_Intervention8";
+            this.chk_Intervention8.Size = new System.Drawing.Size(104, 21);
+            this.chk_Intervention8.TabIndex = 86;
+            this.chk_Intervention8.Text = "Intervention";
+            this.chk_Intervention8.UseVisualStyleBackColor = true;
+            // 
+            // chk_Best_Practice8
+            // 
+            this.chk_Best_Practice8.AutoSize = true;
+            this.chk_Best_Practice8.Location = new System.Drawing.Point(716, 346);
+            this.chk_Best_Practice8.Name = "chk_Best_Practice8";
+            this.chk_Best_Practice8.Size = new System.Drawing.Size(113, 21);
+            this.chk_Best_Practice8.TabIndex = 85;
+            this.chk_Best_Practice8.Text = "Best Practice";
+            this.chk_Best_Practice8.UseVisualStyleBackColor = true;
+            // 
             // InspectionSubmission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1110, 522);
+            this.Controls.Add(this.chk_Subcontractor8);
+            this.Controls.Add(this.chk_Intervention8);
+            this.Controls.Add(this.chk_Best_Practice8);
+            this.Controls.Add(this.chk_Subcontractor7);
+            this.Controls.Add(this.chk_Intervention7);
+            this.Controls.Add(this.chk_Best_Practice7);
+            this.Controls.Add(this.chk_Subcontractor6);
+            this.Controls.Add(this.chk_Intervention6);
+            this.Controls.Add(this.chk_Best_Practice6);
+            this.Controls.Add(this.chk_Subcontractor5);
+            this.Controls.Add(this.chk_Intervention5);
+            this.Controls.Add(this.chk_Best_Practice5);
+            this.Controls.Add(this.chk_Subcontractor4);
+            this.Controls.Add(this.chk_Intervention4);
+            this.Controls.Add(this.chk_Best_Practice4);
+            this.Controls.Add(this.chk_Subcontractor3);
+            this.Controls.Add(this.chk_Intervention3);
+            this.Controls.Add(this.chk_Best_Practice3);
+            this.Controls.Add(this.chk_Subcontractor2);
+            this.Controls.Add(this.chk_Intervention2);
+            this.Controls.Add(this.chk_Best_Practice2);
             this.Controls.Add(this.lbl_Total);
             this.Controls.Add(this.rtb_Total);
             this.Controls.Add(this.lbl_Work_Area);
@@ -445,5 +698,26 @@ namespace SE_CWA2020ASN1_Prog
         private System.Windows.Forms.Label lbl_Work_Area;
         private System.Windows.Forms.RichTextBox rtb_Total;
         private System.Windows.Forms.Label lbl_Total;
+        private System.Windows.Forms.CheckBox chk_Subcontractor2;
+        private System.Windows.Forms.CheckBox chk_Intervention2;
+        private System.Windows.Forms.CheckBox chk_Best_Practice2;
+        private System.Windows.Forms.CheckBox chk_Subcontractor3;
+        private System.Windows.Forms.CheckBox chk_Intervention3;
+        private System.Windows.Forms.CheckBox chk_Best_Practice3;
+        private System.Windows.Forms.CheckBox chk_Subcontractor4;
+        private System.Windows.Forms.CheckBox chk_Intervention4;
+        private System.Windows.Forms.CheckBox chk_Best_Practice4;
+        private System.Windows.Forms.CheckBox chk_Subcontractor5;
+        private System.Windows.Forms.CheckBox chk_Intervention5;
+        private System.Windows.Forms.CheckBox chk_Best_Practice5;
+        private System.Windows.Forms.CheckBox chk_Subcontractor6;
+        private System.Windows.Forms.CheckBox chk_Intervention6;
+        private System.Windows.Forms.CheckBox chk_Best_Practice6;
+        private System.Windows.Forms.CheckBox chk_Subcontractor7;
+        private System.Windows.Forms.CheckBox chk_Intervention7;
+        private System.Windows.Forms.CheckBox chk_Best_Practice7;
+        private System.Windows.Forms.CheckBox chk_Subcontractor8;
+        private System.Windows.Forms.CheckBox chk_Intervention8;
+        private System.Windows.Forms.CheckBox chk_Best_Practice8;
     }
 }
