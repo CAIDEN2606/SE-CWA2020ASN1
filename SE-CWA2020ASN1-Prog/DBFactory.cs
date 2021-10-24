@@ -94,10 +94,7 @@ namespace SE_CWA2020ASN1_Prog
     public interface DbConnection
     {
         bool OpenConnection();
-
         bool CloseConnection();
-
-
         //Insert statement
         int Insert();
         /*
@@ -106,7 +103,6 @@ namespace SE_CWA2020ASN1_Prog
         //Delete statement
         public void Delete();
         */
-
 
         //Select statement
         DbDataReader Select(String query);
@@ -117,11 +113,7 @@ namespace SE_CWA2020ASN1_Prog
         public void Restore();
        
         */
-
         DataSet getDataSet(string sqlStatement);
-
     }
-
-
 }
 

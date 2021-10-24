@@ -16,14 +16,14 @@ namespace SE_CWA2020ASN1_Prog
         {
             InitializeComponent();
 
-            cmbEnterSite.Items.Add("Weetabix Burton AP1 / Main");
-            cmbEnterSite.Items.Add("Project Safety Audits");
-            cmbEnterSite.Items.Add("Tate and Lyle");
-            cmbEnterSite.Items.Add("Musk Design");
-            cmbEnterSite.Items.Add("AkzoNobel Stowmarket");
+            cmb_siteName.Items.Add("Weetabix Burton AP1 / Main");
+            cmb_siteName.Items.Add("Project Safety Audits");
+            cmb_siteName.Items.Add("Tate and Lyle");
+            cmb_siteName.Items.Add("Musk Design");
+            cmb_siteName.Items.Add("AkzoNobel Stowmarket");
 
 
-            cmbEnterType.Items.Add("Instalation");
+            cmb_EnterType.Items.Add("Instalation");
           
         }
 
@@ -34,7 +34,7 @@ namespace SE_CWA2020ASN1_Prog
 
         private void btn_Enter_Click(object sender, EventArgs e)
             {
-                ActionComments frmActComm = new ActionComments();
+                InspectionSubmission frmActComm = new InspectionSubmission();
                 this.Hide();
                 frmActComm.ShowDialog();
                 this.Show();
@@ -43,13 +43,13 @@ namespace SE_CWA2020ASN1_Prog
         private void txt_name_TextChanged(object sender, EventArgs e)
         {
            
-           if (!System.Text.RegularExpressions.Regex.IsMatch(txt_name.Text, "^[a-zA-Z ]"))
+           if (!System.Text.RegularExpressions.Regex.IsMatch(txt_inspectorName.Text, "^[a-zA-Z ]"))
             {
                 MessageBox.Show("This textbox accepts only alphabetical characters");
-                txt_name.Text.Remove(txt_name.Text.Length -1);
+                txt_inspectorName.Text.Remove(txt_inspectorName.Text.Length -1);
             }
                 else
-            if (txt_name.Text == "")
+            if (txt_inspectorName.Text == "")
             {
                 MessageBox.Show("Please, Enter your full name");
             }
@@ -58,7 +58,7 @@ namespace SE_CWA2020ASN1_Prog
         private void txt_workArea_TextChanged(object sender, EventArgs e)
         {
            
-            if (txt_name.Text == "")
+            if (txt_inspectorName.Text == "")
             {
                 MessageBox.Show("Please, Enter Work Area");
             }
@@ -66,7 +66,7 @@ namespace SE_CWA2020ASN1_Prog
 
         private void txt_jobDescription_TextChanged(object sender, EventArgs e)
         {
-            if (txt_name.Text == "")
+            if (txt_inspectorName.Text == "")
             {
                 MessageBox.Show("Please, Enter Job Description");
             }
@@ -74,13 +74,13 @@ namespace SE_CWA2020ASN1_Prog
 
         private void txt_supervisor_TextChanged(object sender, EventArgs e)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txt_name.Text, "^[a-zA-Z ]"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txt_inspectorName.Text, "^[a-zA-Z ]"))
             {
                 MessageBox.Show("This textbox accepts only alphabetical characters");
-                txt_name.Text.Remove(txt_name.Text.Length - 1);
+                txt_inspectorName.Text.Remove(txt_inspectorName.Text.Length - 1);
             }
             else
-            if (txt_name.Text == "")
+            if (txt_inspectorName.Text == "")
             {
                 MessageBox.Show("Please, Enter your supervisor's name");
             }
@@ -89,6 +89,14 @@ namespace SE_CWA2020ASN1_Prog
         private void SafetyInspection_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_aboutMusk_Click(object sender, EventArgs e)
+        {
+            AboutMusk frmActComm = new AboutMusk();
+            //this.Hide();
+            frmActComm.ShowDialog();
+            this.Show();
         }
     }
 }

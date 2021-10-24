@@ -35,42 +35,38 @@ namespace SE_CWA2020ASN1_Prog
             return num;
         }
 
-        //method to list details of inspection before submit 
+        //method to list details of inspection and get the ok from user before submit 
         //need datareader to read from sqlite
         //gestring and save to list
         //read to display in a messagebox
-        public List<Inspection> getInspectionDetails()
+        public List<Inspection> confirmInspection()
         {
             List<Inspection> inspection = new List<Inspection>();
             DbConnection con = DbFactory.instance();
             if (con.OpenConnection())
             {
-                DbDataReader dr = con.Select("SELECT Inspection.workAreaName, Intervention.subHeading FROM InspectionArea AND Intervention;");
-
+                DbDataReader dr = con.Select("SELECT Inspection.siteName, InspectionArea.workAreaName, Intervention.subHeading FROM InspectionArea AND Intervention;");
                 //Read the data and store them in the list
                 while (dr.Read())
                 {
                     //creating object
                     Inspection inspect = new Inspection();
-                    inspect.Work_Area = dr.GetString(0);
-                    inspect.Subheading_Name = dr.GetString(1);
-                    //inspect.Address = dr.GetString(2);
-                    //inspect.City = dr.GetString(3);
-                    // etc.....
+                    InspectionArea inar = new InspectionArea();
+                    Intervention inter = new Intervention();
                     
+                    inspect.Site_Name = dr.GetString(0);
+                    inar.Work_Area = dr.GetString(1);
+                    inter.Subheading_Name = dr.GetString(2);
                     //adding object
                     inspection.Add(inspect);
+                    inspection.Add(inar);
+                    inspection.Add(inter);
                 }
-
                 //close Data Reader
                 dr.Close();
                 con.CloseConnection();
             }
-
             //return object to display
-
-
-
             return inspection;
         }
     }

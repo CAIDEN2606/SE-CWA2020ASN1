@@ -16,5 +16,13 @@ namespace SE_CWA2020ASN1_Prog
         {
             InitializeComponent();
         }
+
+        private void btn_accept_Click(object sender, EventArgs e)
+        {
+            ActionComments frmActComm = new ActionComments();
+            this.Hide();
+            frmActComm.ShowDialog();
+            this.Show();
+        }
     }
 }

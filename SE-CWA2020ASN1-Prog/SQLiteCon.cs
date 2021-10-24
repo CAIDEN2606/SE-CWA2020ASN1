@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SQLite;
 using System.Windows.Forms;
+using System.Diagnostics;
 //taken from https://www.codeguru.com/dotnet/using-sqlite-in-a-c-application/
 
 namespace SE_CWA2020ASN1_Prog
@@ -28,14 +29,27 @@ namespace SE_CWA2020ASN1_Prog
         private void initialize()
         {
             database = m_properties["Database"];
-            setConnection();
+            createConnection();
         }
 
-        private void setConnection()
+        //private void setConnection()
+        static SQLiteConnection createConnection()
         {
-            string connectionString;
-            connectionString = "Data source=" + database + "; Version = 3; New = True; Compress = True; ";
-            connection = new SQLiteConnection(connectionString);
+            SQLiteConnection sqlite_conn;
+            // Create a new database connection:
+            sqlite_conn = new SQLiteConnection("Data Source=database.db; Version = 3; New = True; Compress = True; ");
+            // Open the connection:
+            try
+            {
+                sqlite_conn.Open();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("No connection exception thrown : " + ex.Message);
+                sqlite_conn = null;
+                throw ex;
+            }
+            return sqlite_conn;
         }
 
         public bool CloseConnection()
@@ -51,19 +65,6 @@ namespace SE_CWA2020ASN1_Prog
             }
             return false;
 
-        }
-
-        public DataSet getDataSet(string sqlStatement)
-        {
-            DataSet dataSet;
-
-            // create the object dataAdapter to manipulate a table from the database StudentDissertations specified by connectionToDB
-            SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(sqlStatement, connection);
-            // create the dataset
-            dataSet = new System.Data.DataSet();
-            dataAdapter.Fill(dataSet);
-            //return the dataSet
-            return dataSet;
         }
 
         public bool OpenConnection()
@@ -82,6 +83,19 @@ namespace SE_CWA2020ASN1_Prog
             }
             return connected;
             throw new NotImplementedException();
+        }
+
+        public DataSet getDataSet(string sqlStatement)
+        {
+            DataSet dataSet;
+
+            // create the object dataAdapter to manipulate a table from the database StudentDissertations specified by connectionToDB
+            SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(sqlStatement, connection);
+            // create the dataset
+            dataSet = new System.Data.DataSet();
+            dataAdapter.Fill(dataSet);
+            //return the dataSet
+            return dataSet;
         }
 
         public DbDataReader Select(string query)
@@ -136,13 +150,16 @@ namespace SE_CWA2020ASN1_Prog
             }
             catch (Exception ex)
             {
-
+                Debug.WriteLine("No connection exception thrown : " + ex.Message);
+                sqlite_conn = null;
+                throw ex;
             }
             return sqlite_conn;
         }
 
         static void CreateTables(SQLiteConnection conn)
         {
+            //if not exist create table
 
             SQLiteCommand sqlite_cmd;
             string Createsql = "CREATE TABLE Inspection (SiteName VARCHAR(20), InspectionDate DATE, SuperVisorName VARCHAR(20), Type VARCHAR(30), JobDescription VARCHAR(30), InspectorName VARCHAR(20))";
@@ -164,11 +181,11 @@ namespace SE_CWA2020ASN1_Prog
             
             SQLiteCommand sqlite_cmd;
             string ins1 = "INSERT INTO Inspection (SiteName, InspectionDate, SuperVisorName, Type, JobDescription, InspectorName)" +
-                "VALUES(m_siteName,m_type,)";
+                "VALUES('" + cmb_siteName + "','" + DateTimePicker1 + "','" + txt_supervisor + "','" + cmb_EnterType + "','" + txt_jobDescription + "','" + txt_inspectorName + "')";
             string ins2 = "INSERT INTO InspectionArea (WorkAreaName, InspectionSummary, InterventionsTotal)" +
-                "VALUES()";
+                "VALUES('" + rtb_WorkArea + "','" + rtb_InspectionComments + "','" + rtb_Total + "')";
             string ins3 = "INSERT INTO Intervention (Heading, SubHeading, InterventionType, InterventionSum, InspectorActions, InspectorComments)" +
-                " VALUES()";
+                " VALUES('" + +"','" + +"','" + +"','" + +"','" + rtx_ActionTaken + "','" + rtx_comments + "')";
 
             sqlite_cmd = conn.CreateCommand();
             sqlite_cmd.CommandText = ins1;

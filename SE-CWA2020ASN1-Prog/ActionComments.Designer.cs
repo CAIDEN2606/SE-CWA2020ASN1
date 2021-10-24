@@ -38,7 +38,7 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_backSubHead = new System.Windows.Forms.Button();
             this.btn_confirmInspection = new System.Windows.Forms.Button();
             this.btn_takePic = new System.Windows.Forms.Button();
-            this.rtx_actionTaken = new System.Windows.Forms.RichTextBox();
+            this.rtx_ActionTaken = new System.Windows.Forms.RichTextBox();
             this.lbl_enterAction = new System.Windows.Forms.Label();
             this.lbl_insertComments = new System.Windows.Forms.Label();
             this.rtx_comments = new System.Windows.Forms.RichTextBox();
@@ -137,14 +137,14 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_takePic.UseVisualStyleBackColor = true;
             this.btn_takePic.Click += new System.EventHandler(this.btn_takePic_Click);
             // 
-            // rtx_actionTaken
+            // rtx_ActionTaken
             // 
-            this.rtx_actionTaken.Location = new System.Drawing.Point(25, 334);
-            this.rtx_actionTaken.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rtx_actionTaken.Name = "rtx_actionTaken";
-            this.rtx_actionTaken.Size = new System.Drawing.Size(453, 119);
-            this.rtx_actionTaken.TabIndex = 32;
-            this.rtx_actionTaken.Text = "";
+            this.rtx_ActionTaken.Location = new System.Drawing.Point(25, 334);
+            this.rtx_ActionTaken.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rtx_ActionTaken.Name = "rtx_ActionTaken";
+            this.rtx_ActionTaken.Size = new System.Drawing.Size(453, 119);
+            this.rtx_ActionTaken.TabIndex = 32;
+            this.rtx_ActionTaken.Text = "";
             // 
             // lbl_enterAction
             // 
@@ -196,7 +196,7 @@ namespace SE_CWA2020ASN1_Prog
             this.Controls.Add(this.btn_backSubHead);
             this.Controls.Add(this.btn_confirmInspection);
             this.Controls.Add(this.btn_takePic);
-            this.Controls.Add(this.rtx_actionTaken);
+            this.Controls.Add(this.rtx_ActionTaken);
             this.Controls.Add(this.lbl_enterAction);
             this.Controls.Add(this.lbl_insertComments);
             this.Controls.Add(this.rtx_comments);
@@ -222,7 +222,7 @@ namespace SE_CWA2020ASN1_Prog
         private System.Windows.Forms.Button btn_backSubHead;
         private System.Windows.Forms.Button btn_confirmInspection;
         private System.Windows.Forms.Button btn_takePic;
-        private System.Windows.Forms.RichTextBox rtx_actionTaken;
+        private System.Windows.Forms.RichTextBox rtx_ActionTaken;
         private System.Windows.Forms.Label lbl_enterAction;
         private System.Windows.Forms.Label lbl_insertComments;
         private System.Windows.Forms.RichTextBox rtx_comments;
