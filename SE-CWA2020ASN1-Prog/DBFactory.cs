@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.Common;
 using System.Diagnostics;
@@ -12,6 +9,7 @@ namespace SE_CWA2020ASN1_Prog
 {
     public class DbFactory
     {
+
         private static DbConnection m_instance = null;
 
         Dictionary<string, string> m_properties;
@@ -40,7 +38,7 @@ namespace SE_CWA2020ASN1_Prog
                 string provider = m_properties["Provider"];
                 if (provider.Equals("SQLite"))
                     connection = new SQLiteCon(m_properties);
-                //else if (provider.Equals("MySQL"))
+                //else if(provider.Equals("MySQL"))
                 //    connection = new MySQLCon(m_properties);
                 //else if (provider.Equals("Microsoft.ACE.OLEDB.16.0"))
                 //    connection = new OleDatabaseConnection(m_properties);
@@ -50,7 +48,7 @@ namespace SE_CWA2020ASN1_Prog
                 else
                 {
                     // should throw unsupport exception here
-                    throw new DbException("Not supported provider '" + provider + "'");
+                    throw new DBException("Not supported provider '" + provider + "'");
                 }
             }
             catch (FileNotFoundException e)
@@ -86,15 +84,18 @@ namespace SE_CWA2020ASN1_Prog
             return properties;
         }
     }
-    class DbException : System.Exception
+    class DBException : System.Exception
     {
-        public DbException(string message) : base(message) { }
+        public DBException(string message) : base(message) { }
     }
 
     public interface DbConnection
     {
         bool OpenConnection();
+
         bool CloseConnection();
+
+
         //Insert statement
         int Insert();
         /*
@@ -103,6 +104,7 @@ namespace SE_CWA2020ASN1_Prog
         //Delete statement
         public void Delete();
         */
+
 
         //Select statement
         DbDataReader Select(String query);
@@ -113,7 +115,9 @@ namespace SE_CWA2020ASN1_Prog
         public void Restore();
        
         */
+
         DataSet getDataSet(string sqlStatement);
+
+
     }
 }
-

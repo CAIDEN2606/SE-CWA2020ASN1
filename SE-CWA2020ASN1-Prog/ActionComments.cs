@@ -27,15 +27,19 @@ namespace SE_CWA2020ASN1_Prog
         {
             
             //1st text box
-            //rtx_comments.Text;
+            var comments = rtx_comments.Text;
             //2nd text box
-            //rtx_actionTaken.Text;
+            var actionTaken = rtx_actionTaken.Text;
             //pics
             //pic_viewer.Image
-            BusinessMetaLayer ml = BusinessMetaLayer.instance();
-            //m_intervention =
-            //Console.WriteLine(rtx_comments.Text); works
+            
 
+
+            //Console.WriteLine(rtx_comments.Text); works
+            SafetyInspection frmActComm = new SafetyInspection();
+            this.Hide();
+            frmActComm.ShowDialog();
+            this.Show();
 
 
         }
