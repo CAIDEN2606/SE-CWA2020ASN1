@@ -20,8 +20,8 @@ namespace SE_CWA2020ASN1_Prog
         private string m_actionComments;
         public string Action_Comments { get { return m_actionComments; } set { m_actionComments = value; } }
 
-        private string m_inspectionComments;
-        public string Inspection_Comments { get { return m_inspectionComments; } set { m_inspectionComments = value; } }
+        private string m_interventionComments;
+        public string Intervention_Comments { get { return m_interventionComments; } set { m_interventionComments = value; } }
 
         //private string m_inspectionPicture;
         //public string Inspection_Picture { get { return m_inspectionPicture; } set { m_inspectionPicture = value; } }

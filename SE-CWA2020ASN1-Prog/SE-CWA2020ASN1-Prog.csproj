@@ -86,6 +86,12 @@
       <DependentUpon>SafetyInspection.cs</DependentUpon>
     </Compile>
     <Compile Include="SQLiteCon.cs" />
+    <Compile Include="TestHarness.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestHarness.Designer.cs">
+      <DependentUpon>TestHarness.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutMusk.resx">
       <DependentUpon>AboutMusk.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +117,10 @@
     <EmbeddedResource Include="SafetyInspection.resx">
       <DependentUpon>SafetyInspection.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TestHarness.resx">
+      <DependentUpon>TestHarness.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="MyMuskSQLiteDb.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

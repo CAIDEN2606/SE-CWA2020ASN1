@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,14 +32,48 @@ namespace SE_CWA2020ASN1_Prog
         {
             this.Close();
         }
+        public int InsertInspectionData(SQLiteConnection conn)
+        {
+            int ans = 0;
 
-        private void btn_Enter_Click(object sender, EventArgs e)
+
+            return ans;
+
+        }
+        private void btn_Enter_Click(object sender, EventArgs e )
+        {
+            int ans = 0;
+            DbConnection con = DbFactory.instance();
+            try
             {
-                InspectionSubmission frmActComm = new InspectionSubmission();
+                SQLiteConnection conn = new SQLiteConnection();
+               if (con.OpenConnection())
+                {
+                    SQLiteCommand sqlite_cmd;
+                    sqlite_cmd = conn.CreateCommand();
+                    sqlite_cmd.CommandText = "INSERT INTO Inspection (SiteName, JobDescription,InspectorName,InspectionDate," +
+                        "SupervisorName) VALUES(@inspectName,@site,@wkarea, @date,@job,@supervisor);";
+                    sqlite_cmd.Parameters.AddWithValue("@inspectName", txt_name.Text);
+                    sqlite_cmd.Parameters.AddWithValue("@site", cmbEnterSite.Text);
+                    sqlite_cmd.Parameters.AddWithValue("@wkarea", txt_workArea.Text);
+                    sqlite_cmd.Parameters.AddWithValue("@date", dateTimePicker1.Text);
+                    sqlite_cmd.Parameters.AddWithValue("@job", txt_jobDescription.Text);
+                    sqlite_cmd.Parameters.AddWithValue("@supervisor", txt_supervisor.Text);
+                    ans++;
+                    MessageBox.Show("Inspection details added to database. Return value = " + ans.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                 MessageBox.Show("Error inserting data into Inspection table: " + ex);
+                throw ex;
+            }
+            con.CloseConnection();
+            InspectionSubmission frmActComm = new InspectionSubmission();
                 this.Hide();
                 frmActComm.ShowDialog();
                 this.Show();
-            }
+        }
 
         private void txt_name_TextChanged(object sender, EventArgs e)
         {

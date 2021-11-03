@@ -20,6 +20,19 @@ namespace SE_CWA2020ASN1_Prog
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            try
+            {
+
+                //createTables
+
+                MessageBox.Show("Tables created");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error creating tables: "+ex.ToString());
+                
+            }
+            
         }
 
         private void btn_exitSystem_Click(object sender, EventArgs e)
@@ -31,9 +44,9 @@ namespace SE_CWA2020ASN1_Prog
         //1st form
         private void btn_goSafetyInspection_Click(object sender, EventArgs e)
         {
-            SafetyInspection frmSafetyInspection = new SafetyInspection();
+            SafetyInspection SafetyInspection = new SafetyInspection();
             this.Hide();
-            frmSafetyInspection.ShowDialog();
+            SafetyInspection.ShowDialog();
             this.Show();
         }
         //2nd form

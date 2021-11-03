@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Data.SQLite;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
 {
@@ -62,13 +64,13 @@ namespace SE_CWA2020ASN1_Prog
         //    return inspection;
         //}
 
-        
-        //read data from win forms fields and store in sqlite tables
-        //seperate methods for each class
-        //should save each form into dictionary for each form and extract data via tag @
-        
-        
-        static int saveInspection(Inspection insp)
+       
+        /// <summary>
+        /// save all inspection details of classes to db incl sqlite
+        /// </summary>
+        /// <param name="insp"></param>
+        /// <returns></returns>
+        public int Insert()
         {
             int affected = 0;
 
@@ -78,28 +80,31 @@ namespace SE_CWA2020ASN1_Prog
 
             return affected;
         }
+        public int InsertInspectionData(SQLiteConnection con)
+        {
+            int ans = 0;
+
+            SQLiteCommand sqlite_cmd;
+            sqlite_cmd = con.CreateCommand();
+            
+            sqlite_cmd.CommandText = "INSERT INTO Inspection (SiteName, JobDescription,InspectorName,InspectionDate," +
+                "SupervisorName) VALUES(@inspectName,@site,@wkarea, @date,@job,@supervisor);";
+            //sqlite_cmd.Parameters.AddWithValue("@inspectName",txt_name.Text);
+            //sqlite_cmd.Parameters.AddWithValue("@site", cmbEnterSite.Text);
+            //sqlite_cmd.Parameters.AddWithValue("@wkarea", txt_workArea.Text);
+            //sqlite_cmd.Parameters.AddWithValue("@date", dateTimePicker1.Text);
+            //sqlite_cmd.Parameters.AddWithValue("@job", txt_jobDescription.Text);
+            //sqlite_cmd.Parameters.AddWithValue("@supervisor", txt_supervisor.Text);
+
+            sqlite_cmd.ExecuteNonQuery();
+            ans++;
+            return ans;
+        }
+
         
-        static int saveInspectionArea(InspectionArea inspa)
-        {
-            int affected = 0;
+        
 
-            // create an insert statement for your class
 
-            // send insert statement down to connection
-
-            return affected;
-        }
-
-        static int insertIntervention(Intervention intv)
-        {
-            int affected = 0;
-
-            // create an insert statement for your class
-
-            // send insert statement down to connection
-
-            return affected;
-        }
 
     }
 }

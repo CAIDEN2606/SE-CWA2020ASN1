@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
+using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
 
@@ -89,6 +90,7 @@ namespace SE_CWA2020ASN1_Prog
         public DBException(string message) : base(message) { }
     }
 
+    //for sqlitecon and other db files
     public interface DbConnection
     {
         bool OpenConnection();
@@ -97,7 +99,7 @@ namespace SE_CWA2020ASN1_Prog
 
 
         //Insert statement
-        int Insert();
+        int InsertInspectionData(SQLiteConnection con);
         /*
         //Update statement
         public void Update();
