@@ -59,5 +59,15 @@ namespace SE_CWA2020ASN1_Prog
             }
             
         }
+
+        private void vsc_actionTaken_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void ActionComments_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
