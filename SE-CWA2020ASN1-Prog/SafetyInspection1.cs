@@ -70,7 +70,7 @@ namespace SE_CWA2020ASN1_Prog
             //}
             //con.CloseConnection();
             InspectionSubmission2 frmInspectsub = new InspectionSubmission2();
-                this.Close();
+                this.Hide();
             frmInspectsub.ShowDialog();
                 this.Show();
         }

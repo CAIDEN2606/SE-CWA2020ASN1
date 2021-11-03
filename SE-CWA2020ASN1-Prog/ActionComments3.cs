@@ -27,7 +27,7 @@ namespace SE_CWA2020ASN1_Prog
             //pics
             //??
             InspectionSubmission2 frmActComm = new InspectionSubmission2();
-            this.Close();
+            this.Hide();
             frmActComm.ShowDialog();
             this.Show();
         }

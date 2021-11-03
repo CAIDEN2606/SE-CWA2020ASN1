@@ -28,7 +28,7 @@ namespace SE_CWA2020ASN1_Prog
 
             //go to 3rd form
             ActionComments3 frmActComm = new ActionComments3();
-            this.Close();
+            this.Hide();
             frmActComm.ShowDialog();
             this.Show();
         }
@@ -39,7 +39,7 @@ namespace SE_CWA2020ASN1_Prog
 
             //return to form2
             InspectionSubmission2 frmInspSub = new InspectionSubmission2();
-            this.Close();
+            this.Hide();
             frmInspSub.ShowDialog();
             this.Show();
         }

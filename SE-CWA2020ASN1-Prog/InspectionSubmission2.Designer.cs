@@ -397,7 +397,7 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_enterComments.Name = "btn_enterComments";
             this.btn_enterComments.Size = new System.Drawing.Size(125, 73);
             this.btn_enterComments.TabIndex = 67;
-            this.btn_enterComments.Text = "Enter comments";
+            this.btn_enterComments.Text = "Enter comments and take picture";
             this.btn_enterComments.UseVisualStyleBackColor = true;
             this.btn_enterComments.Click += new System.EventHandler(this.btn_enterComments_Click);
             // 
