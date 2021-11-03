@@ -17,5 +17,20 @@ namespace SE_CWA2020ASN1_Prog
             InitializeComponent();
         }
 
+        private void btn_ExitNoSave_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_accept_Click(object sender, EventArgs e)
+        {
+            //save all data to sqlite
+
+            //got to 3rd form
+            ActionComments frmActComm = new ActionComments();
+            this.Hide();
+            frmActComm.ShowDialog();
+            this.Show();
+        }
     }
 }

@@ -26,7 +26,10 @@ namespace SE_CWA2020ASN1_Prog
             //rtx_actionTaken.Text;
             //pics
             //??
-
+            SafetyInspection frmActComm = new SafetyInspection();
+            this.Hide();
+            frmActComm.ShowDialog();
+            this.Show();
         }
 
         private void btn_takePic_Click(object sender, EventArgs e)
@@ -54,10 +57,7 @@ namespace SE_CWA2020ASN1_Prog
             {
                 this.Close();
             }
-            else
-            {
-                //nothing
-            }
+            
         }
     }
 }
