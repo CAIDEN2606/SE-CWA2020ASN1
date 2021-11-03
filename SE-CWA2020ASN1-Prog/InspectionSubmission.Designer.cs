@@ -137,6 +137,7 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_ExitNoSave.TabIndex = 42;
             this.btn_ExitNoSave.Text = "Exit Without Save";
             this.btn_ExitNoSave.UseVisualStyleBackColor = true;
+            this.btn_ExitNoSave.Click += new System.EventHandler(this.btn_ExitNoSave_Click);
             // 
             // lbl_GeneralInspection
             // 

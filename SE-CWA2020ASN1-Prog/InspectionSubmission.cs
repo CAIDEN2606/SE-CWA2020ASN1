@@ -17,9 +17,5 @@ namespace SE_CWA2020ASN1_Prog
             InitializeComponent();
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
