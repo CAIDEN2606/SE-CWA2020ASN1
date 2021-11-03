@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
 {
-    public partial class InspectionSubmission : Form
+    public partial class InspectionSubmission2 : Form
     {
-        public InspectionSubmission()
+        public InspectionSubmission2()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace SE_CWA2020ASN1_Prog
             //save all data to sqlite
 
             //got to 3rd form
-            ActionComments frmActComm = new ActionComments();
+            ActionComments3 frmActComm = new ActionComments3();
             this.Hide();
             frmActComm.ShowDialog();
             this.Show();

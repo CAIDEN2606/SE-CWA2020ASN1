@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
 {
-    public partial class ActionComments : Form
+    public partial class ActionComments3 : Form
     {
-        public ActionComments()
+        public ActionComments3()
         {
             InitializeComponent();
         }

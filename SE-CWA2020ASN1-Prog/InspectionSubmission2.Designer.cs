@@ -1,7 +1,7 @@
 ﻿
 namespace SE_CWA2020ASN1_Prog
 {
-    partial class InspectionSubmission
+    partial class InspectionSubmission2
     {
         /// <summary>
         /// Required designer variable.

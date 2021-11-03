@@ -1,7 +1,7 @@
 ﻿
 namespace SE_CWA2020ASN1_Prog
 {
-    partial class ActionComments
+    partial class ActionComments3
     {
         /// <summary>
         /// Required designer variable.
