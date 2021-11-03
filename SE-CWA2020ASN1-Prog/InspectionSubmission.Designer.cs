@@ -65,10 +65,10 @@ namespace SE_CWA2020ASN1_Prog
             // lbl_TitleCaiden
             // 
             this.lbl_TitleCaiden.AutoSize = true;
-            this.lbl_TitleCaiden.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_TitleCaiden.Location = new System.Drawing.Point(392, 8);
+            this.lbl_TitleCaiden.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_TitleCaiden.Location = new System.Drawing.Point(321, 6);
             this.lbl_TitleCaiden.Name = "lbl_TitleCaiden";
-            this.lbl_TitleCaiden.Size = new System.Drawing.Size(228, 32);
+            this.lbl_TitleCaiden.Size = new System.Drawing.Size(305, 44);
             this.lbl_TitleCaiden.TabIndex = 0;
             this.lbl_TitleCaiden.Text = "Inspections Main";
             // 
@@ -122,7 +122,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.lbl_GeneralInspection.AutoSize = true;
             this.lbl_GeneralInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_GeneralInspection.Location = new System.Drawing.Point(181, 15);
+            this.lbl_GeneralInspection.Location = new System.Drawing.Point(442, 50);
             this.lbl_GeneralInspection.Name = "lbl_GeneralInspection";
             this.lbl_GeneralInspection.Size = new System.Drawing.Size(175, 25);
             this.lbl_GeneralInspection.TabIndex = 43;
