@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
 {
-    public partial class ActionComments : Form
+    public partial class ActionComments3 : Form
     {
-        public ActionComments()
+        public ActionComments3()
         {
             InitializeComponent();
         }
@@ -26,8 +26,8 @@ namespace SE_CWA2020ASN1_Prog
             //rtx_actionTaken.Text;
             //pics
             //??
-            SafetyInspection frmActComm = new SafetyInspection();
-            this.Hide();
+            InspectionSubmission2 frmActComm = new InspectionSubmission2();
+            this.Close();
             frmActComm.ShowDialog();
             this.Show();
         }

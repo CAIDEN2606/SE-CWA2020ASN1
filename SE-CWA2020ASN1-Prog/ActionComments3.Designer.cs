@@ -1,7 +1,7 @@
 ﻿
 namespace SE_CWA2020ASN1_Prog
 {
-    partial class ActionComments
+    partial class ActionComments3
     {
         /// <summary>
         /// Required designer variable.
@@ -174,7 +174,6 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // pic_logo
             // 
-            this.pic_logo.Image = global::SE_CWA2020ASN1_Prog.Properties.Resources.musk_logo;
             this.pic_logo.ImageLocation = "main.musk-logo.jpg";
             this.pic_logo.Location = new System.Drawing.Point(25, 12);
             this.pic_logo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -184,11 +183,11 @@ namespace SE_CWA2020ASN1_Prog
             this.pic_logo.TabIndex = 37;
             this.pic_logo.TabStop = false;
             // 
-            // ActionComments
+            // ActionComments3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 634);
+            this.ClientSize = new System.Drawing.Size(515, 650);
             this.Controls.Add(this.lbl_picViewer);
             this.Controls.Add(this.pic_viewer);
             this.Controls.Add(this.vsc_actionTaken);
@@ -204,7 +203,7 @@ namespace SE_CWA2020ASN1_Prog
             this.Controls.Add(this.rtx_comments);
             this.Controls.Add(this.lbl_sbheadingTitle);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "ActionComments";
+            this.Name = "ActionComments3";
             this.Text = "ActionComments";
             ((System.ComponentModel.ISupportInitialize)(this.pic_viewer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();

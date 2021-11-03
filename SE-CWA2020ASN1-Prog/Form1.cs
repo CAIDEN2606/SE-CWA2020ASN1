@@ -31,7 +31,7 @@ namespace SE_CWA2020ASN1_Prog
         //1st form
         private void btn_goSafetyInspection_Click(object sender, EventArgs e)
         {
-            SafetyInspection frmSafetyInspection = new SafetyInspection();
+            SafetyInspection1 frmSafetyInspection = new SafetyInspection1();
             this.Hide();
             frmSafetyInspection.ShowDialog();
             this.Show();
@@ -39,7 +39,7 @@ namespace SE_CWA2020ASN1_Prog
         //2nd form
         private void btn_InspectionSubmission_Click(object sender, EventArgs e)
         {
-            InspectionSubmission frmActComm = new InspectionSubmission();
+            InspectionSubmission2 frmActComm = new InspectionSubmission2();
             this.Hide();
             frmActComm.ShowDialog();
             this.Show();
@@ -47,7 +47,7 @@ namespace SE_CWA2020ASN1_Prog
         //3rd form
         private void btn_actionComments_Click(object sender, EventArgs e)
         {
-            ActionComments frmActComm = new ActionComments();
+            ActionComments3 frmActComm = new ActionComments3();
             this.Hide();
             frmActComm.ShowDialog();
             this.Show();
