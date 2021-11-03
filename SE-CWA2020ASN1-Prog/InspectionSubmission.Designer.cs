@@ -458,7 +458,7 @@ namespace SE_CWA2020ASN1_Prog
             this.chk_Intervention3.TabIndex = 71;
             this.chk_Intervention3.Text = "Intervention";
             this.chk_Intervention3.UseVisualStyleBackColor = true;
-            this.chk_Intervention3.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            //this.chk_Intervention3.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // chk_Best_Practice3
             // 
