@@ -55,7 +55,7 @@ namespace SE_CWA2020ASN1_Prog
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(218, 176);
+            this.label1.Location = new System.Drawing.Point(272, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 20);
             this.label1.TabIndex = 0;
@@ -64,7 +64,7 @@ namespace SE_CWA2020ASN1_Prog
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 246);
+            this.label2.Location = new System.Drawing.Point(83, 181);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 20);
             this.label2.TabIndex = 1;
@@ -73,7 +73,7 @@ namespace SE_CWA2020ASN1_Prog
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 295);
+            this.label3.Location = new System.Drawing.Point(83, 230);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 20);
             this.label3.TabIndex = 2;
@@ -82,7 +82,7 @@ namespace SE_CWA2020ASN1_Prog
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 339);
+            this.label4.Location = new System.Drawing.Point(83, 274);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 20);
             this.label4.TabIndex = 3;
@@ -91,7 +91,7 @@ namespace SE_CWA2020ASN1_Prog
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 396);
+            this.label5.Location = new System.Drawing.Point(83, 331);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 20);
             this.label5.TabIndex = 4;
@@ -100,7 +100,7 @@ namespace SE_CWA2020ASN1_Prog
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 449);
+            this.label6.Location = new System.Drawing.Point(83, 384);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(154, 20);
             this.label6.TabIndex = 5;
@@ -109,7 +109,7 @@ namespace SE_CWA2020ASN1_Prog
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(29, 504);
+            this.label7.Location = new System.Drawing.Point(83, 439);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 20);
             this.label7.TabIndex = 6;
@@ -118,7 +118,7 @@ namespace SE_CWA2020ASN1_Prog
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(29, 549);
+            this.label8.Location = new System.Drawing.Point(83, 484);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(124, 20);
             this.label8.TabIndex = 7;
@@ -126,7 +126,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_Enter
             // 
-            this.btn_Enter.Location = new System.Drawing.Point(71, 624);
+            this.btn_Enter.Location = new System.Drawing.Point(86, 543);
             this.btn_Enter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Enter.Name = "btn_Enter";
             this.btn_Enter.Size = new System.Drawing.Size(84, 29);
@@ -137,7 +137,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(332, 624);
+            this.btn_exit.Location = new System.Drawing.Point(347, 543);
             this.btn_exit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(84, 29);
@@ -149,7 +149,7 @@ namespace SE_CWA2020ASN1_Prog
             // cmbEnterSite
             // 
             this.cmbEnterSite.FormattingEnabled = true;
-            this.cmbEnterSite.Location = new System.Drawing.Point(191, 286);
+            this.cmbEnterSite.Location = new System.Drawing.Point(245, 221);
             this.cmbEnterSite.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbEnterSite.Name = "cmbEnterSite";
             this.cmbEnterSite.Size = new System.Drawing.Size(222, 28);
@@ -157,7 +157,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // txt_name
             // 
-            this.txt_name.Location = new System.Drawing.Point(191, 240);
+            this.txt_name.Location = new System.Drawing.Point(245, 175);
             this.txt_name.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_name.MaxLength = 20;
             this.txt_name.Name = "txt_name";
@@ -167,7 +167,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // txt_workArea
             // 
-            this.txt_workArea.Location = new System.Drawing.Point(194, 332);
+            this.txt_workArea.Location = new System.Drawing.Point(248, 267);
             this.txt_workArea.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_workArea.MaxLength = 20;
             this.txt_workArea.Name = "txt_workArea";
@@ -177,7 +177,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(194, 390);
+            this.dateTimePicker1.Location = new System.Drawing.Point(248, 325);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(222, 26);
@@ -185,7 +185,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // txt_jobDescription
             // 
-            this.txt_jobDescription.Location = new System.Drawing.Point(194, 442);
+            this.txt_jobDescription.Location = new System.Drawing.Point(248, 377);
             this.txt_jobDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_jobDescription.MaxLength = 20;
             this.txt_jobDescription.Name = "txt_jobDescription";
@@ -196,7 +196,7 @@ namespace SE_CWA2020ASN1_Prog
             // cmbEnterType
             // 
             this.cmbEnterType.FormattingEnabled = true;
-            this.cmbEnterType.Location = new System.Drawing.Point(194, 495);
+            this.cmbEnterType.Location = new System.Drawing.Point(248, 430);
             this.cmbEnterType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbEnterType.Name = "cmbEnterType";
             this.cmbEnterType.Size = new System.Drawing.Size(222, 28);
@@ -204,7 +204,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // txt_supervisor
             // 
-            this.txt_supervisor.Location = new System.Drawing.Point(194, 549);
+            this.txt_supervisor.Location = new System.Drawing.Point(248, 484);
             this.txt_supervisor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_supervisor.Name = "txt_supervisor";
             this.txt_supervisor.Size = new System.Drawing.Size(222, 26);
@@ -213,7 +213,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_back
             // 
-            this.btn_back.Location = new System.Drawing.Point(191, 624);
+            this.btn_back.Location = new System.Drawing.Point(206, 543);
             this.btn_back.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(84, 29);

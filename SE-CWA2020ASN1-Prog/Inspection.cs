@@ -6,9 +6,24 @@ using System.Threading.Tasks;
 
 namespace SE_CWA2020ASN1_Prog
 {
-    public class Inspection
+    class Inspection
     {
+        //used just to print inspections as requested by project requirements
+        private List<Inspection> inspection;
 
+        private String m_inspection;
+        private List<InspectionArea> m_inspectionArea;
+        public Inspection(String inspectionName)
+        {
+            m_inspection = inspectionName;
+            m_inspectionArea = new List<InspectionArea>();
+
+        }
+        //used to add each inspectionArea to inspection list 
+        public void addInspectionArea(InspectionArea insp)
+        {
+            m_inspectionArea.Add(insp);
+        }
         private string m_siteName;
         public string Site_Name { get { return m_siteName; } set { m_siteName = value; } }
 
@@ -26,6 +41,9 @@ namespace SE_CWA2020ASN1_Prog
 
         private string m_supervisorName;
         public string Supervisor_Name { get { return m_supervisorName; } set { m_supervisorName = value; } }
+    
+    public void listInsections
+    
     }
 
 }
