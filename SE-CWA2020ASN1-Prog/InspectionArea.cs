@@ -10,10 +10,10 @@ namespace SE_CWA2020ASN1_Prog
     {
         private String m_workarea;
         private String m_inspectionSummary;
-        
+
         private List<Intervention> m_interventionObjs;
 
-        public InspectionArea(String workArea,String iSummary)
+        public InspectionArea(String workArea, String iSummary)
         {
             m_workarea = workArea;
             m_inspectionSummary = iSummary;
@@ -28,8 +28,9 @@ namespace SE_CWA2020ASN1_Prog
         }
         public String Work_Area { get { return m_workarea; } set { m_workarea = value; } }
 
-       
+
         public String Inspection_Summary { get { return m_inspectionSummary; } set { m_inspectionSummary = value; } }
 
     }
+}
 }

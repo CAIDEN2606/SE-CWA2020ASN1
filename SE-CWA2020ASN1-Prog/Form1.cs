@@ -31,7 +31,7 @@ namespace SE_CWA2020ASN1_Prog
         //1st form
         private void btn_goSafetyInspection_Click(object sender, EventArgs e)
         {
-            SafetyInspection frmSafetyInspection = new SafetyInspection();
+            SafetyInspection1 frmSafetyInspection = new SafetyInspection1();
             this.Hide();
             frmSafetyInspection.ShowDialog();
             this.Show();

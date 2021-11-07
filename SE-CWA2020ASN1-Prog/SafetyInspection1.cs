@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
 {
-    public partial class SafetyInspection : Form
+    public partial class SafetyInspection1 : Form
     {
-        public SafetyInspection()
+        public SafetyInspection1()
         {
             InitializeComponent();
 
@@ -31,14 +32,48 @@ namespace SE_CWA2020ASN1_Prog
         {
             this.Close();
         }
+        public int InsertInspectionData(SQLiteConnection conn)
+        {
+            int ans = 0;
 
-        private void btn_Enter_Click(object sender, EventArgs e)
-            {
-                InspectionSubmission2 frmActComm = new InspectionSubmission2();
+
+            return ans;
+
+        }
+        private void btn_Enter_Click(object sender, EventArgs e )
+        {
+            //int ans = 0;
+            //DbConnection con = DbFactory.instance();
+            //try
+            //{
+            //    SQLiteConnection conn = new SQLiteConnection();
+            //   if (con.OpenConnection())
+            //    {
+            //        SQLiteCommand sqlite_cmd;
+            //        sqlite_cmd = conn.CreateCommand();
+            //        sqlite_cmd.CommandText = "INSERT INTO Inspection (SiteName, JobDescription,InspectorName,InspectionDate," +
+            //            "SupervisorName) VALUES(@inspectName,@site,@wkarea, @date,@job,@supervisor);";
+            //        sqlite_cmd.Parameters.AddWithValue("@inspectName", txt_name.Text);
+            //        sqlite_cmd.Parameters.AddWithValue("@site", cmbEnterSite.Text);
+            //        sqlite_cmd.Parameters.AddWithValue("@wkarea", txt_workArea.Text);
+            //        sqlite_cmd.Parameters.AddWithValue("@date", dateTimePicker1.Text);
+            //        sqlite_cmd.Parameters.AddWithValue("@job", txt_jobDescription.Text);
+            //        sqlite_cmd.Parameters.AddWithValue("@supervisor", txt_supervisor.Text);
+            //        ans++;
+            //        MessageBox.Show("Inspection details added to database. Return value = " + ans.ToString());
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //     MessageBox.Show("Error inserting data into Inspection table: " + ex);
+            //    throw ex;
+            //}
+            //con.CloseConnection();
+            InspectionSubmission2 frmInspectsub = new InspectionSubmission2();
                 this.Hide();
-                frmActComm.ShowDialog();
+            frmInspectsub.ShowDialog();
                 this.Show();
-            }
+        }
 
         private void txt_name_TextChanged(object sender, EventArgs e)
         {
@@ -93,9 +128,9 @@ namespace SE_CWA2020ASN1_Prog
 
         private void btn_about_Click(object sender, EventArgs e)
         {
-            AboutMusk frmActComm = new AboutMusk();
+            AboutMusk amusk = new AboutMusk();
             //this.Hide();
-            frmActComm.ShowDialog();
+            amusk.ShowDialog();
             this.Show();
         }
     }
