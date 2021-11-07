@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
 {
-    public partial class InspectionSubmission2 : Form
+    public partial class InspectionSubmission3 : Form
     {
-        public InspectionSubmission2()
+        public InspectionSubmission3()
         {
             InitializeComponent();
         }
@@ -31,6 +31,11 @@ namespace SE_CWA2020ASN1_Prog
             this.Hide();
             frmActComm.ShowDialog();
             this.Show();
+        }
+
+        private void btn_enterComments_Click(object sender, EventArgs e)
+        {
+            //go to form3 to get comments and pics
         }
     }
 }

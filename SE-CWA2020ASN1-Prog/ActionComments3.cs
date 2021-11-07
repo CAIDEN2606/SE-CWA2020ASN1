@@ -20,16 +20,18 @@ namespace SE_CWA2020ASN1_Prog
 
         private void btn_confirmInspection_Click(object sender, EventArgs e)
         {
-            InspectionArea m_inspectionArea;
+            
             //1st text box
             var comments = rtx_comments.Text;
             //2nd text box
             var actionTaken = rtx_actionTaken.Text;
             //pics
             //??
-            m_inspectionArea.addWorkArea(comments);
+            //InspectionSubmission3.getInsp();
+           
 
-            SafetyInspection frmActComm = new SafetyInspection();
+
+            SafetyInspection1 frmActComm = new SafetyInspection1();
             this.Hide();
             frmActComm.ShowDialog();
             this.Show();

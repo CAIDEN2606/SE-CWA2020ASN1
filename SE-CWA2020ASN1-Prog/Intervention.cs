@@ -8,6 +8,7 @@ namespace SE_CWA2020ASN1_Prog
 {
     class Intervention
     {
+        private List<Intervention> intervention;
         public Intervention(String hName, String subName, String type, String aComments,
             String iComments, String iPicture)
         {
@@ -19,7 +20,21 @@ namespace SE_CWA2020ASN1_Prog
             m_inspectionPicture = iPicture;
 
         }
-            private String m_headingName;
+        
+
+        public void makeIntervention(String hName, String subName, String type, String aComments,
+            String iComments, String iPicture, Intervention intervention)
+        {
+            intervention.Add(hName,subName,type,aComments,iComments,iPicture);
+        }
+
+        private void Add(string hName, string subName, string type, string aComments, string iComments, String iPicture)
+        {
+            
+            throw new NotImplementedException();
+        }
+
+        private String m_headingName;
             public String Heading_Name { get { return m_headingName; } set { m_headingName = value; } }
 
             private String m_subheadingName;

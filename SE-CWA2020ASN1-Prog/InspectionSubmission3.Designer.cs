@@ -1,7 +1,7 @@
 ﻿
 namespace SE_CWA2020ASN1_Prog
 {
-    partial class InspectionSubmission2
+    partial class InspectionSubmission3
     {
         /// <summary>
         /// Required designer variable.
@@ -101,7 +101,6 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_Submit.TabIndex = 40;
             this.btn_Submit.Text = "Submit";
             this.btn_Submit.UseVisualStyleBackColor = true;
-            this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click);
             // 
             // btn_Edit
             // 
@@ -112,7 +111,6 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_Edit.TabIndex = 41;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
-            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_ExitNoSave
             // 
@@ -401,7 +399,7 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_enterComments.UseVisualStyleBackColor = true;
             this.btn_enterComments.Click += new System.EventHandler(this.btn_enterComments_Click);
             // 
-            // InspectionSubmission2
+            // InspectionSubmission3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -438,7 +436,7 @@ namespace SE_CWA2020ASN1_Prog
             this.Controls.Add(this.pic_logo);
             this.Controls.Add(this.lbl_TitleCaiden);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "InspectionSubmission2";
+            this.Name = "InspectionSubmission3";
             this.Text = "Inspection Main";
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.ResumeLayout(false);

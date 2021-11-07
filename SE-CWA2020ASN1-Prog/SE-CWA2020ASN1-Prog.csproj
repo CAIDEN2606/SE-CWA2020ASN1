@@ -66,11 +66,11 @@
     </Compile>
     <Compile Include="Inspection.cs" />
     <Compile Include="InspectionArea.cs" />
-    <Compile Include="InspectionSubmission2.cs">
+    <Compile Include="InspectionSubmission3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InspectionSubmission2.Designer.cs">
-      <DependentUpon>InspectionSubmission2.cs</DependentUpon>
+    <Compile Include="InspectionSubmission3.Designer.cs">
+      <DependentUpon>InspectionSubmission3.cs</DependentUpon>
     </Compile>
     <Compile Include="Methods.cs" />
     <Compile Include="Intervention.cs" />
@@ -91,8 +91,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InspectionSubmission2.resx">
-      <DependentUpon>InspectionSubmission2.cs</DependentUpon>
+    <EmbeddedResource Include="InspectionSubmission3.resx">
+      <DependentUpon>InspectionSubmission3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
