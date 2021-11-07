@@ -13,27 +13,44 @@ namespace SE_CWA2020ASN1_Prog
 {
     public partial class ActionComments3 : Form
     {
-        public ActionComments3()
+        //add the type selected in form2 and add ...
+        public ActionComments3(String titleType)
         {
             InitializeComponent();
+            
+            //keep this and add the string passed in public Actioncomments(String....)
+            lbl_sbheadingTitle.Text = titleType;
+
         }
 
-        private void btn_confirmInspection_Click(object sender, EventArgs e)
+
+
+        /// <summary>
+        ///  pass the comments and pics to form2 to add to intervention list
+        /// </summary>
+        private void passComments()
         {
-            
             //1st text box
-            var comments = rtx_comments.Text;
+            var iComments = rtx_comments.Text;
             //2nd text box
-            var actionTaken = rtx_actionTaken.Text;
+            var aComments = rtx_actionTaken.Text;
             //pics
             //??
-            //InspectionSubmission3.getInsp();
-           
 
 
-            SafetyInspection1 frmActComm = new SafetyInspection1();
+        }
+
+        /// <summary>
+        /// call passComments method and return to form2
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_confirmInspection_Click(object sender, EventArgs e)
+        {
+            passComments();
+            InspectionSubmission2 frmInSub = new InspectionSubmission2();
             this.Hide();
-            frmActComm.ShowDialog();
+            frmInSub.ShowDialog();
             this.Show();
         }
 

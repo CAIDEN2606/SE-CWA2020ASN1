@@ -37,7 +37,7 @@ namespace SE_CWA2020ASN1_Prog
         {
 
             
-            InspectionSubmission3 frmInspectsub = new InspectionSubmission3();
+            InspectionSubmission2 frmInspectsub = new InspectionSubmission2();
                 this.Hide();
             frmInspectsub.ShowDialog();
                 this.Show();

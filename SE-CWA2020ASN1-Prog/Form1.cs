@@ -39,18 +39,19 @@ namespace SE_CWA2020ASN1_Prog
         //2nd form
         private void btn_InspectionSubmission_Click(object sender, EventArgs e)
         {
-            InspectionSubmission3 frmActComm = new InspectionSubmission3();
+            InspectionSubmission2 frmInSub = new InspectionSubmission2();
             this.Hide();
-            frmActComm.ShowDialog();
+            frmInSub.ShowDialog();
             this.Show();
         }
         //3rd form
         private void btn_actionComments_Click(object sender, EventArgs e)
         {
-            ActionComments3 frmActComm = new ActionComments3();
-            this.Hide();
-            frmActComm.ShowDialog();
-            this.Show();
+            
+            //ActionComments3 frmActComm = new ActionComments3();
+            //this.Hide();
+            //frmActComm.ShowDialog();
+            //this.Show();
         }
     }
 }

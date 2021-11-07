@@ -157,9 +157,8 @@ namespace SE_CWA2020ASN1_Prog
             this.lbl_sbheadingTitle.AutoSize = true;
             this.lbl_sbheadingTitle.Location = new System.Drawing.Point(214, 12);
             this.lbl_sbheadingTitle.Name = "lbl_sbheadingTitle";
-            this.lbl_sbheadingTitle.Size = new System.Drawing.Size(104, 20);
+            this.lbl_sbheadingTitle.Size = new System.Drawing.Size(0, 20);
             this.lbl_sbheadingTitle.TabIndex = 28;
-            this.lbl_sbheadingTitle.Text = "Sub-heading:\r\n";
             // 
             // pic_viewer
             // 
