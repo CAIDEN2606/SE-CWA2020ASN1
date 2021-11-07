@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SE_CWA2020ASN1_Prog
 {
-    public class Inspection
+    class Inspection
     {
 
         //used just to print inspections as requested by project requirements
