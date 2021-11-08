@@ -24,10 +24,29 @@ namespace SE_CWA2020ASN1_Prog
             cmbEnterSite.Items.Add("AkzoNobel Stowmarket");
 
 
-            cmbEnterType.Items.Add("Instalation");
-          
+            cmbEnterType.Items.Add("Installation");
+            cmbEnterType.Items.Add("General maintenance");
+            cmbEnterType.Items.Add("Building works");
+            cmbEnterType.Items.Add("Annual deep clean");
+
         }
 
+        public void getInspectionDetils()
+        {
+            List<Inspection> insp = new List<Inspection>();
+            var name=txt_name.Text;
+            var site=cmbEnterSite.Text;
+            var workarea=txt_workArea.Text;
+            var date=dateTimePicker1.Value;
+            var jobdes=txt_jobDescription.Text;
+            var type=cmbEnterType.Text;
+            var superv=txt_supervisor.Text;
+            //insp.Add(name);
+
+
+
+           
+        }
         private void btn_exit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -45,13 +64,12 @@ namespace SE_CWA2020ASN1_Prog
 
         private void txt_name_TextChanged(object sender, EventArgs e)
         {
-           
-           if (!System.Text.RegularExpressions.Regex.IsMatch(txt_name.Text, "^[a-zA-Z ]"))
-            {
-                MessageBox.Show("This textbox accepts only alphabetical characters");
-                txt_name.Text.Remove(txt_name.Text.Length -1);
-            }
-                else
+            //if (!System.Text.RegularExpressions.Regex.IsMatch(txt_name.Text, "^[a-zA-Z ]"))
+            //{
+            //    MessageBox.Show("This textbox accepts only alphabetical characters");
+            //    txt_name.Text.Remove(txt_name.Text.Length - 1);
+            //}
+            //else
             if (txt_name.Text == "")
             {
                 MessageBox.Show("Please, Enter your full name");
@@ -77,12 +95,12 @@ namespace SE_CWA2020ASN1_Prog
 
         private void txt_supervisor_TextChanged(object sender, EventArgs e)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txt_name.Text, "^[a-zA-Z ]"))
-            {
-                MessageBox.Show("This textbox accepts only alphabetical characters");
-                txt_name.Text.Remove(txt_name.Text.Length - 1);
-            }
-            else
+            //if (!System.Text.RegularExpressions.Regex.IsMatch(txt_name.Text, "^[a-zA-Z ]"))
+            //{
+            //    MessageBox.Show("This textbox accepts only alphabetical characters");
+            //    txt_name.Text.Remove(txt_name.Text.Length - 1);
+            //}
+            //else
             if (txt_name.Text == "")
             {
                 MessageBox.Show("Please, Enter your supervisor's name");

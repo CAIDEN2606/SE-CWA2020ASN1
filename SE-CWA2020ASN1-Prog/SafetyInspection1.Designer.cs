@@ -167,7 +167,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // txt_workArea
             // 
-            this.txt_workArea.Location = new System.Drawing.Point(194, 304);
+            this.txt_workArea.Location = new System.Drawing.Point(194, 308);
             this.txt_workArea.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_workArea.MaxLength = 20;
             this.txt_workArea.Name = "txt_workArea";

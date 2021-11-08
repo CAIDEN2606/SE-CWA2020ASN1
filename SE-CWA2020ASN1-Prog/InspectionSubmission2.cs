@@ -33,7 +33,7 @@ namespace SE_CWA2020ASN1_Prog
             }
             catch (Exception e)
             {
-                
+     
                 Console.WriteLine(e.ToString());
             }
             Console.WriteLine("test ok if return 1: "+num);
@@ -48,13 +48,18 @@ namespace SE_CWA2020ASN1_Prog
             //get type [1]
             string type = getType();
             //get heading [2]
-            
+            string heading = getHeading();
             //get subheading [3]
+            string subheading = getSubHead();
             //get insp comments (form3)[4]
+            //list form3 index 0
             //get action comments (form3)[5]
+            //list form3 index 1
             //get pics (form3)[6]
+            //list form3 index2
             //get summary[7]
             string summary = rtb_InspectionComments.Text;
+
 
             //add to intervention 
             //interv.Insert(0, workArea);
@@ -66,7 +71,7 @@ namespace SE_CWA2020ASN1_Prog
             //interv.Insert(6, pics);
             //interv.Insert(7, summary);
 
-            ////add intervention obj to inspectionArea obj
+            //add intervention obj to inspectionArea obj
             
             //inspArea.Add(interv);
 
@@ -75,56 +80,101 @@ namespace SE_CWA2020ASN1_Prog
         }
 
         /// <summary>
-        /// Get heading and subheading of interventions
+        /// Returns the heading as string from combo boxes to add to intervention list
         /// </summary>
-        private void getHeadSubHead(String heading, String subheading)
+        /// <param name="heading"></param>
+        /// <returns></returns>
+        private string getHeading()
         {
-            
-            
+            string heading = "";
             if (cmb_WorkingStandards.Text != "")
             {
-                subheading = cmb_WorkingStandards.Text;
-                heading = "Working Standards";
+                 heading = "Working Standards";
             }
             else if (cmb_Quality.Text != "")
             {
-                subheading = cmb_Quality.Text;
                 heading = "Quality";
             }
             else if (cmb_Site_Rules.Text != "")
             {
-                subheading = cmb_Site_Rules.Text;
                 heading = "Site Rules";
             }
             else if (cmb_Environmental.Text != "")
             {
-                subheading = cmb_Environmental.Text;
                 heading = "Environmental";
             }
             else if (cmb_Protection_Of_Individuals.Text != "")
             {
+                 heading = "Protection Of Individuals";
+            }
+            else if (cmb_Tools_Cables_And_Other.Text != "")
+            {
+                 heading = "Tools, Cables And Other Equipment";
+            }
+            else if (cmb_Miscellaneous.Text != "")
+            {
+                 heading = "Miscellaneous";
+            }
+            else if (cmb_High_Risk.Text != "")
+            {
+                heading = "High Risk";
+            }
+            else
+            {
+                MessageBox.Show("Please enter a subheading");
+            }
+            return heading;
+        }
+        /// <summary>
+        /// Returns the subheading as string from combo boxes to add to intervention list
+        /// </summary>
+        private string getSubHead()
+        {
+            string subheading = "";
+            if (cmb_WorkingStandards.Text != "")
+            {
+                subheading = cmb_WorkingStandards.Text;
+            }
+            else if (cmb_Quality.Text != "")
+            {
+                subheading = cmb_Quality.Text;
+               
+            }
+            else if (cmb_Site_Rules.Text != "")
+            {
+                subheading = cmb_Site_Rules.Text;
+               
+            }
+            else if (cmb_Environmental.Text != "")
+            {
+                subheading = cmb_Environmental.Text;
+                
+            }
+            else if (cmb_Protection_Of_Individuals.Text != "")
+            {
                 subheading = cmb_Protection_Of_Individuals.Text;
-                heading = "Protection Of Individuals";
+                
             }
             else if (cmb_Tools_Cables_And_Other.Text != "")
             {
                 subheading = cmb_Tools_Cables_And_Other.Text;
-                heading = "Tools, Cables And Other Equipment";
+                
             }
             else if (cmb_Miscellaneous.Text != "")
             {
                 subheading = cmb_Miscellaneous.Text;
-                heading = "Miscellaneous";
+                
             }
             else if (cmb_High_Risk.Text != "")
             {
                 subheading = cmb_High_Risk.Text;
-                heading = "High Risk";
+                
              }
             else
             {
                 MessageBox.Show("Please enter a subheading");
             }
+            return subheading;
         }
 
 
