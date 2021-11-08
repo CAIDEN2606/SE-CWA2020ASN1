@@ -39,7 +39,8 @@ namespace SE_CWA2020ASN1_Prog
         //2nd form
         private void btn_InspectionSubmission_Click(object sender, EventArgs e)
         {
-            InspectionSubmission2 frmInSub = new InspectionSubmission2();
+            List<object> form3 = new List<object>();
+            InspectionSubmission2 frmInSub = new InspectionSubmission2(form3);
             this.Hide();
             frmInSub.ShowDialog();
             this.Show();
@@ -47,8 +48,8 @@ namespace SE_CWA2020ASN1_Prog
         //3rd form
         private void btn_actionComments_Click(object sender, EventArgs e)
         {
-            
-            //ActionComments3 frmActComm = new ActionComments3();
+            //List<string> titleType = new List<string>();
+            //ActionComments3 frmActComm = new ActionComments3(titleType);
             //this.Hide();
             //frmActComm.ShowDialog();
             //this.Show();

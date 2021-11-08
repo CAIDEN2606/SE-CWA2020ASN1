@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace SE_CWA2020ASN1_Prog
         private List<Intervention> interv;
 
         public Intervention(String hName, String subName, String type, String aComments,
-            String iComments, String iPicture)
+            String iComments, Image iPicture)
         {
             m_headingName = hName;
             m_subheadingName = subName;
@@ -24,12 +25,12 @@ namespace SE_CWA2020ASN1_Prog
         
 
         public void makeIntervention(String hName, String subName, String type, String aComments,
-            String iComments, String iPicture, Intervention intervention)
+            String iComments, Image iPicture, Intervention intervention)
         {
             intervention.Add(hName,subName,type,aComments,iComments,iPicture);
         }
 
-        private void Add(string hName, string subName, string type, string aComments, string iComments, String iPicture)
+        private void Add(string hName, string subName, string type, string aComments, string iComments, Image iPicture)
         {
             
             throw new NotImplementedException();
@@ -50,8 +51,8 @@ namespace SE_CWA2020ASN1_Prog
         private String m_inspectionComments;
         public String Inspection_Comments { get { return m_inspectionComments; } set { m_inspectionComments = value; } }
 
-        private String m_inspectionPicture;
-        public String Inspection_Picture { get { return m_inspectionPicture; } set { m_inspectionPicture = value; } }
+        private Image m_inspectionPicture;
+        public Image Inspection_Picture { get { return m_inspectionPicture; } set { m_inspectionPicture = value; } }
 
         
     }

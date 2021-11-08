@@ -18,7 +18,7 @@ namespace SE_CWA2020ASN1_Prog
         {
             InitializeComponent();
             
-            //keep this and add the string passed in public Actioncomments(String....)
+            //passing type from checkbox to form3 page heading
             lbl_sbheadingTitle.Text = titleType;
 
         }
@@ -30,12 +30,22 @@ namespace SE_CWA2020ASN1_Prog
         /// </summary>
         private void passComments()
         {
+            //store comments and pics as objects 
+            List<object> form3 = new List<object>();
             //1st text box
-            var iComments = rtx_comments.Text;
+            //rtx_comments.Text;
             //2nd text box
-            var aComments = rtx_actionTaken.Text;
+            //rtx_actionTaken.Text;
             //pics
             //??
+            form3.Add(rtx_comments.Text);
+            form3.Add(rtx_actionTaken.Text);
+            form3.Add(pic_viewer);
+            //form3.Add(< PictureBoxSizeMode >);
+            //test
+            //foreach (Object s in form3)
+              //  Console.WriteLine("item: " + s);
+             
 
 
         }
@@ -47,8 +57,12 @@ namespace SE_CWA2020ASN1_Prog
         /// <param name="e"></param>
         private void btn_confirmInspection_Click(object sender, EventArgs e)
         {
-            passComments();
-            InspectionSubmission2 frmInSub = new InspectionSubmission2();
+            List<object> form3 = new List<object>();
+            form3.Add(rtx_comments.Text);
+            form3.Add(rtx_actionTaken.Text);
+            form3.Add(pic_viewer.Image);
+            //passComments();
+            InspectionSubmission2 frmInSub = new InspectionSubmission2(form3);
             this.Hide();
             frmInSub.ShowDialog();
             this.Show();

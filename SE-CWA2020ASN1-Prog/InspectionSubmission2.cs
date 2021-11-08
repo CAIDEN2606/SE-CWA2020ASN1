@@ -15,20 +15,38 @@ namespace SE_CWA2020ASN1_Prog
         private List<Intervention> interv = new List<Intervention>();
         private List<InspectionArea> inspArea = new List<InspectionArea>();
 
-        public InspectionSubmission2()
+        public InspectionSubmission2(List<object>form3)
         {
             InitializeComponent();
             //clear all fields when saved intervention to enter another
+            testForm3(form3);
         }
-        
+        public int testForm3(List<object> form3)
+        {
+            int num = 0;
+            try
+            {
+                //test
+                foreach (Object s in form3)
+                    Console.WriteLine("item: " + s);
+                num++;
+            }
+            catch (Exception e)
+            {
+                
+                Console.WriteLine(e.ToString());
+            }
+            Console.WriteLine("test ok if return 1: "+num);
+            return num;
+        }
         private void getIntervention()
         {
             //List<Intervention> interv = new List<Intervention>();
             List<InspectionArea> inspArea = new List<InspectionArea>();
              //get work area [0]
-            String workArea = rtb_WorkArea.Text;
+            string workArea = rtb_WorkArea.Text;
             //get type [1]
-            String type = getType();
+            string type = getType();
             //get heading [2]
             
             //get subheading [3]
@@ -36,21 +54,21 @@ namespace SE_CWA2020ASN1_Prog
             //get action comments (form3)[5]
             //get pics (form3)[6]
             //get summary[7]
-            String summary = rtb_InspectionComments.Text;
+            string summary = rtb_InspectionComments.Text;
 
             //add to intervention 
-            interv.Insert(0, workArea);
-            interv.Insert(1, type);
-            interv.Insert(2, heading);
-            interv.Insert(3, subheading);
-            interv.Insert(4, iComments);
-            interv.Insert(5, aComments);
-            interv.Insert(6, pics);
-            interv.Insert(7, summary);
+            //interv.Insert(0, workArea);
+            //interv.Insert(1, type);
+            //interv.Insert(2, heading);
+            //interv.Insert(3, subheading);
+            //interv.Insert(4, iComments);
+            //interv.Insert(5, aComments);
+            //interv.Insert(6, pics);
+            //interv.Insert(7, summary);
 
-            //add intervention obj to inspectionArea obj
+            ////add intervention obj to inspectionArea obj
             
-            inspArea.Add(interv);
+            //inspArea.Add(interv);
 
             //call method to send to sqlite
 
