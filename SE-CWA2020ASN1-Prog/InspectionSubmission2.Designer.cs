@@ -79,7 +79,7 @@ namespace SE_CWA2020ASN1_Prog
             this.rtb_InspectionComments.Name = "rtb_InspectionComments";
             this.rtb_InspectionComments.Size = new System.Drawing.Size(237, 238);
             this.rtb_InspectionComments.TabIndex = 39;
-            this.rtb_InspectionComments.Text = "";
+            this.rtb_InspectionComments.Text = "Inspection summary";
             // 
             // btn_Submit
             // 
@@ -90,6 +90,7 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_Submit.TabIndex = 40;
             this.btn_Submit.Text = "Submit";
             this.btn_Submit.UseVisualStyleBackColor = true;
+            this.btn_Submit.Click += new System.EventHandler(this.btn_Submit_Click);
             // 
             // btn_Edit
             // 
@@ -301,7 +302,9 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.cmb_High_Risk.FormattingEnabled = true;
             this.cmb_High_Risk.Items.AddRange(new object[] {
-            "Need to figure out what counts as high risk"});
+            "1. Work at height",
+            "4. Confined space",
+            "9. Hot work"});
             this.cmb_High_Risk.Location = new System.Drawing.Point(444, 409);
             this.cmb_High_Risk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb_High_Risk.Name = "cmb_High_Risk";

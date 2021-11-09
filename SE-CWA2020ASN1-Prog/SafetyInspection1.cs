@@ -115,7 +115,7 @@ namespace SE_CWA2020ASN1_Prog
             //printing in console
             foreach (Inspection i in inspection)
             {
-                MessageBox.Show(i.tostring());
+                //MessageBox.Show(i.tostring());
                 Console.WriteLine("Inspection name: " + i.Site_Name.ToString() + "," + i.Inspection_Date.ToString());
             }
 

@@ -14,16 +14,54 @@ namespace SE_CWA2020ASN1_Prog
     {
         private List<Intervention> interv = new List<Intervention>();
         private List<InspectionArea> inspArea = new List<InspectionArea>();
-
+        public List<Object> form3;
         public InspectionSubmission2(List<object>form3)
         {
             InitializeComponent();
             //clear all fields when saved intervention to enter another
             testForm3(form3);
+            //popSubheading();
+        }
+
+        //not needed all added to each combo properties
+        private void popSubheading()
+        {
+            cmb_WorkingStandards.Items.Add("2.Lifting operations-Crane,fork lift truck,Hoists");
+            cmb_WorkingStandards.Items.Add("3.Certification-Daily checksheets for MEWP and FLT");
+            cmb_WorkingStandards.Items.Add("5.Electrical work");
+           
+            cmb_Quality.Items.Add("6.Site setup and appearance, Signage");
+            cmb_Quality.Items.Add("7.Paperwork (Permits, Risk assessments, Method Statement)");
+            cmb_Quality.Items.Add("8.Certification-Training,Insurance Inspection, Induction current");
+                        
+            cmb_Site_Rules.Items.Add("10.Isolation and lock Offs");
+            cmb_Site_Rules.Items.Add("11.Fire exits and escape routes");
+            cmb_Site_Rules.Items.Add("12.Awareness-Fire exit, assembly point");
+
+            cmb_Environmental.Items.Add("13.Waste management");
+            cmb_Environmental.Items.Add("14.Product contamination");
+            cmb_Environmental.Items.Add("15.COSHH & Asbestos");
+           
+            cmb_Protection_Of_Individuals.Items.Add("16.PPE");
+            cmb_Protection_Of_Individuals.Items.Add("17.Manual handling");
+            cmb_Protection_Of_Individuals.Items.Add("18.Other contractors");
+           
+            cmb_Tools_Cables_And_Other.Items.Add("19.Power tools, Cables & other equipement");
+            cmb_Tools_Cables_And_Other.Items.Add("20.Voltage detector checked");
+            cmb_Tools_Cables_And_Other.Items.Add("21.Tools used fit for purpose");
+           
+            cmb_Miscellaneous.Items.Add("22.Company vehicles");
+            cmb_Miscellaneous.Items.Add("23.Fire precautions");
+            cmb_Miscellaneous.Items.Add("24.Workshop conditions");
+            
+            cmb_High_Risk.Items.Add("1.Work at height");
+            cmb_High_Risk.Items.Add("4.Confined space work");
+            cmb_High_Risk.Items.Add("9.Hot work");
+ 
         }
 
         /// <summary>
-        ///  - get objects of interventions
+        ///  
         /// </summary>
         private List<InspectionArea> getInspectionArea()
         {
@@ -32,11 +70,16 @@ namespace SE_CWA2020ASN1_Prog
             ia.Inspection_Summary = rtb_InspectionComments.Text;
 
             inspArea.Add(ia);
+            getInspectionAreaTest();
             return inspArea;
         }
 
-
-        private List<Intervention> getIntervention(List<Object> form3)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="form3"></param>
+        /// <returns></returns>
+        private List<Intervention> getIntervention()
         {
             Intervention intv = new Intervention();
             
@@ -47,6 +90,7 @@ namespace SE_CWA2020ASN1_Prog
             intv.Action_Comments = (string)form3.ElementAt(1); 
             intv.Inspection_Picture = (Image)form3.ElementAt(2);
             interv.Add(intv);
+            getInterventionTest();
             return interv;
         }
 
@@ -58,41 +102,44 @@ namespace SE_CWA2020ASN1_Prog
         private string getHeading()
         {
             string heading = "";
-            if (cmb_WorkingStandards.Text != "")
+            while (heading == "")
             {
-                 heading = "Working Standards";
-            }
-            else if (cmb_Quality.Text != "")
-            {
-                heading = "Quality";
-            }
-            else if (cmb_Site_Rules.Text != "")
-            {
-                heading = "Site Rules";
-            }
-            else if (cmb_Environmental.Text != "")
-            {
-                heading = "Environmental";
-            }
-            else if (cmb_Protection_Of_Individuals.Text != "")
-            {
-                 heading = "Protection Of Individuals";
-            }
-            else if (cmb_Tools_Cables_And_Other.Text != "")
-            {
-                 heading = "Tools, Cables And Other Equipment";
-            }
-            else if (cmb_Miscellaneous.Text != "")
-            {
-                 heading = "Miscellaneous";
-            }
-            else if (cmb_High_Risk.Text != "")
-            {
-                heading = "High Risk";
-            }
-            else
-            {
-                MessageBox.Show("Please enter a subheading");
+                if (cmb_WorkingStandards.Text != "")
+                {
+                    heading = "Working Standards";
+                }
+                else if (cmb_Quality.Text != "")
+                {
+                    heading = "Quality";
+                }
+                else if (cmb_Site_Rules.Text != "")
+                {
+                    heading = "Site Rules";
+                }
+                else if (cmb_Environmental.Text != "")
+                {
+                    heading = "Environmental";
+                }
+                else if (cmb_Protection_Of_Individuals.Text != "")
+                {
+                    heading = "Protection Of Individuals";
+                }
+                else if (cmb_Tools_Cables_And_Other.Text != "")
+                {
+                    heading = "Tools, Cables And Other Equipment";
+                }
+                else if (cmb_Miscellaneous.Text != "")
+                {
+                    heading = "Miscellaneous";
+                }
+                else if (cmb_High_Risk.Text != "")
+                {
+                    heading = "High Risk";
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a subheading");
+                }
             }
             return heading;
         }
@@ -102,41 +149,44 @@ namespace SE_CWA2020ASN1_Prog
         private string getSubHead()
         {
             string subheading = "";
-            if (cmb_WorkingStandards.Text != "")
+            while (subheading == "")
             {
-                subheading = cmb_WorkingStandards.Text;
-            }
-            else if (cmb_Quality.Text != "")
-            {
-                subheading = cmb_Quality.Text;
-            }
-            else if (cmb_Site_Rules.Text != "")
-            {
-                subheading = cmb_Site_Rules.Text;
-            }
-            else if (cmb_Environmental.Text != "")
-            {
-                subheading = cmb_Environmental.Text;
-            }
-            else if (cmb_Protection_Of_Individuals.Text != "")
-            {
-                subheading = cmb_Protection_Of_Individuals.Text;
-            }
-            else if (cmb_Tools_Cables_And_Other.Text != "")
-            {
-                subheading = cmb_Tools_Cables_And_Other.Text;
-            }
-            else if (cmb_Miscellaneous.Text != "")
-            {
-                subheading = cmb_Miscellaneous.Text;
-            }
-            else if (cmb_High_Risk.Text != "")
-            {
-                subheading = cmb_High_Risk.Text;
-            }
-            else
-            {
-                MessageBox.Show("Please enter a subheading");
+                if (cmb_WorkingStandards.Text != "")
+                {
+                    subheading = cmb_WorkingStandards.Text;
+                }
+                else if (cmb_Quality.Text != "")
+                {
+                    subheading = cmb_Quality.Text;
+                }
+                else if (cmb_Site_Rules.Text != "")
+                {
+                    subheading = cmb_Site_Rules.Text;
+                }
+                else if (cmb_Environmental.Text != "")
+                {
+                    subheading = cmb_Environmental.Text;
+                }
+                else if (cmb_Protection_Of_Individuals.Text != "")
+                {
+                    subheading = cmb_Protection_Of_Individuals.Text;
+                }
+                else if (cmb_Tools_Cables_And_Other.Text != "")
+                {
+                    subheading = cmb_Tools_Cables_And_Other.Text;
+                }
+                else if (cmb_Miscellaneous.Text != "")
+                {
+                    subheading = cmb_Miscellaneous.Text;
+                }
+                else if (cmb_High_Risk.Text != "")
+                {
+                    subheading = cmb_High_Risk.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a subheading");
+                }
             }
             return subheading;
         }
@@ -181,7 +231,10 @@ namespace SE_CWA2020ASN1_Prog
         /// </summary>
         public void getInterventionTest()
         {
-
+            foreach (Intervention i in interv)
+            {
+                Console.WriteLine("Intervention = " + i.Heading_Name.ToString() + "," + "Subheading = " + i.Subheading_Name.ToString());
+            }
         }
 
         /// <summary>
@@ -189,7 +242,10 @@ namespace SE_CWA2020ASN1_Prog
         /// </summary>
         public void getInspectionAreaTest()
         {
-
+            foreach (InspectionArea ia in inspArea)
+            {
+                Console.WriteLine("Inspection area = " + ia.Work_Area.ToString());
+            }
         }
         /// <summary>
         /// print to console form3 comments and pics
@@ -230,7 +286,7 @@ namespace SE_CWA2020ASN1_Prog
         }
 
         /// <summary>
-        /// Submit button to save all intervention data and add to inspectionArea 
+        /// x 
         /// list as an object
         /// </summary>
         /// <param name="sender"></param>
@@ -273,6 +329,23 @@ namespace SE_CWA2020ASN1_Prog
         private void btn_Edit_Click(object sender, EventArgs e)
         {
             //view list of interventions to select and change
+        }
+
+        /// <summary>
+        /// Submit button to save all intervention data and add to inspectionArea
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_Submit_Click(object sender, EventArgs e)
+        {
+            getInspectionArea();
+            getIntervention();
+            getInterventionTest();
+            getInspectionAreaTest();
+            SafetyInspection1 frmSI1 = new SafetyInspection1();
+            this.Hide();
+            frmSI1.ShowDialog();
+            this.Show();
         }
     }
 }

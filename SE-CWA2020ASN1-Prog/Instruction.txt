@@ -9,10 +9,10 @@ Methods to complete
 ##  createInspectionDetails() - same as getInspection but using inspection class
 
 				FORM 2
-getInspectionArea() - get objects of interventions
-getInspectionAreaTest() - print objects to console, or rich text box or messagebox
-getIntervention() - get user inputs and save to inspectionArea list
-getInterventionTest - print contents to console
+##  getInspectionArea() - get objects of interventions
+##  getInspectionAreaTest() - print objects to console, or rich text box or messagebox
+##  getIntervention() - get user inputs and save to inspectionArea list
+##  getInterventionTest - print contents to console
 ##  getType() - pass intervention type to form3 for page heading
 ##  getHeading() - get heading of intervention from combo boxes
 ##  getSubHeading() - get subHeading from combo box selected
