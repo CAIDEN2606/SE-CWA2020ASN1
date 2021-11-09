@@ -10,27 +10,29 @@ namespace SE_CWA2020ASN1_Prog
     {
         //used just to print inspections as requested by project requirements
         private List<Inspection> inspection;
-        private List<InspectionArea> m_inspectionArea;
+        //private List<InspectionArea> m_inspectionArea;
 
-        public Inspection(String iName, String type, String jobDescr, DateTime date, String sName)
-        {
-            m_siteName = iName;
-            m_type = type;
-            m_jobDescription = jobDescr;
-            m_inspectionDate = date;
-            m_supervisorName = sName;
-            m_inspectionArea = new List<InspectionArea>();
+        //public Inspection(String iName, String type, String jobDescr, DateTime date, String sName)
+        //{
+        //    m_siteName = iName;
+        //    m_type = type;
+        //    m_jobDescription = jobDescr;
+        //    m_inspectionDate = date;
+        //    m_supervisorName = sName;
+        //    //m_inspectionArea = new List<InspectionArea>();
+        //}
+            //}
+            /// <summary>
+            /// Used to add each inspectionArea to inspection list
+            /// then send to external db before starting new work area
+            /// </summary>
+            /// <param name="ia"></param>
+        //public void addInspectionArea(InspectionArea ia)
+        //{
+        //    m_inspectionArea.Add(ia);
+        //}
+        
 
-        }
-        /// <summary>
-        /// Used to add each inspectionArea to inspection list
-        /// then send to external db before starting new work area
-        /// </summary>
-        /// <param name="ia"></param>
-        public void addInspectionArea(InspectionArea ia)
-        {
-            m_inspectionArea.Add(ia);
-        }
         private String m_siteName;
         public String Site_Name { get { return m_siteName; } set { m_siteName = value; } }
 

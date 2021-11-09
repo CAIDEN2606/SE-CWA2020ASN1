@@ -40,7 +40,7 @@ namespace SE_CWA2020ASN1_Prog
             //??
             form3.Add(rtx_comments.Text);
             form3.Add(rtx_actionTaken.Text);
-            form3.Add(pic_viewer);
+            form3.Add(pic_viewer.Image);
             //form3.Add(< PictureBoxSizeMode >);
             //test
             //foreach (Object s in form3)

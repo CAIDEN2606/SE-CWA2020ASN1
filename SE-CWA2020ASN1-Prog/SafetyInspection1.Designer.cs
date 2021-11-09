@@ -46,7 +46,6 @@ namespace SE_CWA2020ASN1_Prog
             this.txt_jobDescription = new System.Windows.Forms.TextBox();
             this.cmbEnterType = new System.Windows.Forms.ComboBox();
             this.txt_supervisor = new System.Windows.Forms.TextBox();
-            this.btn_back = new System.Windows.Forms.Button();
             this.pic_logo = new System.Windows.Forms.PictureBox();
             this.btn_about = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
@@ -211,16 +210,6 @@ namespace SE_CWA2020ASN1_Prog
             this.txt_supervisor.TabIndex = 16;
             this.txt_supervisor.TextChanged += new System.EventHandler(this.txt_supervisor_TextChanged);
             // 
-            // btn_back
-            // 
-            this.btn_back.Location = new System.Drawing.Point(191, 590);
-            this.btn_back.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(84, 29);
-            this.btn_back.TabIndex = 17;
-            this.btn_back.Text = "Back";
-            this.btn_back.UseVisualStyleBackColor = true;
-            // 
             // pic_logo
             // 
             this.pic_logo.ImageLocation = "main.musk-logo.jpg";
@@ -250,7 +239,6 @@ namespace SE_CWA2020ASN1_Prog
             this.ClientSize = new System.Drawing.Size(561, 668);
             this.Controls.Add(this.btn_about);
             this.Controls.Add(this.pic_logo);
-            this.Controls.Add(this.btn_back);
             this.Controls.Add(this.txt_supervisor);
             this.Controls.Add(this.cmbEnterType);
             this.Controls.Add(this.txt_jobDescription);
@@ -297,7 +285,6 @@ namespace SE_CWA2020ASN1_Prog
         private System.Windows.Forms.TextBox txt_jobDescription;
         private System.Windows.Forms.ComboBox cmbEnterType;
         private System.Windows.Forms.TextBox txt_supervisor;
-        private System.Windows.Forms.Button btn_back;
         private System.Windows.Forms.PictureBox pic_logo;
         private System.Windows.Forms.Button btn_about;
     }

@@ -9,7 +9,7 @@ namespace SE_CWA2020ASN1_Prog
 
     interface IMethods
     {
-        void GetInspections();
+        void GetInspection();
         void GetInspectionArea();
         void GetIntervention();
 
@@ -19,45 +19,42 @@ namespace SE_CWA2020ASN1_Prog
 
     class Methods
     {
+        private List<Inspection> inspection;
+        private List<InspectionArea> inspectionArea;
+        private List<Intervention> intervention;
         //adding user input to lists
-        public List<Inspection> GetInspection()
+        public void GetInspection()
         {
-            List<Inspection> inspection = new List<Inspection>();
-            //inspection.Add(0, Site_Name);
+            
+           // List<Inspection> inspection = new List<Inspection>();
+            inspection.Add(0, Site_Name);
             //inspection.Add(1, Type);
             //inspection.Add(2, Job_Description);
             //inspection.Add(3, Inspector_Name);
             //inspection.Add(4, Inspection_Date);
             //inspection.Add(5, Supervisor_Name);
 
-
-            return inspection;
-
         }
 
-        public List<InspectionArea> GetInspectionArea()
+        public void GetInspectionArea()
         {
-            List<InspectionArea> inspectionArea = new List<InspectionArea>();
+             
             //inspectionArea.Add(0, Work_Area);
             //inspectionArea.Add(1, Inspection_Summary);
-            
-
-            return inspectionArea;
+          
 
         }
 
-        public List<Intervention> GetIntervention()
+        public void GetIntervention()
         {
-            List<Intervention> intervention = new List<Intervention>();
+            
             //intervention.Add(0, Heading_Name);
             //intervention.Add(1, Subheading_Name);
             //intervention.Add(2, Intervention_Type);
             //intervention.Add(3, Action_Comments);
             //intervention.Add(4, Inspection_Comments);
             //intervention.Add(5, Inspection_Picture);
-
-
-            return intervention;
+  
 
         }
 

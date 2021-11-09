@@ -21,47 +21,48 @@ namespace SE_CWA2020ASN1_Prog
             //clear all fields when saved intervention to enter another
             testForm3(form3);
         }
-        public int testForm3(List<object> form3)
+
+        /// <summary>
+        ///  - get objects of interventions
+        /// </summary>
+        private void getInspectionArea()
         {
-            int num = 0;
-            try
-            {
-                //test
-                foreach (Object s in form3)
-                    Console.WriteLine("item: " + s);
-                num++;
-            }
-            catch (Exception e)
-            {
-     
-                Console.WriteLine(e.ToString());
-            }
-            Console.WriteLine("test ok if return 1: "+num);
-            return num;
+
+
+
         }
-        private void getIntervention()
+        
+                
+        private void getIntervention(List<object> form3)
         {
-            //List<Intervention> interv = new List<Intervention>();
-            List<InspectionArea> inspArea = new List<InspectionArea>();
+            Intervention interv = new Intervention();
+            InspectionArea ia = new InspectionArea();
              //get work area [0]
-            string workArea = rtb_WorkArea.Text;
+            ia.Work_Area = rtb_WorkArea.Text;
             //get type [1]
-            string type = getType();
+            interv.Intervention_Type = getType();
             //get heading [2]
-            string heading = getHeading();
+            interv.Heading_Name = getHeading();
             //get subheading [3]
-            string subheading = getSubHead();
+            interv.Subheading_Name = getSubHead();
             //get insp comments (form3)[4]
             //list form3 index 0
             //get action comments (form3)[5]
             //list form3 index 1
             //get pics (form3)[6]
             //list form3 index2
+            foreach(Object o in form3)
+            {
+                interv.Action_Comments = form3.ToString();
+                interv.Inspection_Comments= form3.ToString();
+                //interv.Inspection_Picture= form3.Image;
+            }
             //get summary[7]
-            string summary = rtb_InspectionComments.Text;
+            ia.Inspection_Summary = rtb_InspectionComments.Text;
 
 
-            //add to intervention 
+            //add to intervention
+            
             //interv.Insert(0, workArea);
             //interv.Insert(1, type);
             //interv.Insert(2, heading);
@@ -138,38 +139,31 @@ namespace SE_CWA2020ASN1_Prog
             else if (cmb_Quality.Text != "")
             {
                 subheading = cmb_Quality.Text;
-               
             }
             else if (cmb_Site_Rules.Text != "")
             {
                 subheading = cmb_Site_Rules.Text;
-               
             }
             else if (cmb_Environmental.Text != "")
             {
                 subheading = cmb_Environmental.Text;
-                
             }
             else if (cmb_Protection_Of_Individuals.Text != "")
             {
                 subheading = cmb_Protection_Of_Individuals.Text;
-                
             }
             else if (cmb_Tools_Cables_And_Other.Text != "")
             {
                 subheading = cmb_Tools_Cables_And_Other.Text;
-                
             }
             else if (cmb_Miscellaneous.Text != "")
             {
                 subheading = cmb_Miscellaneous.Text;
-                
             }
             else if (cmb_High_Risk.Text != "")
             {
                 subheading = cmb_High_Risk.Text;
-                
-             }
+            }
             else
             {
                 MessageBox.Show("Please enter a subheading");
@@ -206,13 +200,59 @@ namespace SE_CWA2020ASN1_Prog
         }
 
 
-       
+
+        //#######################################//
+        //              test methods             //
+        //                                       //
+        //#######################################//
+
+        /// <summary>
+        ///  - print contents to console
+        /// </summary>
+        public void getInterventionTest()
+        {
+
+        }
+
+        /// <summary>
+        ///  - print objects to console, or rich text box or messagebox
+        /// </summary>
+        public void getInspectionAreaTest()
+        {
+
+        }
+        /// <summary>
+        /// print to console form3 comments and pics
+        /// </summary>
+        /// <param name="form3"></param>
+        /// <returns></returns>
+        public int testForm3(List<object> form3)
+        {
+            int num = 0;
+            try
+            {
+                //test
+                foreach (Object s in form3)
+                    Console.WriteLine("item: " + s);
+                num++;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            Console.WriteLine("test ok if return 1: " + num);
+            return num;
+        }
+
+        //
+        //###############  test methods end   ###################
+
         //#######################################################
         //
         //                          Buttons
         //
         //#######################################################
-        
+
         private void btn_ExitNoSave_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -238,17 +278,12 @@ namespace SE_CWA2020ASN1_Prog
         
 
         /// <summary>
-        /// Go to form3 to get comments and pics
+        /// Go to form3 to get comments and pics and pass type to page title
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btn_enterComments_Click(object sender, EventArgs e)
         {
-            
-            
-            
-            
-            
             //pass type title to form3 heading
             String titleType = getType();
             if (titleType != "")

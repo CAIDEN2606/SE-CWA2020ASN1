@@ -1,0 +1,29 @@
+﻿
+
+Methods to complete
+
+				FORM 1
+getInspection() - get user inputs and save to inspection list
+getInspectionTest() - print user inputs to console, then to rich text box or messagebox
+displayInspections() - display inspection with interventions to display in form1
+
+
+				FORM 2
+getInspectionArea() - get objects of interventions
+getInspectionAreaTest() - print objects to console, or rich text box or messagebox
+getIntervention() - get user inputs and save to inspectionArea list
+getInterventionTest - print contents to console
+##  getType() - pass intervention type to form3 for page heading
+##  getHeading() - get heading of intervention from combo boxes
+##  getSubHeading() - get subHeading from combo box selected
+##  testForm3() - prints to console list from form3 to confirm passed through
+
+
+				FORM 3
+##  getCommentsPics() - save comments and pics to list and pass to form3 to add to intervention list
+
+##  get pics and display in gallery for user to delete or accept ##
+
+
+## = completed
+
