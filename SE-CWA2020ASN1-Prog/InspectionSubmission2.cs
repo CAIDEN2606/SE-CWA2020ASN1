@@ -25,59 +25,29 @@ namespace SE_CWA2020ASN1_Prog
         /// <summary>
         ///  - get objects of interventions
         /// </summary>
-        private void getInspectionArea()
+        private List<InspectionArea> getInspectionArea()
         {
-
-
-
-        }
-        
-                
-        private void getIntervention(List<object> form3)
-        {
-            Intervention interv = new Intervention();
             InspectionArea ia = new InspectionArea();
-             //get work area [0]
             ia.Work_Area = rtb_WorkArea.Text;
-            //get type [1]
-            interv.Intervention_Type = getType();
-            //get heading [2]
-            interv.Heading_Name = getHeading();
-            //get subheading [3]
-            interv.Subheading_Name = getSubHead();
-            //get insp comments (form3)[4]
-            //list form3 index 0
-            //get action comments (form3)[5]
-            //list form3 index 1
-            //get pics (form3)[6]
-            //list form3 index2
-            foreach(Object o in form3)
-            {
-                interv.Action_Comments = form3.ToString();
-                interv.Inspection_Comments= form3.ToString();
-                //interv.Inspection_Picture= form3.Image;
-            }
-            //get summary[7]
             ia.Inspection_Summary = rtb_InspectionComments.Text;
 
+            inspArea.Add(ia);
+            return inspArea;
+        }
 
-            //add to intervention
+
+        private List<Intervention> getIntervention(List<Object> form3)
+        {
+            Intervention intv = new Intervention();
             
-            //interv.Insert(0, workArea);
-            //interv.Insert(1, type);
-            //interv.Insert(2, heading);
-            //interv.Insert(3, subheading);
-            //interv.Insert(4, iComments);
-            //interv.Insert(5, aComments);
-            //interv.Insert(6, pics);
-            //interv.Insert(7, summary);
-
-            //add intervention obj to inspectionArea obj
-            
-            //inspArea.Add(interv);
-
-            //call method to send to sqlite
-
+            intv.Intervention_Type = getType();
+            intv.Heading_Name = getHeading();
+            intv.Subheading_Name = getSubHead();
+            intv.Inspection_Comments = (string)form3.ElementAt(0);
+            intv.Action_Comments = (string)form3.ElementAt(1); 
+            intv.Inspection_Picture = (Image)form3.ElementAt(2);
+            interv.Add(intv);
+            return interv;
         }
 
         /// <summary>
@@ -229,6 +199,7 @@ namespace SE_CWA2020ASN1_Prog
         public int testForm3(List<object> form3)
         {
             int num = 0;
+            Console.WriteLine("Start form3 test");
             try
             {
                 //test
@@ -240,7 +211,7 @@ namespace SE_CWA2020ASN1_Prog
             {
                 Console.WriteLine(e.ToString());
             }
-            Console.WriteLine("test ok if return 1: " + num);
+            Console.WriteLine("Form3 end test ok if return 1: " + num);
             return num;
         }
 

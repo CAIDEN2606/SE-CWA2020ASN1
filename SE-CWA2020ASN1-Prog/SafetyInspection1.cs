@@ -39,7 +39,7 @@ namespace SE_CWA2020ASN1_Prog
 
         //created by anzors
         /// <summary>
-        /// 
+        /// Saving user input to string list and test print messagebox and console to confirm
         /// </summary>
         public void getInspection()
         {
@@ -59,53 +59,67 @@ namespace SE_CWA2020ASN1_Prog
             inspectionList.Add(job);
             inspectionList.Add(type);
             inspectionList.Add(supervisor);
-
-
             //printing in console
+            Console.WriteLine("Anzors method test print inspection details");
             foreach (String String in inspectionList)
             {
+                MessageBox.Show("Anzors test print: "+String.ToString());
                 Console.WriteLine(String.ToString());
             }
 
             //printing in console REFACTORING
-            inspectionList.ForEach(String => Console.WriteLine(String + ", "));
+            //inspectionList.ForEach(String => Console.WriteLine(String + ", "));
+            Console.WriteLine("End Anzors test print");
         }
 
-
+        /// <summary>
+        /// Saving user input on form1 as an inspection obj and adding to inspection list 
+        /// </summary>
         public void createInspectionDetails()
         { 
-            inspection = new List<Inspection>();
+           
             Inspection insp = new Inspection();
             insp.Inspector_Name = txt_name.Text;
-           
             insp.Site_Name = cmbEnterSite.Text;
             insp.Inspection_Date = dateTimePicker1.Value;
             insp.Job_Description = txt_jobDescription.Text;
             insp.Type = cmbEnterType.Text;
-            insp.Inspector_Name = txt_supervisor.Text;
+            insp.Supervisor_Name = txt_supervisor.Text;
             
             inspection.Add(insp);
-
-            //printing in console
-            foreach (Inspection i in inspection)
-            {
-                Console.WriteLine(i.ToString());
-            }
-            //printing in console REFACTORING
-            inspection.ForEach(Inspection => Console.WriteLine(inspection.ToString() + ", "));
+                                            
+            getInspectionTest();                //edit out when done
         }
 
         /// <summary>
-        /// Display inspections and some details in rich text box as required by project reqs.
+        /// Display list of inspections and some details in rich text box as required by project reqs.
         /// </summary>
         public void displayInspections()
         {
-
-
-
-
+            Console.WriteLine("Inspection details");
+            //printing in console
+            foreach (Inspection i in inspection)
+            {
+                MessageBox.Show("Inspection name: " + i.Site_Name.ToString());
+                Console.WriteLine("Inspection name: " + i.Site_Name.ToString());
+            }
+            
         }
 
+        //###########################################################
+        //                       Testing                           ##
+        //###########################################################
+        private void getInspectionTest()
+        {
+            Console.WriteLine("Inspection details");
+            //printing in console
+            foreach (Inspection i in inspection)
+            {
+                MessageBox.Show(i.tostring());
+                Console.WriteLine("Inspection name: " + i.Site_Name.ToString() + "," + i.Inspection_Date.ToString());
+            }
+
+        }
 
         //###########################################################
         //                              buttons
@@ -123,6 +137,7 @@ namespace SE_CWA2020ASN1_Prog
             getInspection();
             //same method using inspection class list
             createInspectionDetails();
+            
             List<object> form3 = new List<object>();
             InspectionSubmission2 frmInspectsub = new InspectionSubmission2(form3);
                 this.Hide();
@@ -138,7 +153,7 @@ namespace SE_CWA2020ASN1_Prog
             this.Show();
         }
 
-        //dont do anything /////////////////////////////////////
+        //  doesn't do anything yet  /////////////////////////////////////
         private void txt_name_TextChanged(object sender, EventArgs e)
         {
             //if (!System.Text.RegularExpressions.Regex.IsMatch(txt_name.Text, "^[a-zA-Z ]"))

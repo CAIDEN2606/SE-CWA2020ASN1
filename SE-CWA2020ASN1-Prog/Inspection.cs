@@ -12,7 +12,7 @@ namespace SE_CWA2020ASN1_Prog
         private List<Inspection> inspection;
         //private List<InspectionArea> m_inspectionArea;
 
-        //public Inspection(String iName, String type, String jobDescr, DateTime date, String sName)
+        //public Inspection(string iName, string type, string jobDescr, DateTime date, string sName)
         //{
         //    m_siteName = iName;
         //    m_type = type;
@@ -33,28 +33,29 @@ namespace SE_CWA2020ASN1_Prog
         //}
         
 
-        private String m_siteName;
-        public String Site_Name { get { return m_siteName; } set { m_siteName = value; } }
+        private string m_siteName;
+        public string Site_Name { get { return m_siteName; } set { m_siteName = value; } }
 
-        private String m_type;
-        public String Type { get { return m_type; } set { m_type = value; } }
+        private string m_type;
+        public string Type { get { return m_type; } set { m_type = value; } }
 
-        private String m_jobDescription;
-        public String Job_Description { get { return m_jobDescription; } set { m_jobDescription = value; } }
+        private string m_jobDescription;
+        public string Job_Description { get { return m_jobDescription; } set { m_jobDescription = value; } }
 
-        private String m_inspectorName;
-        public String Inspector_Name { get { return m_inspectorName; } set { m_inspectorName = value; } }
+        private string m_inspectorName;
+        public string Inspector_Name { get { return m_inspectorName; } set { m_inspectorName = value; } }
 
         private DateTime m_inspectionDate;
         public DateTime Inspection_Date { get { return m_inspectionDate; } set { m_inspectionDate = value; } }
 
-        private String m_supervisorName;
-        public String Supervisor_Name { get { return m_supervisorName; } set { m_supervisorName = value; } }
+        private string m_supervisorName;
+        public string Supervisor_Name { get { return m_supervisorName; } set { m_supervisorName = value; } }
     
-        public void listInspections()
+        public string tostring()
         {
-            
+            return "Site: "+Site_Name.ToString() + "," + Inspection_Date.ToString() + "," + "Inspected by: " + Inspector_Name.ToString();
         }
+        
     }
 
 }

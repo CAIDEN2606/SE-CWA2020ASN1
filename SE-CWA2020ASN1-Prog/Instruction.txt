@@ -3,10 +3,10 @@
 Methods to complete
 
 				FORM 1
-getInspection() - get user inputs and save to inspection list
-getInspectionTest() - print user inputs to console, then to rich text box or messagebox
-displayInspections() - display inspection with interventions to display in form1
-
+##  getInspection() - get user inputs and save to string list done by ANZORS
+##  getInspectionTest() - print user inputs to console, then to rich text box or messagebox
+##  displayInspections() - display inspection with interventions to display in form1
+##  createInspectionDetails() - same as getInspection but using inspection class
 
 				FORM 2
 getInspectionArea() - get objects of interventions
@@ -21,8 +21,9 @@ getInterventionTest - print contents to console
 
 				FORM 3
 ##  getCommentsPics() - save comments and pics to list and pass to form3 to add to intervention list
-
-##  get pics and display in gallery for user to delete or accept ##
+##  passComments()
+TO DO-->
+		get pics and display in gallery for user to delete or accept ##
 
 
 ## = completed

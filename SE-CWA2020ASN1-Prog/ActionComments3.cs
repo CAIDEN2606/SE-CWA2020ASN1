@@ -13,6 +13,7 @@ namespace SE_CWA2020ASN1_Prog
 {
     public partial class ActionComments3 : Form
     {
+        private List<object> form3 = new List<object>();
         //add the type selected in form2 and add ...
         public ActionComments3(String titleType)
         {
@@ -23,31 +24,16 @@ namespace SE_CWA2020ASN1_Prog
 
         }
 
-
-
         /// <summary>
         ///  pass the comments and pics to form2 to add to intervention list
         /// </summary>
-        private void passComments()
+        private List<object> passCommentsPics()
         {
             //store comments and pics as objects 
-            List<object> form3 = new List<object>();
-            //1st text box
-            //rtx_comments.Text;
-            //2nd text box
-            //rtx_actionTaken.Text;
-            //pics
-            //??
             form3.Add(rtx_comments.Text);
             form3.Add(rtx_actionTaken.Text);
             form3.Add(pic_viewer.Image);
-            //form3.Add(< PictureBoxSizeMode >);
-            //test
-            //foreach (Object s in form3)
-              //  Console.WriteLine("item: " + s);
-             
-
-
+            return form3;
         }
 
         /// <summary>
@@ -57,11 +43,7 @@ namespace SE_CWA2020ASN1_Prog
         /// <param name="e"></param>
         private void btn_confirmInspection_Click(object sender, EventArgs e)
         {
-            List<object> form3 = new List<object>();
-            form3.Add(rtx_comments.Text);
-            form3.Add(rtx_actionTaken.Text);
-            form3.Add(pic_viewer.Image);
-            //passComments();
+            passCommentsPics();
             InspectionSubmission2 frmInSub = new InspectionSubmission2(form3);
             this.Hide();
             frmInSub.ShowDialog();
