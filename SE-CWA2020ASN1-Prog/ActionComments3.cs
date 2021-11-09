@@ -14,7 +14,7 @@ namespace SE_CWA2020ASN1_Prog
     public partial class ActionComments3 : Form
     {
         private List<object> form3 = new List<object>();
-        //add the type selected in form2 and add ...
+        
         public ActionComments3(String titleType)
         {
             InitializeComponent();
@@ -36,6 +36,10 @@ namespace SE_CWA2020ASN1_Prog
             return form3;
         }
 
+        //#################################################
+        //                  Buttons                      ##
+        //#################################################
+
         /// <summary>
         /// call passComments method and return to form2
         /// </summary>
@@ -44,9 +48,9 @@ namespace SE_CWA2020ASN1_Prog
         private void btn_confirmInspection_Click(object sender, EventArgs e)
         {
             passCommentsPics();
-            InspectionSubmission2 frmInSub = new InspectionSubmission2(form3);
-            this.Hide();
-            frmInSub.ShowDialog();
+            InspectionSubmission2 frmIS2 = new InspectionSubmission2(form3); // not new go back to previous
+            this.Close();
+            frmIS2.ShowDialog();
             this.Show();
         }
 

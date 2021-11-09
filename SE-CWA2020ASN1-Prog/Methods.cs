@@ -19,47 +19,31 @@ namespace SE_CWA2020ASN1_Prog
 
     class Methods
     {
-        //private List<Inspection> inspection;
-        //private List<InspectionArea> inspectionArea;
-        //private List<Intervention> intervention;
-        ////adding user input to lists
-        //public void GetInspection()
-        //{
-            
-        //   // List<Inspection> inspection = new List<Inspection>();
-        //    inspection.Add(0, Site_Name);
-        //    //inspection.Add(1, Type);
-        //    //inspection.Add(2, Job_Description);
-        //    //inspection.Add(3, Inspector_Name);
-        //    //inspection.Add(4, Inspection_Date);
-        //    //inspection.Add(5, Supervisor_Name);
+        public int closeForm()
+        {
+            int ans = 0;
 
-        //}
+            return ans;
+        }
+        public int hideForm()
+        {
+            int ans = 0;
 
-        //public void GetInspectionArea()
-        //{
-             
-        //    //inspectionArea.Add(0, Work_Area);
-        //    //inspectionArea.Add(1, Inspection_Summary);
-          
+            return ans;
+        }
+        public int reopenForm()
+        {
+            int ans = 0;
 
-        //}
+            return ans;
+        }
 
-        //public void GetIntervention()
-        //{
-            
-        //    //intervention.Add(0, Heading_Name);
-        //    //intervention.Add(1, Subheading_Name);
-        //    //intervention.Add(2, Intervention_Type);
-        //    //intervention.Add(3, Action_Comments);
-        //    //intervention.Add(4, Inspection_Comments);
-        //    //intervention.Add(5, Inspection_Picture);
-  
+        public int openNewForm()
+        {
+            int ans = 0;
 
-        //}
-
-
-
+            return ans;
+        }
 
 
     }

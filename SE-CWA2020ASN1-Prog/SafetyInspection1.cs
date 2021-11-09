@@ -63,11 +63,10 @@ namespace SE_CWA2020ASN1_Prog
             Console.WriteLine("Anzors method test print inspection details");
             foreach (String String in inspectionList)
             {
-                MessageBox.Show("Anzors test print: "+String.ToString());
                 Console.WriteLine(String.ToString());
             }
 
-            //printing in console REFACTORING
+            //printing in console REFACTORED
             //inspectionList.ForEach(String => Console.WriteLine(String + ", "));
             Console.WriteLine("End Anzors test print");
         }
@@ -97,10 +96,10 @@ namespace SE_CWA2020ASN1_Prog
         public void displayInspections()
         {
             Console.WriteLine("Inspection details");
-            //printing in console
+            //printing in console change to messagebox when works ok
             foreach (Inspection i in inspection)
             {
-                MessageBox.Show("Inspection name: " + i.Site_Name.ToString());
+                //MessageBox.Show("Inspection name: " + i.Site_Name.ToString());
                 Console.WriteLine("Inspection name: " + i.Site_Name.ToString());
             }
             
@@ -109,6 +108,10 @@ namespace SE_CWA2020ASN1_Prog
         //###########################################################
         //                       Testing                           ##
         //###########################################################
+        
+        /// <summary>
+        /// Prints the inspection list to console to confirm details entered
+        /// </summary>
         private void getInspectionTest()
         {
             Console.WriteLine("Inspection details");
@@ -139,9 +142,9 @@ namespace SE_CWA2020ASN1_Prog
             createInspectionDetails();
             
             List<object> form3 = new List<object>();
-            InspectionSubmission2 frmInspectsub = new InspectionSubmission2(form3);
+            InspectionSubmission2 frmIS2 = new InspectionSubmission2(form3);
                 this.Hide();
-            frmInspectsub.ShowDialog();
+            frmIS2.ShowDialog();
                 this.Show();
         }
 

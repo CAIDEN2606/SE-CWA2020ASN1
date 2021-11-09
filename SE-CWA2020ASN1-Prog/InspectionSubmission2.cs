@@ -15,6 +15,8 @@ namespace SE_CWA2020ASN1_Prog
         private List<Intervention> interv = new List<Intervention>();
         private List<InspectionArea> inspArea = new List<InspectionArea>();
         public List<Object> form3;
+        SafetyInspection1 frmSI1 = new SafetyInspection1();
+
         public InspectionSubmission2(List<object>form3)
         {
             InitializeComponent();
@@ -86,7 +88,7 @@ namespace SE_CWA2020ASN1_Prog
             intv.Intervention_Type = getType();
             intv.Heading_Name = getHeading();
             intv.Subheading_Name = getSubHead();
-            intv.Inspection_Comments = (string)form3.ElementAt(0);
+            intv.Inspection_Comments = (string)form3.ElementAt(0); //throws argumentnullexception
             intv.Action_Comments = (string)form3.ElementAt(1); 
             intv.Inspection_Picture = (Image)form3.ElementAt(2);
             interv.Add(intv);
@@ -139,6 +141,7 @@ namespace SE_CWA2020ASN1_Prog
                 else
                 {
                     MessageBox.Show("Please enter a subheading");
+                    break;
                 }
             }
             return heading;
@@ -148,44 +151,72 @@ namespace SE_CWA2020ASN1_Prog
         /// </summary>
         private string getSubHead()
         {
+            int num = 0;
             string subheading = "";
             while (subheading == "")
             {
-                if (cmb_WorkingStandards.Text != "")
+                if (cmb_WorkingStandards.Text != "" && num==0)
                 {
                     subheading = cmb_WorkingStandards.Text;
+                    num++;
+                    
                 }
-                else if (cmb_Quality.Text != "")
+                else if (cmb_Quality.Text != "" && num == 0)
                 {
                     subheading = cmb_Quality.Text;
+                    num++;
+                    
                 }
-                else if (cmb_Site_Rules.Text != "")
+                else if (cmb_Site_Rules.Text != "" && num == 0)
                 {
                     subheading = cmb_Site_Rules.Text;
+                    num++;
+                    
+
                 }
-                else if (cmb_Environmental.Text != "")
+                else if (cmb_Environmental.Text != "" && num == 0)
                 {
                     subheading = cmb_Environmental.Text;
+                    num++;
+                    
                 }
-                else if (cmb_Protection_Of_Individuals.Text != "")
+                else if (cmb_Protection_Of_Individuals.Text != "" && num == 0)
                 {
                     subheading = cmb_Protection_Of_Individuals.Text;
+                    num++;
+                    
                 }
-                else if (cmb_Tools_Cables_And_Other.Text != "")
+                else if (cmb_Tools_Cables_And_Other.Text != "" && num == 0)
                 {
                     subheading = cmb_Tools_Cables_And_Other.Text;
+                    num++;
+                    
                 }
-                else if (cmb_Miscellaneous.Text != "")
+                else if (cmb_Miscellaneous.Text != "" && num == 0)
                 {
                     subheading = cmb_Miscellaneous.Text;
+                    num++;
+                    
+
                 }
-                else if (cmb_High_Risk.Text != "")
+                else if (cmb_High_Risk.Text != "" && num == 0)
                 {
                     subheading = cmb_High_Risk.Text;
+                    num++;
+                    
                 }
                 else
                 {
-                    MessageBox.Show("Please enter a subheading");
+                    if (num > 0)
+                    {
+                        MessageBox.Show("Only one subheading can be chosen");
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a subheading");
+                        continue;
+                    }
                 }
             }
             return subheading;
@@ -227,7 +258,7 @@ namespace SE_CWA2020ASN1_Prog
         //#######################################//
 
         /// <summary>
-        ///  - print contents to console
+        /// print intervention list contents to console
         /// </summary>
         public void getInterventionTest()
         {
@@ -238,7 +269,7 @@ namespace SE_CWA2020ASN1_Prog
         }
 
         /// <summary>
-        ///  - print objects to console, or rich text box or messagebox
+        /// print inspectionArea objects to console
         /// </summary>
         public void getInspectionAreaTest()
         {
@@ -285,24 +316,7 @@ namespace SE_CWA2020ASN1_Prog
             this.Close();
         }
 
-        /// <summary>
-        /// x 
-        /// list as an object
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btn_accept_Click(object sender, EventArgs e)
-        {
-            //save all data to sqlite
-
-            //go to 3rd form
-            SafetyInspection1 frmsafInsp = new SafetyInspection1();
-            this.Hide();
-            frmsafInsp.ShowDialog();
-            this.Show();
-        }
-
-        
+             
 
         /// <summary>
         /// Go to form3 to get comments and pics and pass type to page title
@@ -330,7 +344,7 @@ namespace SE_CWA2020ASN1_Prog
         {
             //view list of interventions to select and change
         }
-
+        
         /// <summary>
         /// Submit button to save all intervention data and add to inspectionArea
         /// </summary>
@@ -339,11 +353,11 @@ namespace SE_CWA2020ASN1_Prog
         private void btn_Submit_Click(object sender, EventArgs e)
         {
             getInspectionArea();
-            getIntervention();
-            getInterventionTest();
-            getInspectionAreaTest();
-            SafetyInspection1 frmSI1 = new SafetyInspection1();
-            this.Hide();
+            //getIntervention();
+            
+            //save all data to sqlite
+            
+            this.Close();
             frmSI1.ShowDialog();
             this.Show();
         }

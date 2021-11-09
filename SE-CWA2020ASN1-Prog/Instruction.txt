@@ -8,6 +8,7 @@ Methods to complete
 ##  displayInspections() - display inspection with interventions to display in form1
 ##  createInspectionDetails() - same as getInspection but using inspection class
 
+
 				FORM 2
 ##  getInspectionArea() - get objects of interventions
 ##  getInspectionAreaTest() - print objects to console, or rich text box or messagebox
@@ -22,9 +23,16 @@ Methods to complete
 				FORM 3
 ##  getCommentsPics() - save comments and pics to list and pass to form3 to add to intervention list
 ##  passComments()
-TO DO-->
-		get pics and display in gallery for user to delete or accept ##
 
+
+TO DO-->
+		1. get pics and display in gallery for user to delete or accept 
+		2. form2 doesn't keep data when go to form3 and back including work area
+		--> not going back to previous form but opens new one
+		--> each form opens new one so have multiple new forms opened
+		--> 
+		3. need try catch errors in get.. methods
+		4. may need to look at naming of methods as too many gets..
 
 ## = completed
 
