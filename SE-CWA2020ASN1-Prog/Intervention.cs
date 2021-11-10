@@ -11,19 +11,19 @@ namespace SE_CWA2020ASN1_Prog
     {
         private List<Intervention> interv;
 
-        //public Intervention(String hName, String subName, String type, String aComments,
-        //    String iComments, Image iPicture)
-            
-        //{
-        //    m_headingName = hName;
-        //    m_subheadingName = subName;
-        //    m_interventionType = type;
-        //    m_actionComments = aComments;
-        //    m_inspectionComments = iComments;
-        //    m_inspectionPicture = iPicture;
+        public Intervention(String hName, String subName, String type, String aComments,
+            String iComments, Image iPicture)
 
-        //}
-        
+        {
+            m_headingName = hName;
+            m_subheadingName = subName;
+            m_interventionType = type;
+            m_actionComments = aComments;
+            m_inspectionComments = iComments;
+            m_inspectionPicture = iPicture;
+
+        }
+
 
         //public void makeIntervention(String hName, String subName, String type, String aComments,
         //    String iComments, Image iPicture, Intervention intervention)
@@ -33,7 +33,7 @@ namespace SE_CWA2020ASN1_Prog
 
         //private void Add(string hName, string subName, string type, string aComments, string iComments, Image iPicture)
         //{
-            
+
         //    throw new NotImplementedException();
         //}
 

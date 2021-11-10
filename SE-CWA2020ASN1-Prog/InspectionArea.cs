@@ -10,22 +10,23 @@ namespace SE_CWA2020ASN1_Prog
     {
         private String m_workarea;
         private String m_inspectionSummary;
+        private List<Intervention> intervention;
+        private List<InspectionArea> inspectionArea; 
 
-        private List<Intervention> m_interventionObjs;
-
-        //public InspectionArea(String workArea, String iSummary)
-        //{
-        //    m_workarea = workArea;
-        //    m_inspectionSummary = iSummary;
-        //    m_interventionObjs = new List<Intervention>();
-        //}
+        public InspectionArea(String workArea, String iSummary)
+        {
+            m_workarea = workArea;
+            m_inspectionSummary = iSummary;
+            intervention = new List<Intervention>();
+        }
         ///// <summary>
         ///// multiple intervention objects added to single work area list
         ///// </summary>
-        //public void addIntervention(Intervention i)
-        //{
-        //    m_interventionObjs.Add(i);
-        //}
+        public void addIntervention(Intervention i)
+        {
+
+            intervention.Add(i);
+        }
         public String Work_Area { get { return m_workarea; } set { m_workarea = value; } }
 
 

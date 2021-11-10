@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SQLite;
+//using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -77,15 +77,15 @@ namespace SE_CWA2020ASN1_Prog
         public void createInspectionDetails()
         { 
            
-            Inspection insp = new Inspection();
-            insp.Inspector_Name = txt_name.Text;
-            insp.Site_Name = cmbEnterSite.Text;
-            insp.Inspection_Date = dateTimePicker1.Value;
-            insp.Job_Description = txt_jobDescription.Text;
-            insp.Type = cmbEnterType.Text;
-            insp.Supervisor_Name = txt_supervisor.Text;
+            //Inspection insp = new Inspection();
+            //insp.Inspector_Name = txt_name.Text;
+            //insp.Site_Name = cmbEnterSite.Text;
+            //insp.Inspection_Date = dateTimePicker1.Value;
+            //insp.Job_Description = txt_jobDescription.Text;
+            //insp.Type = cmbEnterType.Text;
+            //insp.Supervisor_Name = txt_supervisor.Text;
             
-            inspection.Add(insp);
+            //inspection.Add(insp);
                                             
             getInspectionTest();                //edit out when done
         }
@@ -153,7 +153,7 @@ namespace SE_CWA2020ASN1_Prog
             AboutMusk amusk = new AboutMusk();
             //this.Hide();
             amusk.ShowDialog();
-            this.Show();
+            //this.Show();
         }
 
         //  doesn't do anything yet  /////////////////////////////////////
