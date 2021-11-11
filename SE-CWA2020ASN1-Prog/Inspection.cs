@@ -6,33 +6,24 @@ using System.Threading.Tasks;
 
 namespace SE_CWA2020ASN1_Prog
 {
-    class Inspection
+    public class Inspection
     {
-        //used just to print inspections as requested by project requirements
-        private List<InspectionArea> inspectionArea;
-        //private List<InspectionArea> m_inspectionArea;
+        private List<WorkArea> m_workAreaList;
 
-        public Inspection(string iName, string type, string jobDescr, DateTime date, string sName)
+        public Inspection(string iName, string jobType, string jobDescr, DateTime date, string sName)
         {
             m_siteName = iName;
-            m_type = type;
+            m_type = jobType;
             m_jobDescription = jobDescr;
             m_inspectionDate = date;
             m_supervisorName = sName;
-            //m_inspectionArea = new List<InspectionArea>();
+            m_workAreaList = new List<WorkArea>();
         }
-        //}
-        /// <summary>
-        /// Used to add each inspectionArea to inspection list
-        /// then send to external db before starting new work area
-        /// </summary>
-        /// <param name="ia"></param>
-        public void addInspectionArea(InspectionArea ia)
+
+        public void addInsp()
         {
-            inspectionArea.Add(ia);
+           
         }
-
-
         private string m_siteName;
         public string Site_Name { get { return m_siteName; } set { m_siteName = value; } }
 

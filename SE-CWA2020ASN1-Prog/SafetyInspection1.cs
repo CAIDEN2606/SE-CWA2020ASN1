@@ -13,14 +13,17 @@ namespace SE_CWA2020ASN1_Prog
 {
     public partial class SafetyInspection1 : Form
     {
+
+
+        private IMethods im = new Methods();
         public SafetyInspection1()
         {
             InitializeComponent();
-
+            
             addComboData();
 
         }
-        private List<Inspection> inspection = new List<Inspection>();
+        
         private void addComboData()
         {
             cmbEnterSite.Items.Add("Weetabix Burton AP1 / Main");
@@ -37,92 +40,39 @@ namespace SE_CWA2020ASN1_Prog
 
         }
 
-        //created by anzors
-        /// <summary>
-        /// Saving user input to string list and test print messagebox and console to confirm
-        /// </summary>
-        public void getInspection()
-        {
-            string inspector = txt_name.Text;
-            string site = cmbEnterSite.Text;
-            var date = dateTimePicker1.Text;
-            string job = txt_jobDescription.Text;
-            string type = cmbEnterType.Text;
-            string supervisor = txt_supervisor.Text;
-
-            //Creating a list 
-            List<String> inspectionList = new List<String>();
-
-            inspectionList.Add(inspector);
-            inspectionList.Add(site);
-            inspectionList.Add(date);
-            inspectionList.Add(job);
-            inspectionList.Add(type);
-            inspectionList.Add(supervisor);
-            //printing in console
-            Console.WriteLine("Anzors method test print inspection details");
-            foreach (String String in inspectionList)
-            {
-                Console.WriteLine(String.ToString());
-            }
-
-            //printing in console REFACTORED
-            //inspectionList.ForEach(String => Console.WriteLine(String + ", "));
-            Console.WriteLine("End Anzors test print");
-        }
-
-        /// <summary>
-        /// Saving user input on form1 as an inspection obj and adding to inspection list 
-        /// </summary>
-        public void createInspectionDetails()
-        { 
-           
-            //Inspection insp = new Inspection();
-            //insp.Inspector_Name = txt_name.Text;
-            //insp.Site_Name = cmbEnterSite.Text;
-            //insp.Inspection_Date = dateTimePicker1.Value;
-            //insp.Job_Description = txt_jobDescription.Text;
-            //insp.Type = cmbEnterType.Text;
-            //insp.Supervisor_Name = txt_supervisor.Text;
-            
-            //inspection.Add(insp);
-                                            
-            getInspectionTest();                //edit out when done
-        }
-
-        /// <summary>
-        /// Display list of inspections and some details in rich text box as required by project reqs.
-        /// </summary>
-        public void displayInspections()
-        {
-            Console.WriteLine("Inspection details");
-            //printing in console change to messagebox when works ok
-            foreach (Inspection i in inspection)
-            {
-                //MessageBox.Show("Inspection name: " + i.Site_Name.ToString());
-                Console.WriteLine("Inspection name: " + i.Site_Name.ToString());
-            }
-            
-        }
-
-        //###########################################################
-        //                       Testing                           ##
-        //###########################################################
         
-        /// <summary>
-        /// Prints the inspection list to console to confirm details entered
-        /// </summary>
-        private void getInspectionTest()
+        public string m_site
         {
-            Console.WriteLine("Inspection details");
-            //printing in console
-            foreach (Inspection i in inspection)
-            {
-                //MessageBox.Show(i.tostring());
-                Console.WriteLine("Inspection name: " + i.Site_Name.ToString() + "," + i.Inspection_Date.ToString());
-            }
-
+            get { return cmbEnterSite.Text; }
+            set { cmbEnterSite.Text = value; }
         }
+        public DateTime m_date
+        {
+            get { return dateTimePicker1.Value; }
+            set { dateTimePicker1.Value = value; }
+        }
+        public string m_inspector
+        {
+            get { return txt_name.Text; }
+            set { txt_name.Text = value; }
+        }
+        public string m_jobDesc
+        {
+            get { return txt_jobDescription.Text; }
+            set { txt_jobDescription.Text = value; }
+        } 
+        public string m_jobType
+        {
+            get { return cmbEnterType.Text; }
+            set { cmbEnterType.Text = value; }
+        } 
+        public string m_supervisor
+        {
+            get { return txt_supervisor.Text; }
+            set { txt_supervisor.Text = value; }
+        } 
+
+                
 
         //###########################################################
         //                              buttons
@@ -136,14 +86,13 @@ namespace SE_CWA2020ASN1_Prog
         
         private void btn_Enter_Click(object sender, EventArgs e )
         {
-            //anzors method using string list
-            getInspection();
-            //same method using inspection class list
-            createInspectionDetails();
-            
-            List<object> form3 = new List<object>();
-            InspectionSubmission2 frmIS2 = new InspectionSubmission2(form3);
-                this.Hide();
+            //create object of type inspection_area
+            //pass to safetyInspection2
+            Inspection insp = new Inspection(iName...);
+
+
+            //im.createInspectionList();
+            InspectionSubmission2 frmIS2 = new InspectionSubmission2(insp);
             frmIS2.ShowDialog();
                 this.Show();
         }

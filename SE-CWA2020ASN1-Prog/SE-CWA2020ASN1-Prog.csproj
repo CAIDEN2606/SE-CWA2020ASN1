@@ -59,7 +59,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Inspection.cs" />
-    <Compile Include="InspectionArea.cs" />
+    <Compile Include="WorkArea.cs" />
     <Compile Include="InspectionSubmission2.cs">
       <SubType>Form</SubType>
     </Compile>

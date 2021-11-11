@@ -39,8 +39,8 @@ namespace SE_CWA2020ASN1_Prog
         //2nd form
         private void btn_InspectionSubmission_Click(object sender, EventArgs e)
         {
-            List<object> form3 = new List<object>();
-            InspectionSubmission2 frmInSub = new InspectionSubmission2(form3);
+            
+            InspectionSubmission2 frmInSub = new InspectionSubmission2();
             this.Hide();
             frmInSub.ShowDialog();
             this.Show();
