@@ -8,20 +8,11 @@ namespace SE_CWA2020ASN1_Prog
     public partial class InspectionSubmission2 : Form
     {
  
-
-        
-        public InspectionSubmission2(Inspection insp)
+       public InspectionSubmission2(Inspection insp)
         {
             InitializeComponent();
-
-            //m_subheadings = subheading;
-            //m_intervType = intervType;
-            //m_comments = comments;
-            //m_actionComments = actionComments;
-            //m_inspectionComments = inspectionComments;
-            //m_picture = picture;
-
-
+            popInterventionCombo();
+            
         }
 
 
@@ -44,15 +35,51 @@ namespace SE_CWA2020ASN1_Prog
         }
         public string m_inspectionComments
         {
-            get { return rtb_InspectionComments.Text; }
-            set { rtb_InspectionComments.Text = value; }
+            get { return rtb_InspectCommsSummary.Text; }
+            set { rtb_InspectCommsSummary.Text = value; }
         }
         public Image m_picture
         {
             get { return pic_viewer.Image; }
             set { pic_viewer.Image = value; }
         }
+        private void popInterventionCombo()
+        {
+            cmb_Interventions.Items.Add("1.Work at height");
+            cmb_Interventions.Items.Add("2.Lifting operations-Crane,fork lift truck,Hoists");
+            cmb_Interventions.Items.Add("3.Certification-Daily checksheets for MEWP and FLT");
+            cmb_Interventions.Items.Add("4.Confined space work");
+            cmb_Interventions.Items.Add("5.Electrical work");
+            
+            cmb_Interventions.Items.Add("6.Site setup and appearance, Signage");
+            cmb_Interventions.Items.Add("7.Paperwork (Permits, Risk assessments, Method Statement)");
+            cmb_Interventions.Items.Add("8.Certification-Training,Insurance Inspection, Induction current");
+            
+            cmb_Interventions.Items.Add("9.Hot work");
+            cmb_Interventions.Items.Add("10.Isolation and lock Offs");
+            cmb_Interventions.Items.Add("11.Fire exits and escape routes");
+            cmb_Interventions.Items.Add("12.Awareness-Fire exit, assembly point");
 
+            cmb_Interventions.Items.Add("13.Waste management");
+            cmb_Interventions.Items.Add("14.Product contamination");
+            cmb_Interventions.Items.Add("15.COSHH & Asbestos");
+
+            cmb_Interventions.Items.Add("16.PPE");
+            cmb_Interventions.Items.Add("17.Manual handling");
+            cmb_Interventions.Items.Add("18.Other contractors");
+
+            cmb_Interventions.Items.Add("19.Power tools, Cables & other equipement");
+            cmb_Interventions.Items.Add("20.Voltage detector checked");
+            cmb_Interventions.Items.Add("21.Tools used fit for purpose");
+
+            cmb_Interventions.Items.Add("22.Company vehicles");
+            cmb_Interventions.Items.Add("23.Fire precautions");
+            cmb_Interventions.Items.Add("24.Workshop conditions");
+
+            
+            
+           
+        }
         //#######################################################
         //
         //                          Buttons
@@ -85,32 +112,33 @@ namespace SE_CWA2020ASN1_Prog
 
             string intDesc="";
             string intervType="";
+            string actComms = "";
+            string inspectComms = "";
 
             lbl_error1.Visible = false;
 
             if (cmb_Interventions.SelectedIndex != -1)
             {
-
                 intDesc = cmb_Interventions.Text;
             }
-            else
-            {
-                lbl_error1.Visible = true;
-
-            }
+            else { lbl_error1.Visible = true; }
             if (cmb_TypesOfIntervention.SelectedIndex != -1)
             {
                 intervType = cmb_TypesOfIntervention.Text;
             }
-                string actComms = rtx_actionTaken.Text;
-                string inspectComms = rtb_InspectionComments.Text;
-            
+            else { lbl_error2.Visible = true; }
+            actComms = rtx_actionTaken.Text;
+            inspectComms = rtb_InspectCommsSummary.Text;
+            //rtb_InspectCommsSummary
             //Image pics=  pic_viewer.Image;
-            //repeat for rest
-            //
-            //create new intervention obj call addinterv
-            Intervention interv = new Intervention(intDesc,intervType,actComms,inspectComms);
-            
+           
+           //create new intervention obj, call addinterv
+           Intervention interv = new Intervention(intDesc,intervType,actComms,inspectComms);
+            WorkArea wa = new WorkArea();
+            wa.addInterv(interv);
+
+           
+
         }
 
         private void btn_ExitNoSave_Click(object sender, EventArgs e)
@@ -126,6 +154,8 @@ namespace SE_CWA2020ASN1_Prog
             this.Close();
 
         }
+
+        
 
         /**********************************************
 *

@@ -13,10 +13,7 @@ namespace SE_CWA2020ASN1_Prog
 {
     public partial class SafetyInspection1 : Form
     {
-
-
-        private IMethods im = new Methods();
-        public SafetyInspection1()
+    public SafetyInspection1()
         {
             InitializeComponent();
             
@@ -88,10 +85,8 @@ namespace SE_CWA2020ASN1_Prog
         {
             //create object of type inspection_area
             //pass to safetyInspection2
-            Inspection insp = new Inspection(iName...);
+            Inspection insp = new Inspection(iName,jobType,jobDescr,date,sName);
 
-
-            //im.createInspectionList();
             InspectionSubmission2 frmIS2 = new InspectionSubmission2(insp);
             frmIS2.ShowDialog();
                 this.Show();
