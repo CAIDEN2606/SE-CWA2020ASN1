@@ -23,25 +23,25 @@ namespace SE_CWA2020ASN1_Prog
         
         private void addComboData()
         {
-            cmbEnterSite.Items.Add("Weetabix Burton AP1 / Main");
-            cmbEnterSite.Items.Add("Project Safety Audits");
-            cmbEnterSite.Items.Add("Tate and Lyle");
-            cmbEnterSite.Items.Add("Musk Design");
-            cmbEnterSite.Items.Add("AkzoNobel Stowmarket");
+            cmb_EnterSite.Items.Add("Weetabix Burton AP1 / Main");
+            cmb_EnterSite.Items.Add("Project Safety Audits");
+            cmb_EnterSite.Items.Add("Tate and Lyle");
+            cmb_EnterSite.Items.Add("Musk Design");
+            cmb_EnterSite.Items.Add("AkzoNobel Stowmarket");
 
 
-            cmbEnterType.Items.Add("Installation");
-            cmbEnterType.Items.Add("General maintenance");
-            cmbEnterType.Items.Add("Building works");
-            cmbEnterType.Items.Add("Repairing");
+            cmb_EnterType.Items.Add("Installation");
+            cmb_EnterType.Items.Add("General maintenance");
+            cmb_EnterType.Items.Add("Building works");
+            cmb_EnterType.Items.Add("Repairing");
 
         }
 
         
         public string m_site
         {
-            get { return cmbEnterSite.Text; }
-            set { cmbEnterSite.Text = value; }
+            get { return cmb_EnterSite.Text; }
+            set { cmb_EnterSite.Text = value; }
         }
         public DateTime m_date
         {
@@ -50,8 +50,8 @@ namespace SE_CWA2020ASN1_Prog
         }
         public string m_inspector
         {
-            get { return txt_name.Text; }
-            set { txt_name.Text = value; }
+            get { return txt_inspectorName.Text; }
+            set { txt_inspectorName.Text = value; }
         }
         public string m_jobDesc
         {
@@ -60,8 +60,8 @@ namespace SE_CWA2020ASN1_Prog
         } 
         public string m_jobType
         {
-            get { return cmbEnterType.Text; }
-            set { cmbEnterType.Text = value; }
+            get { return cmb_EnterType.Text; }
+            set { cmb_EnterType.Text = value; }
         } 
         public string m_supervisor
         {
@@ -83,9 +83,23 @@ namespace SE_CWA2020ASN1_Prog
         
         private void btn_Enter_Click(object sender, EventArgs e )
         {
+            string siteName = "";
+            DateTime date;
+            string inspectorName = "";
+            string jobDesc = "";
+            string jobType = "";
+            string supervisor = "";
+
+            siteName = cmb_EnterSite.Text;
+            date = dateTimePicker1.Value;
+            inspectorName = txt_inspectorName.Text;
+            jobType = cmb_EnterType.Text;
+            jobDesc = txt_jobDescription.Text;
+            supervisor = txt_supervisor.Text;
+
             //create object of type inspection_area
             //pass to safetyInspection2
-            Inspection insp = new Inspection(iName,jobType,jobDescr,date,sName);
+            Inspection insp = new Inspection(siteName, date, inspectorName, jobType, jobDesc, supervisor);
 
             InspectionSubmission2 frmIS2 = new InspectionSubmission2(insp);
             frmIS2.ShowDialog();
@@ -109,7 +123,7 @@ namespace SE_CWA2020ASN1_Prog
             //    txt_name.Text.Remove(txt_name.Text.Length - 1);
             //}
             //else
-            if (txt_name.Text == "")
+            if (txt_inspectorName.Text == "")
             {
                 MessageBox.Show("Please, Enter your full name");
             }
@@ -118,7 +132,7 @@ namespace SE_CWA2020ASN1_Prog
         private void txt_workArea_TextChanged(object sender, EventArgs e)
         {
            
-            if (txt_name.Text == "")
+            if (txt_inspectorName.Text == "")
             {
                 MessageBox.Show("Please, Enter Work Area");
             }
@@ -126,7 +140,7 @@ namespace SE_CWA2020ASN1_Prog
 
         private void txt_jobDescription_TextChanged(object sender, EventArgs e)
         {
-            if (txt_name.Text == "")
+            if (txt_inspectorName.Text == "")
             {
                 MessageBox.Show("Please, Enter Job Description");
             }
@@ -140,7 +154,7 @@ namespace SE_CWA2020ASN1_Prog
             //    txt_name.Text.Remove(txt_name.Text.Length - 1);
             //}
             //else
-            if (txt_name.Text == "")
+            if (txt_inspectorName.Text == "")
             {
                 MessageBox.Show("Please, Enter your supervisor's name");
             }

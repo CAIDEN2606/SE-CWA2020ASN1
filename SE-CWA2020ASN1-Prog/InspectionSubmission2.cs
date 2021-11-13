@@ -7,42 +7,23 @@ namespace SE_CWA2020ASN1_Prog
 {
     public partial class InspectionSubmission2 : Form
     {
- 
-       public InspectionSubmission2(Inspection insp)
+       private int numTotalInterv = 0;
+        
+        public InspectionSubmission2(Inspection insp)
         {
             InitializeComponent();
             popInterventionCombo();
-            
-        }
+            //display total interventions
+            rtx_displayTotalInterv.Text = numTotalInterv.ToString();
 
-
-        public string m_subheadings
-        { 
-            get { return cmb_Interventions.Text; }
-            set { cmb_Interventions.Text = value; }
-        }
-        public string m_intervType
-        {
-            get { return cmb_TypesOfIntervention.Text; }
-            set { cmb_TypesOfIntervention.Text = value; }
         }
         
-        
-        public string m_actionComments
-        {
-            get {return rtx_actionTaken.Text; }
-            set { rtx_actionTaken.Text=value; }
-        }
-        public string m_inspectionComments
-        {
-            get { return rtb_InspectCommsSummary.Text; }
-            set { rtb_InspectCommsSummary.Text = value; }
-        }
-        public Image m_picture
-        {
-            get { return pic_viewer.Image; }
-            set { pic_viewer.Image = value; }
-        }
+
+        public string m_subheadings {get { return cmb_Interventions.Text; }set { cmb_Interventions.Text = value; }}
+        public string m_intervType {get { return cmb_TypesOfIntervention.Text; }set { cmb_TypesOfIntervention.Text = value; }}
+        public string m_actionComments {get {return rtx_actionTaken.Text; }set { rtx_actionTaken.Text=value; }}
+        public string m_inspectionComments {get { return rtb_InspectCommsSummary.Text; }set { rtb_InspectCommsSummary.Text = value; }}
+        public Image m_picture {get { return pic_viewer.Image; }set { pic_viewer.Image = value; }}
         private void popInterventionCombo()
         {
             cmb_Interventions.Items.Add("1.Work at height");
@@ -109,12 +90,14 @@ namespace SE_CWA2020ASN1_Prog
 
         private void btn_saveIntervention_Click(object sender, EventArgs e)
         {
-
-            string intDesc="";
+            
+            //makes up an intervention
+            string intDesc ="";
             string intervType="";
             string actComms = "";
             string inspectComms = "";
 
+            //check if empty and makes red * visible to user as a must complete field if not
             lbl_error1.Visible = false;
 
             if (cmb_Interventions.SelectedIndex != -1)
@@ -128,16 +111,35 @@ namespace SE_CWA2020ASN1_Prog
             }
             else { lbl_error2.Visible = true; }
             actComms = rtx_actionTaken.Text;
-            inspectComms = rtb_InspectCommsSummary.Text;
-            //rtb_InspectCommsSummary
+            inspectComms = rtx_comments.Text; ;
+
             //Image pics=  pic_viewer.Image;
-           
-           //create new intervention obj, call addinterv
-           Intervention interv = new Intervention(intDesc,intervType,actComms,inspectComms);
-            WorkArea wa = new WorkArea();
+            
+            //create new intervention obj, 
+            Intervention interv = new Intervention(intDesc,intervType,actComms,inspectComms);
+
+            string workArea = "";
+            string inspectCommsSummary = "";
+            // add workarea to inspection
+            workArea = rtb_WorkArea.Text;
+            inspectCommsSummary = rtb_InspectCommsSummary.Text;
+            //create new workarea 
+            WorkArea wa = new WorkArea(workArea, inspectCommsSummary);
+            
+            //add an interv to total interventions 
+            numTotalInterv++;
+            rtx_displayTotalInterv.Text = numTotalInterv.ToString();
+            //call addinterv to add intervention to workarea
             wa.addInterv(interv);
 
-           
+            //functional tests
+            Console.WriteLine(interv.testString()); //print subheading
+            Console.WriteLine(wa.testString()); //print workarea
+            //clear
+            cmb_Interventions.Text = "";
+            cmb_TypesOfIntervention.Text = "";
+            rtx_actionTaken.Text="";
+            rtx_comments.Text="";
 
         }
 
@@ -150,6 +152,11 @@ namespace SE_CWA2020ASN1_Prog
         private void btn_Submit_Click(object sender, EventArgs e)
         {
             // second redesign is okay!
+            //add summary to workarea and add 'insp'
+            
+            
+            
+            //send
 
             this.Close();
 

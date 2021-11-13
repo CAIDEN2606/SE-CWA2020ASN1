@@ -10,25 +10,26 @@ namespace SE_CWA2020ASN1_Prog
     {
         private List<WorkArea> m_workAreaList;
 
-        public Inspection(string iName, string jobType, string jobDescr, DateTime date, string sName)
+        public Inspection(string iName, DateTime date, string inspectorName, string jobType, string jobDescr,  string sName)
         {
             m_siteName = iName;
-            m_type = jobType;
-            m_jobDescription = jobDescr;
             m_inspectionDate = date;
-            m_supervisorName = sName;
+            m_inspectorName = inspectorName;
+            m_jobType = jobType;
+            m_jobDescription = jobDescr;
+             m_supervisorName = sName;
             m_workAreaList = new List<WorkArea>();
         }
 
-        public void addInsp()
+        public void addWorkArea(WorkArea waObj)
         {
-           
+            m_workAreaList.Add(waObj);
         }
         private string m_siteName;
         public string Site_Name { get { return m_siteName; } set { m_siteName = value; } }
 
-        private string m_type;
-        public string Type { get { return m_type; } set { m_type = value; } }
+        private string m_jobType;
+        public string Type { get { return m_jobType; } set { m_jobType = value; } }
 
         private string m_jobDescription;
         public string Job_Description { get { return m_jobDescription; } set { m_jobDescription = value; } }
@@ -42,9 +43,9 @@ namespace SE_CWA2020ASN1_Prog
         private string m_supervisorName;
         public string Supervisor_Name { get { return m_supervisorName; } set { m_supervisorName = value; } }
     
-        public string tostring()
+        public string teststring()
         {
-            return "Site: "+Site_Name.ToString() + "," + Inspection_Date.ToString() + "," + "Inspected by: " + Inspector_Name.ToString();
+            return "Inspection --> Site: "+ m_siteName + ", date: " + m_inspectionDate + ", Inspected by: " + m_inspectorName;
         }
 
         

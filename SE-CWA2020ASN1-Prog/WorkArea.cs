@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace SE_CWA2020ASN1_Prog
 {
-    class WorkArea
+    public class WorkArea
     {
-        private List<Intervention> intervention;
-        public WorkArea(String workArea, String iSummary)
+        private List<Intervention> m_intervention;
+        public WorkArea(string workArea, string iSummary)
         {
             m_workarea = workArea;
             m_inspectionSummary = iSummary;
-            intervention = new List<Intervention>();
+            m_intervention = new List<Intervention>();
         }
 
         /// <summary>
@@ -21,15 +21,18 @@ namespace SE_CWA2020ASN1_Prog
         /// </summary>
         public void addInterv(Intervention intObj)
         {
-            intervention.Add(intObj);
+            m_intervention.Add(intObj);
         }
+        
+        private string m_workarea;
+        public string Work_Area { get { return m_workarea; } set { m_workarea = value; } }
 
-        private String m_workarea;
-        public String Work_Area { get { return m_workarea; } set { m_workarea = value; } }
-
-        private String m_inspectionSummary;
-        public String Inspection_Summary { get { return m_inspectionSummary; } set { m_inspectionSummary = value; } }
-
+        private string m_inspectionSummary;
+        public string Inspection_Summary { get { return m_inspectionSummary; } set { m_inspectionSummary = value; } }
+        public string testString()
+        {
+            return "Work area --> work area= "+m_workarea + ",Inspection summary= "+ m_inspectionSummary;
+        }
     }
 }
 

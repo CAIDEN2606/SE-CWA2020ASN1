@@ -29,7 +29,6 @@ namespace SE_CWA2020ASN1_Prog
         /// </summary>
         private void InitializeComponent()
         {
-            this.pic_logo = new System.Windows.Forms.PictureBox();
             this.rtb_InspectCommsSummary = new System.Windows.Forms.RichTextBox();
             this.btn_Submit = new System.Windows.Forms.Button();
             this.btn_ExitNoSave = new System.Windows.Forms.Button();
@@ -46,8 +45,6 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_next = new System.Windows.Forms.Button();
             this.btn_prev = new System.Windows.Forms.Button();
             this.pic_viewer = new System.Windows.Forms.PictureBox();
-            this.vsc_actionTaken = new System.Windows.Forms.VScrollBar();
-            this.vsc_comments = new System.Windows.Forms.VScrollBar();
             this.btn_deletePic = new System.Windows.Forms.Button();
             this.btn_takePic = new System.Windows.Forms.Button();
             this.rtx_actionTaken = new System.Windows.Forms.RichTextBox();
@@ -57,26 +54,17 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_saveIntervention = new System.Windows.Forms.Button();
             this.lbl_error1 = new System.Windows.Forms.Label();
             this.lbl_error2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
+            this.lbl_totalInterventions = new System.Windows.Forms.Label();
+            this.rtx_displayTotalInterv = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_viewer)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pic_logo
-            // 
-            this.pic_logo.ImageLocation = "main.musk-logo.jpg";
-            this.pic_logo.Location = new System.Drawing.Point(14, 11);
-            this.pic_logo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pic_logo.Name = "pic_logo";
-            this.pic_logo.Size = new System.Drawing.Size(183, 82);
-            this.pic_logo.TabIndex = 38;
-            this.pic_logo.TabStop = false;
             // 
             // rtb_InspectCommsSummary
             // 
             this.rtb_InspectCommsSummary.Location = new System.Drawing.Point(17, 576);
             this.rtb_InspectCommsSummary.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtb_InspectCommsSummary.Name = "rtb_InspectCommsSummary";
-            this.rtb_InspectCommsSummary.Size = new System.Drawing.Size(453, 60);
+            this.rtb_InspectCommsSummary.Size = new System.Drawing.Size(439, 60);
             this.rtb_InspectCommsSummary.TabIndex = 39;
             this.rtb_InspectCommsSummary.Text = "";
             // 
@@ -93,7 +81,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_ExitNoSave
             // 
-            this.btn_ExitNoSave.Location = new System.Drawing.Point(277, 644);
+            this.btn_ExitNoSave.Location = new System.Drawing.Point(262, 644);
             this.btn_ExitNoSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_ExitNoSave.Name = "btn_ExitNoSave";
             this.btn_ExitNoSave.Size = new System.Drawing.Size(194, 52);
@@ -106,7 +94,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.lbl_GeneralInspection.AutoSize = true;
             this.lbl_GeneralInspection.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_GeneralInspection.Location = new System.Drawing.Point(207, 11);
+            this.lbl_GeneralInspection.Location = new System.Drawing.Point(12, 9);
             this.lbl_GeneralInspection.Name = "lbl_GeneralInspection";
             this.lbl_GeneralInspection.Size = new System.Drawing.Size(249, 29);
             this.lbl_GeneralInspection.TabIndex = 43;
@@ -115,10 +103,7 @@ namespace SE_CWA2020ASN1_Prog
             // cmb_Interventions
             // 
             this.cmb_Interventions.FormattingEnabled = true;
-            this.cmb_Interventions.Items.AddRange(new object[] {
-            "work at height",
-            "wroking some"});
-            this.cmb_Interventions.Location = new System.Drawing.Point(178, 101);
+            this.cmb_Interventions.Location = new System.Drawing.Point(164, 102);
             this.cmb_Interventions.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb_Interventions.Name = "cmb_Interventions";
             this.cmb_Interventions.Size = new System.Drawing.Size(292, 28);
@@ -136,10 +121,10 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // rtb_WorkArea
             // 
-            this.rtb_WorkArea.Location = new System.Drawing.Point(323, 63);
+            this.rtb_WorkArea.Location = new System.Drawing.Point(164, 64);
             this.rtb_WorkArea.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtb_WorkArea.Name = "rtb_WorkArea";
-            this.rtb_WorkArea.Size = new System.Drawing.Size(147, 30);
+            this.rtb_WorkArea.Size = new System.Drawing.Size(209, 30);
             this.rtb_WorkArea.TabIndex = 63;
             this.rtb_WorkArea.Text = "";
             // 
@@ -147,7 +132,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.lbl_Work_Area.AutoSize = true;
             this.lbl_Work_Area.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Work_Area.Location = new System.Drawing.Point(204, 69);
+            this.lbl_Work_Area.Location = new System.Drawing.Point(12, 68);
             this.lbl_Work_Area.Name = "lbl_Work_Area";
             this.lbl_Work_Area.Size = new System.Drawing.Size(113, 25);
             this.lbl_Work_Area.TabIndex = 64;
@@ -188,7 +173,7 @@ namespace SE_CWA2020ASN1_Prog
             "Best practice",
             "Positive intervention",
             "SubContractor"});
-            this.cmb_TypesOfIntervention.Location = new System.Drawing.Point(178, 144);
+            this.cmb_TypesOfIntervention.Location = new System.Drawing.Point(164, 147);
             this.cmb_TypesOfIntervention.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb_TypesOfIntervention.Name = "cmb_TypesOfIntervention";
             this.cmb_TypesOfIntervention.Size = new System.Drawing.Size(292, 28);
@@ -232,24 +217,10 @@ namespace SE_CWA2020ASN1_Prog
             this.pic_viewer.Location = new System.Drawing.Point(17, 362);
             this.pic_viewer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pic_viewer.Name = "pic_viewer";
-            this.pic_viewer.Size = new System.Drawing.Size(454, 80);
+            this.pic_viewer.Size = new System.Drawing.Size(439, 80);
             this.pic_viewer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_viewer.TabIndex = 77;
             this.pic_viewer.TabStop = false;
-            // 
-            // vsc_actionTaken
-            // 
-            this.vsc_actionTaken.Location = new System.Drawing.Point(430, 212);
-            this.vsc_actionTaken.Name = "vsc_actionTaken";
-            this.vsc_actionTaken.Size = new System.Drawing.Size(26, 76);
-            this.vsc_actionTaken.TabIndex = 76;
-            // 
-            // vsc_comments
-            // 
-            this.vsc_comments.Location = new System.Drawing.Point(171, 212);
-            this.vsc_comments.Name = "vsc_comments";
-            this.vsc_comments.Size = new System.Drawing.Size(26, 76);
-            this.vsc_comments.TabIndex = 75;
             // 
             // btn_deletePic
             // 
@@ -275,7 +246,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // rtx_actionTaken
             // 
-            this.rtx_actionTaken.Location = new System.Drawing.Point(269, 212);
+            this.rtx_actionTaken.Location = new System.Drawing.Point(238, 212);
             this.rtx_actionTaken.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtx_actionTaken.Name = "rtx_actionTaken";
             this.rtx_actionTaken.Size = new System.Drawing.Size(201, 76);
@@ -285,7 +256,7 @@ namespace SE_CWA2020ASN1_Prog
             // lbl_enterAction
             // 
             this.lbl_enterAction.AutoSize = true;
-            this.lbl_enterAction.Location = new System.Drawing.Point(265, 190);
+            this.lbl_enterAction.Location = new System.Drawing.Point(234, 190);
             this.lbl_enterAction.Name = "lbl_enterAction";
             this.lbl_enterAction.Size = new System.Drawing.Size(139, 20);
             this.lbl_enterAction.TabIndex = 71;
@@ -294,7 +265,7 @@ namespace SE_CWA2020ASN1_Prog
             // lbl_insertComments
             // 
             this.lbl_insertComments.AutoSize = true;
-            this.lbl_insertComments.Location = new System.Drawing.Point(28, 190);
+            this.lbl_insertComments.Location = new System.Drawing.Point(13, 190);
             this.lbl_insertComments.Name = "lbl_insertComments";
             this.lbl_insertComments.Size = new System.Drawing.Size(173, 20);
             this.lbl_insertComments.TabIndex = 70;
@@ -302,7 +273,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // rtx_comments
             // 
-            this.rtx_comments.Location = new System.Drawing.Point(32, 212);
+            this.rtx_comments.Location = new System.Drawing.Point(17, 212);
             this.rtx_comments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtx_comments.Name = "rtx_comments";
             this.rtx_comments.Size = new System.Drawing.Size(196, 76);
@@ -323,7 +294,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.lbl_error1.AutoSize = true;
             this.lbl_error1.ForeColor = System.Drawing.Color.Red;
-            this.lbl_error1.Location = new System.Drawing.Point(157, 104);
+            this.lbl_error1.Location = new System.Drawing.Point(143, 104);
             this.lbl_error1.Name = "lbl_error1";
             this.lbl_error1.Size = new System.Drawing.Size(15, 20);
             this.lbl_error1.TabIndex = 81;
@@ -334,26 +305,43 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.lbl_error2.AutoSize = true;
             this.lbl_error2.ForeColor = System.Drawing.Color.Red;
-            this.lbl_error2.Location = new System.Drawing.Point(157, 147);
+            this.lbl_error2.Location = new System.Drawing.Point(143, 147);
             this.lbl_error2.Name = "lbl_error2";
             this.lbl_error2.Size = new System.Drawing.Size(15, 20);
             this.lbl_error2.TabIndex = 82;
             this.lbl_error2.Text = "*";
             this.lbl_error2.Visible = false;
             // 
+            // lbl_totalInterventions
+            // 
+            this.lbl_totalInterventions.AutoSize = true;
+            this.lbl_totalInterventions.Location = new System.Drawing.Point(272, 23);
+            this.lbl_totalInterventions.Name = "lbl_totalInterventions";
+            this.lbl_totalInterventions.Size = new System.Drawing.Size(138, 20);
+            this.lbl_totalInterventions.TabIndex = 83;
+            this.lbl_totalInterventions.Text = "Total interventions";
+            // 
+            // rtx_displayTotalInterv
+            // 
+            this.rtx_displayTotalInterv.Location = new System.Drawing.Point(430, 23);
+            this.rtx_displayTotalInterv.Name = "rtx_displayTotalInterv";
+            this.rtx_displayTotalInterv.ReadOnly = true;
+            this.rtx_displayTotalInterv.Size = new System.Drawing.Size(26, 26);
+            this.rtx_displayTotalInterv.TabIndex = 84;
+            // 
             // InspectionSubmission2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 700);
+            this.ClientSize = new System.Drawing.Size(473, 700);
+            this.Controls.Add(this.rtx_displayTotalInterv);
+            this.Controls.Add(this.lbl_totalInterventions);
             this.Controls.Add(this.lbl_error2);
             this.Controls.Add(this.lbl_error1);
             this.Controls.Add(this.btn_saveIntervention);
             this.Controls.Add(this.btn_next);
             this.Controls.Add(this.btn_prev);
             this.Controls.Add(this.pic_viewer);
-            this.Controls.Add(this.vsc_actionTaken);
-            this.Controls.Add(this.vsc_comments);
             this.Controls.Add(this.btn_deletePic);
             this.Controls.Add(this.btn_takePic);
             this.Controls.Add(this.rtx_actionTaken);
@@ -373,11 +361,9 @@ namespace SE_CWA2020ASN1_Prog
             this.Controls.Add(this.btn_ExitNoSave);
             this.Controls.Add(this.btn_Submit);
             this.Controls.Add(this.rtb_InspectCommsSummary);
-            this.Controls.Add(this.pic_logo);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "InspectionSubmission2";
             this.Text = "Inspection Main";
-            ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_viewer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -385,7 +371,6 @@ namespace SE_CWA2020ASN1_Prog
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pic_logo;
         private System.Windows.Forms.RichTextBox rtb_InspectCommsSummary;
         private System.Windows.Forms.Button btn_Submit;
         private System.Windows.Forms.Button btn_ExitNoSave;
@@ -402,8 +387,6 @@ namespace SE_CWA2020ASN1_Prog
         private System.Windows.Forms.Button btn_next;
         private System.Windows.Forms.Button btn_prev;
         private System.Windows.Forms.PictureBox pic_viewer;
-        private System.Windows.Forms.VScrollBar vsc_actionTaken;
-        private System.Windows.Forms.VScrollBar vsc_comments;
         private System.Windows.Forms.Button btn_deletePic;
         private System.Windows.Forms.Button btn_takePic;
         private System.Windows.Forms.RichTextBox rtx_actionTaken;
@@ -413,5 +396,7 @@ namespace SE_CWA2020ASN1_Prog
         private System.Windows.Forms.Button btn_saveIntervention;
         private System.Windows.Forms.Label lbl_error1;
         private System.Windows.Forms.Label lbl_error2;
+        private System.Windows.Forms.Label lbl_totalInterventions;
+        private System.Windows.Forms.TextBox rtx_displayTotalInterv;
     }
 }
