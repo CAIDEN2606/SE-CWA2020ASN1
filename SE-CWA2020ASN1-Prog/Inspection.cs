@@ -6,37 +6,30 @@ using System.Threading.Tasks;
 
 namespace SE_CWA2020ASN1_Prog
 {
-    class Inspection
+    public class Inspection
     {
+        private List<WorkArea> m_workAreaList;
 
-        //used just to print inspections as requested by project requirements
-        private List<Inspection> inspection;
-        //private List<InspectionArea> m_inspectionArea;
+        public Inspection(string iName, DateTime date, string inspectorName, string jobType, string jobDescr,  string sName)
+        {
+            m_siteName = iName;
+            m_inspectionDate = date;
+            m_inspectorName = inspectorName;
+            m_jobType = jobType;
+            m_jobDescription = jobDescr;
+             m_supervisorName = sName;
+            m_workAreaList = new List<WorkArea>();
+        }
 
-        //public Inspection(string iName, string type, string jobDescr, DateTime date, string sName)
-        //{
-        //    m_siteName = iName;
-        //    m_type = type;
-        //    m_jobDescription = jobDescr;
-        //    m_inspectionDate = date;
-        //    m_supervisorName = sName;
-        //    m_inspectionArea = new List<InspectionArea>();
-
-        //}
-        ///// <summary>
-        ///// Used to add each inspectionArea to inspection list
-        ///// then send to external db before starting new work area
-        ///// </summary>
-        ///// <param name="ia"></param>
-        //public void addInspectionArea(InspectionArea ia)
-        //{
-        //    m_inspectionArea.Add(ia);
-        //}
+        public void addWorkArea(WorkArea waObj)
+        {
+            m_workAreaList.Add(waObj);
+        }
         private string m_siteName;
         public string Site_Name { get { return m_siteName; } set { m_siteName = value; } }
 
-        private string m_type;
-        public string Type { get { return m_type; } set { m_type = value; } }
+        private string m_jobType;
+        public string Type { get { return m_jobType; } set { m_jobType = value; } }
 
         private string m_jobDescription;
         public string Job_Description { get { return m_jobDescription; } set { m_jobDescription = value; } }
@@ -49,7 +42,14 @@ namespace SE_CWA2020ASN1_Prog
 
         private string m_supervisorName;
         public string Supervisor_Name { get { return m_supervisorName; } set { m_supervisorName = value; } }
+    
+        public string teststring()
+        {
+            return "Inspection --> Site: "+ m_siteName + ", date: " + m_inspectionDate + ", Inspected by: " + m_inspectorName;
+        }
 
+        
+        
     }
 
 }

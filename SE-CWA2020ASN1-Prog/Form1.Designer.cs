@@ -62,14 +62,10 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_actionComments
             // 
-            this.btn_actionComments.Location = new System.Drawing.Point(454, 455);
-            this.btn_actionComments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_actionComments.Location = new System.Drawing.Point(0, 0);
             this.btn_actionComments.Name = "btn_actionComments";
-            this.btn_actionComments.Size = new System.Drawing.Size(177, 71);
-            this.btn_actionComments.TabIndex = 2;
-            this.btn_actionComments.Text = "Action comments page(3rd)";
-            this.btn_actionComments.UseVisualStyleBackColor = true;
-            this.btn_actionComments.Click += new System.EventHandler(this.btn_actionComments_Click);
+            this.btn_actionComments.Size = new System.Drawing.Size(75, 23);
+            this.btn_actionComments.TabIndex = 6;
             // 
             // btn_exitSystem
             // 
@@ -117,7 +113,6 @@ namespace SE_CWA2020ASN1_Prog
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -62,6 +62,42 @@ namespace InspectionTesting
 
         }
 
+        /// <summary>
+        /// Prints the inspection list to console to confirm details entered
+        /// </summary>
+        //private void getInspectionTest()
+        //{
 
+        //    Console.WriteLine("Inspection details");
+        //    //printing in console
+        //    foreach (Inspection i in inspection)
+        //    {
+        //        //MessageBox.Show(i.tostring());
+        //        Console.WriteLine("Inspection name: " + i.Site_Name.ToString() + "," + i.Inspection_Date.ToString());
+        //    }
+
+        //}
+
+        /// <summary>
+        /// print intervention list contents to console
+        /// </summary>
+        //public void getInterventionTest()
+        //{
+        //    foreach (Intervention i in interv)
+        //    {
+        //        Console.WriteLine("Intervention = " + i.Heading_Name.ToString() + "," + "Subheading = " + i.Subheading_Name.ToString());
+        //    }
+        //}
+
+        ///// <summary>
+        ///// print inspectionArea objects to console
+        ///// </summary>
+        //public void getInspectionAreaTest()
+        //{
+        //    foreach (InspectionArea ia in inspArea)
+        //    {
+        //        Console.WriteLine("Inspection area = " + ia.Work_Area.ToString());
+        //    }
+        //}
     }
 }

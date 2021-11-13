@@ -1,27 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace SE_CWA2020ASN1_Prog
 {
-    class Intervention
+    public class Intervention
     {
-        //public Intervention(string hName, string subName, string type, string aComments,
-        //string iComments, string iPicture)
-        //{
-        //    m_headingName = hName;
-        //    m_subheadingName = subName;
-        //    m_interventionType = type;
-        //    m_actionComments = aComments;
-        //    m_inspectionComments = iComments;
-        //    m_inspectionPicture = iPicture;
+       public Intervention(string subName, string type, string aComments, string iComments)
+        {
+            m_subheadingName = subName;
+            m_interventionType = type;
+            m_actionComments = aComments;
+            m_inspectionComments = iComments;
+            //m_inspectionPicture = iPicture;
+        }
+        public void makeInterv(string subName, string type, string aComments, string iComments)
+        {
+             
 
-        //}
-        private string m_headingName;
-        public string Heading_Name { get { return m_headingName; } set { m_headingName = value; } }
-
+        }
         private string m_subheadingName;
         public string Subheading_Name { get { return m_subheadingName; } set { m_subheadingName = value; } }
 
@@ -34,11 +34,12 @@ namespace SE_CWA2020ASN1_Prog
         private string m_inspectionComments;
         public string Inspection_Comments { get { return m_inspectionComments; } set { m_inspectionComments = value; } }
 
-        private string m_inspectionPicture;
-        public string Inspection_Picture { get { return m_inspectionPicture; } set { m_inspectionPicture = value; } }
-
-
+        //private Image m_inspectionPicture;
+        //public Image Inspection_Picture { get { return m_inspectionPicture; } set { m_inspectionPicture = value; } }
+        public string testString()
+        {
+            return "Intervention --> subheading: " + m_subheadingName;
+        }
+        
     }
-
 }
-
