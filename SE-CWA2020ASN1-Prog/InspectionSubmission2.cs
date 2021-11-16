@@ -1,7 +1,9 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+
 using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
@@ -11,7 +13,7 @@ namespace SE_CWA2020ASN1_Prog
         private int numTotalInterv = 0;
         private WorkArea wa;
         
-        
+
         public InspectionSubmission2(Inspection insp)
         {
             InitializeComponent();
@@ -73,6 +75,10 @@ namespace SE_CWA2020ASN1_Prog
         private void btn_takePic_Click(object sender, EventArgs e)
         {
             // second redisign is okay!
+            MessageBox.Show("in developement");
+            ImageCapture imc = new ImageCapture();
+            imc.ShowDialog();
+            this.Show();
         }
 
         
@@ -173,11 +179,7 @@ namespace SE_CWA2020ASN1_Prog
 
         private void lst_pics_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //using (Bitmap tmpBitmap = new Bitmap(lst_pics.SelectedItem.ToString()))
-            //{
-            //    pic_intervPics.Image = new Bitmap(tmpBitmap);
-
-            //}
+            
             try
             {
                 string imageName = "";
