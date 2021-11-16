@@ -100,23 +100,36 @@ namespace SE_CWA2020ASN1_Prog
             IMethods im = new Methods();
             if (im.isEmptyTextFieldForm2(workArea,intDesc, intervType) == false)
             {
-                //create new intervention obj, 
-                Intervention interv = new Intervention(intDesc, intervType, actComms, inspectComms,pics);
-                                
-                //create new workarea 
-                wa = new WorkArea(workArea, inspectCommsSummary);
-                //call addinterv to add intervention to workarea
-                wa.addInterv(interv);
+                try
+                {
+                    //create new intervention obj, 
+                    Intervention interv = new Intervention(intDesc, intervType, actComms, inspectComms, pics);
 
-                //add an interv to total interventions 
-                numTotalInterv++;
-                rtx_displayTotalInterv.Text = numTotalInterv.ToString();
+                    //create new workarea 
+                    wa = new WorkArea(workArea, inspectCommsSummary);
+                    //call addinterv to add intervention to workarea
+                    wa.addInterv(interv);
 
-                lst_interventions.Items.Add(im.displayInterventions(interv));
+                    //add an interv to total interventions 
+                    numTotalInterv++;
+                    rtx_displayTotalInterv.Text = numTotalInterv.ToString();
 
-                //functional tests
-                Console.WriteLine(interv.testString()); //print subheading
-                Console.WriteLine(wa.testString()); //print workarea
+                    lst_interventions.Items.Add(im.displayInterventions(interv));
+
+                    //functional tests
+                    Console.WriteLine(interv.testString()); //print subheading
+                    Console.WriteLine(wa.testString()); //print workarea
+                }
+                catch (NullReferenceException ex)
+                {
+                    Console.WriteLine(ex.Message+" The list is empty,please check all fields are filled.");
+                    
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("An unexpected error occured: "+ex.Message);
+                }
+                
                 //clear fields
                 cmb_Interventions.Text="";
                 cmb_TypesOfIntervention.Text = "";
@@ -124,8 +137,7 @@ namespace SE_CWA2020ASN1_Prog
                 rtx_comments.Text = "";
                
             }
-            else 
-                return;
+            
         }
 
         private void btn_ExitNoSave_Click(object sender, EventArgs e)
@@ -143,10 +155,16 @@ namespace SE_CWA2020ASN1_Prog
             string workArea = rtb_WorkArea.Text;
             string inspectCommsSummary = rtb_InspectCommsSummary.Text;
             //create new workarea 
-            wa = new WorkArea(workArea, inspectCommsSummary);
-                        
-            Console.WriteLine(wa.testString());
-            //send
+            try
+            {
+                wa = new WorkArea(workArea, inspectCommsSummary);
+
+                Console.WriteLine(wa.testString());
+                //send
+            } catch(NullReferenceException ex)
+            {
+                Console.WriteLine(ex.Message + " The list is empty,please check all fields are filled.");
+            }
 
             this.Close();
 
