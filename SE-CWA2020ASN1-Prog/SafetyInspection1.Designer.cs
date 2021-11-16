@@ -41,7 +41,6 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_exit = new System.Windows.Forms.Button();
             this.cmb_EnterSite = new System.Windows.Forms.ComboBox();
             this.txt_inspectorName = new System.Windows.Forms.TextBox();
-            this.txt_workArea = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txt_jobDescription = new System.Windows.Forms.TextBox();
             this.cmb_EnterType = new System.Windows.Forms.ComboBox();
@@ -98,7 +97,7 @@ namespace SE_CWA2020ASN1_Prog
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(40, 378);
+            this.label6.Location = new System.Drawing.Point(42, 429);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(154, 20);
             this.label6.TabIndex = 5;
@@ -107,7 +106,7 @@ namespace SE_CWA2020ASN1_Prog
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(40, 433);
+            this.label7.Location = new System.Drawing.Point(42, 375);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 20);
             this.label7.TabIndex = 6;
@@ -124,10 +123,10 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_Enter
             // 
-            this.btn_Enter.Location = new System.Drawing.Point(83, 590);
+            this.btn_Enter.Location = new System.Drawing.Point(83, 577);
             this.btn_Enter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Enter.Name = "btn_Enter";
-            this.btn_Enter.Size = new System.Drawing.Size(163, 29);
+            this.btn_Enter.Size = new System.Drawing.Size(163, 42);
             this.btn_Enter.TabIndex = 8;
             this.btn_Enter.Text = "Add intervention";
             this.btn_Enter.UseVisualStyleBackColor = true;
@@ -135,10 +134,10 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(332, 590);
+            this.btn_exit.Location = new System.Drawing.Point(332, 577);
             this.btn_exit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(171, 29);
+            this.btn_exit.Size = new System.Drawing.Size(171, 42);
             this.btn_exit.TabIndex = 9;
             this.btn_exit.Text = "Exit";
             this.btn_exit.UseVisualStyleBackColor = true;
@@ -161,17 +160,6 @@ namespace SE_CWA2020ASN1_Prog
             this.txt_inspectorName.Name = "txt_inspectorName";
             this.txt_inspectorName.Size = new System.Drawing.Size(222, 26);
             this.txt_inspectorName.TabIndex = 11;
-            this.txt_inspectorName.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
-            // 
-            // txt_workArea
-            // 
-            this.txt_workArea.Location = new System.Drawing.Point(268, 97);
-            this.txt_workArea.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txt_workArea.MaxLength = 20;
-            this.txt_workArea.Name = "txt_workArea";
-            this.txt_workArea.Size = new System.Drawing.Size(222, 26);
-            this.txt_workArea.TabIndex = 12;
-            this.txt_workArea.TextChanged += new System.EventHandler(this.txt_workArea_TextChanged);
             // 
             // dateTimePicker1
             // 
@@ -183,18 +171,17 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // txt_jobDescription
             // 
-            this.txt_jobDescription.Location = new System.Drawing.Point(205, 371);
+            this.txt_jobDescription.Location = new System.Drawing.Point(205, 423);
             this.txt_jobDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_jobDescription.MaxLength = 20;
             this.txt_jobDescription.Name = "txt_jobDescription";
             this.txt_jobDescription.Size = new System.Drawing.Size(222, 26);
             this.txt_jobDescription.TabIndex = 14;
-            this.txt_jobDescription.TextChanged += new System.EventHandler(this.txt_jobDescription_TextChanged);
             // 
             // cmb_EnterType
             // 
             this.cmb_EnterType.FormattingEnabled = true;
-            this.cmb_EnterType.Location = new System.Drawing.Point(205, 425);
+            this.cmb_EnterType.Location = new System.Drawing.Point(205, 375);
             this.cmb_EnterType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmb_EnterType.Name = "cmb_EnterType";
             this.cmb_EnterType.Size = new System.Drawing.Size(222, 28);
@@ -202,12 +189,11 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // txt_supervisor
             // 
-            this.txt_supervisor.Location = new System.Drawing.Point(205, 478);
+            this.txt_supervisor.Location = new System.Drawing.Point(205, 472);
             this.txt_supervisor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_supervisor.Name = "txt_supervisor";
             this.txt_supervisor.Size = new System.Drawing.Size(222, 26);
             this.txt_supervisor.TabIndex = 16;
-            this.txt_supervisor.TextChanged += new System.EventHandler(this.txt_supervisor_TextChanged);
             // 
             // pic_logo
             // 
@@ -243,7 +229,6 @@ namespace SE_CWA2020ASN1_Prog
             this.Controls.Add(this.cmb_EnterType);
             this.Controls.Add(this.txt_jobDescription);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.txt_workArea);
             this.Controls.Add(this.txt_inspectorName);
             this.Controls.Add(this.cmb_EnterSite);
             this.Controls.Add(this.btn_exit);
@@ -259,7 +244,6 @@ namespace SE_CWA2020ASN1_Prog
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SafetyInspection1";
             this.Text = "SafetyInspection";
-            this.Load += new System.EventHandler(this.SafetyInspection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -280,7 +264,6 @@ namespace SE_CWA2020ASN1_Prog
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.ComboBox cmb_EnterSite;
         private System.Windows.Forms.TextBox txt_inspectorName;
-        private System.Windows.Forms.TextBox txt_workArea;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txt_jobDescription;
         private System.Windows.Forms.ComboBox cmb_EnterType;

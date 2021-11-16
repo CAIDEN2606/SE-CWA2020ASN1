@@ -35,7 +35,6 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_actionComments = new System.Windows.Forms.Button();
             this.btn_exitSystem = new System.Windows.Forms.Button();
             this.btn_goSafetyInspection = new System.Windows.Forms.Button();
-            this.btn_InspectionSubmission = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Test
@@ -89,22 +88,11 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_goSafetyInspection.UseVisualStyleBackColor = true;
             this.btn_goSafetyInspection.Click += new System.EventHandler(this.btn_goSafetyInspection_Click);
             // 
-            // btn_InspectionSubmission
-            // 
-            this.btn_InspectionSubmission.Location = new System.Drawing.Point(279, 456);
-            this.btn_InspectionSubmission.Name = "btn_InspectionSubmission";
-            this.btn_InspectionSubmission.Size = new System.Drawing.Size(157, 70);
-            this.btn_InspectionSubmission.TabIndex = 5;
-            this.btn_InspectionSubmission.Text = "Inspection submission (2nd)";
-            this.btn_InspectionSubmission.UseVisualStyleBackColor = true;
-            this.btn_InspectionSubmission.Click += new System.EventHandler(this.btn_InspectionSubmission_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 562);
-            this.Controls.Add(this.btn_InspectionSubmission);
             this.Controls.Add(this.btn_goSafetyInspection);
             this.Controls.Add(this.btn_exitSystem);
             this.Controls.Add(this.btn_actionComments);
@@ -125,7 +113,6 @@ namespace SE_CWA2020ASN1_Prog
         private System.Windows.Forms.Button btn_actionComments;
         private System.Windows.Forms.Button btn_exitSystem;
         private System.Windows.Forms.Button btn_goSafetyInspection;
-        private System.Windows.Forms.Button btn_InspectionSubmission;
     }
 }
 

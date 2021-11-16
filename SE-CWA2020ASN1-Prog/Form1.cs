@@ -6,7 +6,7 @@ namespace SE_CWA2020ASN1_Prog
 {
     public partial class Form1 : Form
     {
-        private Inspection insp;
+        
 
         public Form1()
         {
@@ -29,15 +29,7 @@ namespace SE_CWA2020ASN1_Prog
             frmSafetyInspection.ShowDialog();
             this.Show();
         }
-        //2nd form
-        private void btn_InspectionSubmission_Click(object sender, EventArgs e)
-        {
-            
-            InspectionSubmission2 frmInSub = new InspectionSubmission2(insp);
-            this.Hide();
-            frmInSub.ShowDialog();
-            this.Show();
-        }
+        
 
         
     }
