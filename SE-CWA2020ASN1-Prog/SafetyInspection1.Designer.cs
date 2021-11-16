@@ -197,6 +197,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // pic_logo
             // 
+            this.pic_logo.Image = global::SE_CWA2020ASN1_Prog.Properties.Resources.musk_logo;
             this.pic_logo.ImageLocation = "main.musk-logo.jpg";
             this.pic_logo.InitialImage = global::SE_CWA2020ASN1_Prog.Properties.Resources.musk_logo;
             this.pic_logo.Location = new System.Drawing.Point(33, 32);

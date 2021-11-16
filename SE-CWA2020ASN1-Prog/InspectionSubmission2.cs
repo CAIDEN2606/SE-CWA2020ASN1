@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
@@ -116,7 +117,7 @@ namespace SE_CWA2020ASN1_Prog
 
                     lst_interventions.Items.Add(im.displayInterventions(interv));
 
-                    //functional tests
+                    //functional tests 
                     Console.WriteLine(interv.testString()); //print subheading
                     Console.WriteLine(wa.testString()); //print workarea
                 }
@@ -158,7 +159,7 @@ namespace SE_CWA2020ASN1_Prog
             try
             {
                 wa = new WorkArea(workArea, inspectCommsSummary);
-
+                //functional test
                 Console.WriteLine(wa.testString());
                 //send
             } catch(NullReferenceException ex)
@@ -170,7 +171,44 @@ namespace SE_CWA2020ASN1_Prog
 
         }
 
-        
+        private void lst_pics_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //using (Bitmap tmpBitmap = new Bitmap(lst_pics.SelectedItem.ToString()))
+            //{
+            //    pic_intervPics.Image = new Bitmap(tmpBitmap);
+
+            //}
+            try
+            {
+                string imageName = "";
+
+                if (lst_pics.Items[lst_pics.SelectedIndex].ToString() == "img1")
+                {
+                    imageName = "img1.jpg";
+                }
+                else if (lst_pics.Items[lst_pics.SelectedIndex].ToString() == "img2")
+                {
+                    imageName = "img2.jpg";
+                }
+                else if (lst_pics.Items[lst_pics.SelectedIndex].ToString() == "img3")
+                {
+                    imageName = "img3.jpg";
+                }
+
+                //imageString = lst_pics.SelectedItems.ToString();
+                //save images to bin/debug
+                Image image = Image.FromFile(imageName);
+                //if selected from list display in pic viewer
+                pic_intervPics.Image = image;
+                pic_intervPics.SizeMode = PictureBoxSizeMode.StretchImage;
+            }catch(FileNotFoundException ex)
+            {
+                Console.WriteLine("Missing file: " + ex.Message);
+            }
+
+        }
+
+
 
         /**********************************************
 *
