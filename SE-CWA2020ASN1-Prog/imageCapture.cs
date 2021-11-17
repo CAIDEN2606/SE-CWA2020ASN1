@@ -46,15 +46,16 @@ namespace SE_CWA2020ASN1_Prog
                         capture.Read(frame);
                         image = BitmapConverter.ToBitmap(frame);
                         //System.ArgumentException' occurred in System.Drawing.dll
-                    
-                    if (pic_captureImage.Image != null)
-                    {
-                        pic_captureImage.Image.Dispose();
-                    }
-                    //System.ArgumentException: 'Parameter is not valid
-                    pic_captureImage.Image = image;
-                    }
-                    catch (ArgumentException ex)
+
+                        if (pic_captureImage.Image != null)
+                        {
+                            pic_captureImage.Image.Dispose();
+                        }
+                        
+                        //System.ArgumentException: 'Parameter is not valid
+                        pic_captureImage.Image = image;
+                        
+                    }catch (ArgumentException ex)
                     {
                         Console.WriteLine("Error: " + ex.Message);
                     }
@@ -96,6 +97,7 @@ namespace SE_CWA2020ASN1_Prog
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -115,14 +117,31 @@ namespace SE_CWA2020ASN1_Prog
         }
         public void saveImage()
         {
-            Bitmap snapshot = new Bitmap(pic_captureImage.Image);
+            
             //C:\Users\labuj\Documents\GitHub\SE-CWA2020ASN1\SE-CWA2020ASN1-Prog\bin\Debug
             try
             {
+                Bitmap snapshot = new Bitmap(pic_captureImage.Image);
                 //NEED TO CHECK IF EXISTS IMG1,2,3 
-                snapshot.Save(string.Format(Application.StartupPath + @"\\img1.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
-                //System.Runtime.InteropServices.ExternalException: 'A generic error occurred in GDI+.'
-                
+                if (Application.StartupPath.Contains("img1.jpg") == false)
+                {
+                    snapshot.Save(string.Format(Application.StartupPath + @"\\img1.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
+                    //System.Runtime.InteropServices.ExternalException: 'A generic error occurred in GDI+.'
+                }
+                else if (Application.StartupPath.Contains("img2.jpg") == false)
+                {
+                    snapshot.Save(string.Format(Application.StartupPath + @"\\img2.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
+                    //System.Runtime.InteropServices.ExternalException: 'A generic error occurred in GDI+.'
+                }
+                else if (Application.StartupPath.Contains("img3.jpg") == false)
+                {
+                    snapshot.Save(string.Format(Application.StartupPath + @"\\img3.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
+                    //System.Runtime.InteropServices.ExternalException: 'A generic error occurred in GDI+.'
+                }
+                else
+                {
+                    MessageBox.Show("Cannot take any more pictures, max has been reached.");
+                }
             }
             catch (Exception ex)
             {

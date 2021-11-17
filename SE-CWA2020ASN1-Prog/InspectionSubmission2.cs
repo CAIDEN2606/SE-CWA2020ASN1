@@ -210,6 +210,22 @@ namespace SE_CWA2020ASN1_Prog
 
         }
 
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string fileImage = "";
+                fileImage = lst_pics.SelectedItem.ToString() + ".jpg";
+                File.Delete(Application.StartupPath + @fileImage.ToString());
+                Console.WriteLine("deleted file I think");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("error trying to delete file: " + ex.Message);
+            }
+            Console.WriteLine("delete finished");
+        }
+
 
 
         /**********************************************
@@ -233,3 +249,9 @@ testDialog.Dispose();
 */
     }
 }
+
+//An error occured when trying to save image: A generic error occurred in GDI+.
+//Exception thrown: 'System.Threading.ThreadAbortException' in OpenCvSharp.dll
+
+
+

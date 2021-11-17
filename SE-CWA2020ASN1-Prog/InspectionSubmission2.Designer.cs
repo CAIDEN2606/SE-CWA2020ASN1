@@ -53,6 +53,7 @@ namespace SE_CWA2020ASN1_Prog
             this.lbl_listInterventions = new System.Windows.Forms.Label();
             this.lbl_listOfPics = new System.Windows.Forms.Label();
             this.pic_intervPics = new System.Windows.Forms.PictureBox();
+            this.btn_delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_intervPics)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,10 +170,10 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_takePic
             // 
-            this.btn_takePic.Location = new System.Drawing.Point(35, 435);
+            this.btn_takePic.Location = new System.Drawing.Point(17, 420);
             this.btn_takePic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_takePic.Name = "btn_takePic";
-            this.btn_takePic.Size = new System.Drawing.Size(151, 35);
+            this.btn_takePic.Size = new System.Drawing.Size(196, 39);
             this.btn_takePic.TabIndex = 73;
             this.btn_takePic.Text = "Take a picture";
             this.btn_takePic.UseVisualStyleBackColor = true;
@@ -218,7 +219,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_saveIntervention
             // 
-            this.btn_saveIntervention.Location = new System.Drawing.Point(113, 492);
+            this.btn_saveIntervention.Location = new System.Drawing.Point(108, 481);
             this.btn_saveIntervention.Name = "btn_saveIntervention";
             this.btn_saveIntervention.Size = new System.Drawing.Size(237, 43);
             this.btn_saveIntervention.TabIndex = 80;
@@ -237,6 +238,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // rtx_displayTotalInterv
             // 
+            this.rtx_displayTotalInterv.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rtx_displayTotalInterv.Location = new System.Drawing.Point(413, 23);
             this.rtx_displayTotalInterv.Name = "rtx_displayTotalInterv";
             this.rtx_displayTotalInterv.ReadOnly = true;
@@ -253,7 +255,6 @@ namespace SE_CWA2020ASN1_Prog
             "img3"});
             this.lst_pics.Location = new System.Drawing.Point(17, 328);
             this.lst_pics.Name = "lst_pics";
-            this.lst_pics.ScrollAlwaysVisible = true;
             this.lst_pics.Size = new System.Drawing.Size(115, 84);
             this.lst_pics.Sorted = true;
             this.lst_pics.TabIndex = 85;
@@ -272,7 +273,7 @@ namespace SE_CWA2020ASN1_Prog
             // lbl_listInterventions
             // 
             this.lbl_listInterventions.AutoSize = true;
-            this.lbl_listInterventions.Location = new System.Drawing.Point(62, 541);
+            this.lbl_listInterventions.Location = new System.Drawing.Point(62, 569);
             this.lbl_listInterventions.Name = "lbl_listInterventions";
             this.lbl_listInterventions.Size = new System.Drawing.Size(146, 20);
             this.lbl_listInterventions.TabIndex = 87;
@@ -298,12 +299,23 @@ namespace SE_CWA2020ASN1_Prog
             this.pic_intervPics.TabIndex = 89;
             this.pic_intervPics.TabStop = false;
             // 
+            // btn_delete
+            // 
+            this.btn_delete.Location = new System.Drawing.Point(142, 328);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(71, 84);
+            this.btn_delete.TabIndex = 90;
+            this.btn_delete.Text = "Delete a picture";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
             // InspectionSubmission2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(473, 801);
+            this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.pic_intervPics);
             this.Controls.Add(this.lbl_listOfPics);
             this.Controls.Add(this.lbl_listInterventions);
@@ -362,5 +374,6 @@ namespace SE_CWA2020ASN1_Prog
         private System.Windows.Forms.Label lbl_listInterventions;
         private System.Windows.Forms.Label lbl_listOfPics;
         private System.Windows.Forms.PictureBox pic_intervPics;
+        private System.Windows.Forms.Button btn_delete;
     }
 }

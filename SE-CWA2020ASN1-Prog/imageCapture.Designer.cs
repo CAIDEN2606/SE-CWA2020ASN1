@@ -60,7 +60,7 @@ namespace SE_CWA2020ASN1_Prog
             this.pic_captureImage.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pic_captureImage.Location = new System.Drawing.Point(12, 12);
             this.pic_captureImage.Name = "pic_captureImage";
-            this.pic_captureImage.Size = new System.Drawing.Size(568, 426);
+            this.pic_captureImage.Size = new System.Drawing.Size(966, 426);
             this.pic_captureImage.TabIndex = 0;
             this.pic_captureImage.TabStop = false;
             // 
@@ -68,7 +68,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 526);
+            this.ClientSize = new System.Drawing.Size(987, 526);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.btn_start);
             this.Controls.Add(this.pic_captureImage);
