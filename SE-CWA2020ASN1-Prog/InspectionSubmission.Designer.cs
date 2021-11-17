@@ -59,6 +59,7 @@ namespace SE_CWA2020ASN1_Prog
             this.lbl_Work_Area = new System.Windows.Forms.Label();
             this.rtb_Total = new System.Windows.Forms.RichTextBox();
             this.lbl_Total = new System.Windows.Forms.Label();
+            this.btn_Comments = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +97,7 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_Submit.Name = "btn_Submit";
             this.btn_Submit.Size = new System.Drawing.Size(163, 42);
             this.btn_Submit.TabIndex = 40;
-            this.btn_Submit.Text = "Submit";
+            this.btn_Submit.Text = "Submit All";
             this.btn_Submit.UseVisualStyleBackColor = true;
             // 
             // btn_Edit
@@ -137,7 +138,7 @@ namespace SE_CWA2020ASN1_Prog
             "3. Certification",
             "4. Confined Space Work",
             "5. Electrical Work"});
-            this.cmb_WorkingStandards.Location = new System.Drawing.Point(329, 204);
+            this.cmb_WorkingStandards.Location = new System.Drawing.Point(309, 185);
             this.cmb_WorkingStandards.Name = "cmb_WorkingStandards";
             this.cmb_WorkingStandards.Size = new System.Drawing.Size(227, 24);
             this.cmb_WorkingStandards.TabIndex = 44;
@@ -146,7 +147,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.lbl_WorkingStandards.AutoSize = true;
             this.lbl_WorkingStandards.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_WorkingStandards.Location = new System.Drawing.Point(171, 204);
+            this.lbl_WorkingStandards.Location = new System.Drawing.Point(151, 185);
             this.lbl_WorkingStandards.Name = "lbl_WorkingStandards";
             this.lbl_WorkingStandards.Size = new System.Drawing.Size(151, 20);
             this.lbl_WorkingStandards.TabIndex = 45;
@@ -156,7 +157,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.lbl_Quality.AutoSize = true;
             this.lbl_Quality.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Quality.Location = new System.Drawing.Point(262, 240);
+            this.lbl_Quality.Location = new System.Drawing.Point(242, 221);
             this.lbl_Quality.Name = "lbl_Quality";
             this.lbl_Quality.Size = new System.Drawing.Size(61, 20);
             this.lbl_Quality.TabIndex = 46;
@@ -169,7 +170,7 @@ namespace SE_CWA2020ASN1_Prog
             "6. Site Set-Up & Appearance, Signage",
             "7. Paperwork",
             "8. Certification"});
-            this.cmb_Quality.Location = new System.Drawing.Point(329, 240);
+            this.cmb_Quality.Location = new System.Drawing.Point(309, 221);
             this.cmb_Quality.Name = "cmb_Quality";
             this.cmb_Quality.Size = new System.Drawing.Size(227, 24);
             this.cmb_Quality.TabIndex = 47;
@@ -178,7 +179,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.lbl_Site_Rules.AutoSize = true;
             this.lbl_Site_Rules.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Site_Rules.Location = new System.Drawing.Point(237, 274);
+            this.lbl_Site_Rules.Location = new System.Drawing.Point(217, 255);
             this.lbl_Site_Rules.Name = "lbl_Site_Rules";
             this.lbl_Site_Rules.Size = new System.Drawing.Size(86, 20);
             this.lbl_Site_Rules.TabIndex = 48;
@@ -192,7 +193,7 @@ namespace SE_CWA2020ASN1_Prog
             "10. Isolation and Lock Offs",
             "11. Fire Exits and Escape Routes",
             "12. Awareness"});
-            this.cmb_Site_Rules.Location = new System.Drawing.Point(329, 274);
+            this.cmb_Site_Rules.Location = new System.Drawing.Point(309, 255);
             this.cmb_Site_Rules.Name = "cmb_Site_Rules";
             this.cmb_Site_Rules.Size = new System.Drawing.Size(227, 24);
             this.cmb_Site_Rules.TabIndex = 49;
@@ -201,7 +202,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.lbl_Environmental.AutoSize = true;
             this.lbl_Environmental.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Environmental.Location = new System.Drawing.Point(209, 309);
+            this.lbl_Environmental.Location = new System.Drawing.Point(189, 290);
             this.lbl_Environmental.Name = "lbl_Environmental";
             this.lbl_Environmental.Size = new System.Drawing.Size(115, 20);
             this.lbl_Environmental.TabIndex = 50;
@@ -214,7 +215,7 @@ namespace SE_CWA2020ASN1_Prog
             "13. Waste Management",
             "14. Product Contamination",
             "15. COSHH & Asbestos"});
-            this.cmb_Environmental.Location = new System.Drawing.Point(329, 309);
+            this.cmb_Environmental.Location = new System.Drawing.Point(309, 290);
             this.cmb_Environmental.Name = "cmb_Environmental";
             this.cmb_Environmental.Size = new System.Drawing.Size(227, 24);
             this.cmb_Environmental.TabIndex = 51;
@@ -223,7 +224,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.lbl_Protection_Of_Individuals.AutoSize = true;
             this.lbl_Protection_Of_Individuals.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Protection_Of_Individuals.Location = new System.Drawing.Point(135, 344);
+            this.lbl_Protection_Of_Individuals.Location = new System.Drawing.Point(115, 325);
             this.lbl_Protection_Of_Individuals.Name = "lbl_Protection_Of_Individuals";
             this.lbl_Protection_Of_Individuals.Size = new System.Drawing.Size(191, 20);
             this.lbl_Protection_Of_Individuals.TabIndex = 52;
@@ -236,7 +237,7 @@ namespace SE_CWA2020ASN1_Prog
             "16. PPE",
             "17. Manual Handling",
             "18. Other Contractors"});
-            this.cmb_Protection_Of_Individuals.Location = new System.Drawing.Point(329, 344);
+            this.cmb_Protection_Of_Individuals.Location = new System.Drawing.Point(309, 325);
             this.cmb_Protection_Of_Individuals.Name = "cmb_Protection_Of_Individuals";
             this.cmb_Protection_Of_Individuals.Size = new System.Drawing.Size(227, 24);
             this.cmb_Protection_Of_Individuals.TabIndex = 53;
@@ -245,7 +246,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.lbl_Tools_Cables_And_Other.AutoSize = true;
             this.lbl_Tools_Cables_And_Other.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Tools_Cables_And_Other.Location = new System.Drawing.Point(50, 380);
+            this.lbl_Tools_Cables_And_Other.Location = new System.Drawing.Point(30, 361);
             this.lbl_Tools_Cables_And_Other.Name = "lbl_Tools_Cables_And_Other";
             this.lbl_Tools_Cables_And_Other.Size = new System.Drawing.Size(276, 20);
             this.lbl_Tools_Cables_And_Other.TabIndex = 54;
@@ -258,7 +259,7 @@ namespace SE_CWA2020ASN1_Prog
             "19. Power Tools, Cables & Other Equipment",
             "20. Voltage Detector Checked",
             "21. Tools Used Fit For Purpose"});
-            this.cmb_Tools_Cables_And_Other.Location = new System.Drawing.Point(329, 380);
+            this.cmb_Tools_Cables_And_Other.Location = new System.Drawing.Point(309, 361);
             this.cmb_Tools_Cables_And_Other.Name = "cmb_Tools_Cables_And_Other";
             this.cmb_Tools_Cables_And_Other.Size = new System.Drawing.Size(227, 24);
             this.cmb_Tools_Cables_And_Other.TabIndex = 55;
@@ -267,7 +268,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.lbl_Miscellaneous.AutoSize = true;
             this.lbl_Miscellaneous.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Miscellaneous.Location = new System.Drawing.Point(211, 415);
+            this.lbl_Miscellaneous.Location = new System.Drawing.Point(191, 396);
             this.lbl_Miscellaneous.Name = "lbl_Miscellaneous";
             this.lbl_Miscellaneous.Size = new System.Drawing.Size(116, 20);
             this.lbl_Miscellaneous.TabIndex = 56;
@@ -280,7 +281,7 @@ namespace SE_CWA2020ASN1_Prog
             "22. Company Vehicles",
             "23. Fire Precautions",
             "24. Workshop Conditions"});
-            this.cmb_Miscellaneous.Location = new System.Drawing.Point(329, 415);
+            this.cmb_Miscellaneous.Location = new System.Drawing.Point(309, 396);
             this.cmb_Miscellaneous.Name = "cmb_Miscellaneous";
             this.cmb_Miscellaneous.Size = new System.Drawing.Size(227, 24);
             this.cmb_Miscellaneous.TabIndex = 57;
@@ -289,7 +290,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.lbl_High_Risk.AutoSize = true;
             this.lbl_High_Risk.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_High_Risk.Location = new System.Drawing.Point(246, 449);
+            this.lbl_High_Risk.Location = new System.Drawing.Point(226, 430);
             this.lbl_High_Risk.Name = "lbl_High_Risk";
             this.lbl_High_Risk.Size = new System.Drawing.Size(82, 20);
             this.lbl_High_Risk.TabIndex = 58;
@@ -300,7 +301,7 @@ namespace SE_CWA2020ASN1_Prog
             this.cmb_High_Risk.FormattingEnabled = true;
             this.cmb_High_Risk.Items.AddRange(new object[] {
             "Need to figure out what counts as high risk"});
-            this.cmb_High_Risk.Location = new System.Drawing.Point(329, 449);
+            this.cmb_High_Risk.Location = new System.Drawing.Point(309, 430);
             this.cmb_High_Risk.Name = "cmb_High_Risk";
             this.cmb_High_Risk.Size = new System.Drawing.Size(227, 24);
             this.cmb_High_Risk.TabIndex = 59;
@@ -371,11 +372,21 @@ namespace SE_CWA2020ASN1_Prog
             this.lbl_Total.TabIndex = 66;
             this.lbl_Total.Text = "Overall Total";
             // 
+            // btn_Comments
+            // 
+            this.btn_Comments.Location = new System.Drawing.Point(454, 498);
+            this.btn_Comments.Name = "btn_Comments";
+            this.btn_Comments.Size = new System.Drawing.Size(163, 42);
+            this.btn_Comments.TabIndex = 67;
+            this.btn_Comments.Text = "Go To Comments";
+            this.btn_Comments.UseVisualStyleBackColor = true;
+            // 
             // InspectionSubmission
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 893);
+            this.Controls.Add(this.btn_Comments);
             this.Controls.Add(this.lbl_Total);
             this.Controls.Add(this.rtb_Total);
             this.Controls.Add(this.lbl_Work_Area);
@@ -446,5 +457,6 @@ namespace SE_CWA2020ASN1_Prog
         private System.Windows.Forms.Label lbl_Work_Area;
         private System.Windows.Forms.RichTextBox rtb_Total;
         private System.Windows.Forms.Label lbl_Total;
+        private System.Windows.Forms.Button btn_Comments;
     }
 }
