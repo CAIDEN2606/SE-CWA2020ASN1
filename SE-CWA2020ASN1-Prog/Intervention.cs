@@ -9,13 +9,13 @@ namespace SE_CWA2020ASN1_Prog
 {
     public class Intervention
     {
-       public Intervention(string subName, string type, string aComments, string iComments)
+       public Intervention(string subName, string type, string aComments, string iComments,string iPicture)
         {
             m_subheadingName = subName;
             m_interventionType = type;
             m_actionComments = aComments;
             m_inspectionComments = iComments;
-            //m_inspectionPicture = iPicture;
+            m_inspectionPicture = iPicture;
         }
         public void makeInterv(string subName, string type, string aComments, string iComments)
         {
@@ -34,8 +34,8 @@ namespace SE_CWA2020ASN1_Prog
         private string m_inspectionComments;
         public string Inspection_Comments { get { return m_inspectionComments; } set { m_inspectionComments = value; } }
 
-        //private Image m_inspectionPicture;
-        //public Image Inspection_Picture { get { return m_inspectionPicture; } set { m_inspectionPicture = value; } }
+        private string m_inspectionPicture;
+        public string Inspection_Picture { get { return m_inspectionPicture; } set { m_inspectionPicture = value; } }
         public string testString()
         {
             return "Intervention --> subheading: " + m_subheadingName;

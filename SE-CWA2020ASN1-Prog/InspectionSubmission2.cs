@@ -1,29 +1,33 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
+
 using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
 {
     public partial class InspectionSubmission2 : Form
     {
-       private int numTotalInterv = 0;
+        private int numTotalInterv = 0;
+        private WorkArea wa;
         
+
         public InspectionSubmission2(Inspection insp)
         {
             InitializeComponent();
             popInterventionCombo();
             //display total interventions
             rtx_displayTotalInterv.Text = numTotalInterv.ToString();
-
+            Console.WriteLine("print insp teststring"+ insp.teststring());
         }
-        
 
         public string m_subheadings {get { return cmb_Interventions.Text; }set { cmb_Interventions.Text = value; }}
         public string m_intervType {get { return cmb_TypesOfIntervention.Text; }set { cmb_TypesOfIntervention.Text = value; }}
         public string m_actionComments {get {return rtx_actionTaken.Text; }set { rtx_actionTaken.Text=value; }}
         public string m_inspectionComments {get { return rtb_InspectCommsSummary.Text; }set { rtb_InspectCommsSummary.Text = value; }}
-        public Image m_picture {get { return pic_viewer.Image; }set { pic_viewer.Image = value; }}
+        public string m_picture {get { return lst_pics.Text; }set { lst_pics.Text = value; }}
         private void popInterventionCombo()
         {
             cmb_Interventions.Items.Add("1.Work at height");
@@ -71,76 +75,76 @@ namespace SE_CWA2020ASN1_Prog
         private void btn_takePic_Click(object sender, EventArgs e)
         {
             // second redisign is okay!
+            MessageBox.Show("in developement");
+            ImageCapture imc = new ImageCapture();
+            imc.ShowDialog();
+            this.Show();
         }
 
-        private void btn_deletePic_Click(object sender, EventArgs e)
-        {
-            // second redisign is okay!
-        }
+        
 
-        private void btn_prev_Click(object sender, EventArgs e)
-        {
-            // second redisign is okay!
-        }
-
-        private void btn_next_Click(object sender, EventArgs e)
-        {
-            // second redisign is okay!
-        }
-
+        
+        
         private void btn_saveIntervention_Click(object sender, EventArgs e)
         {
-            
             //makes up an intervention
-            string intDesc ="";
-            string intervType="";
-            string actComms = "";
-            string inspectComms = "";
+            //string intDesc ="";
+            //string intervType="";
+            //string actComms = "";
+            //string inspectComms = "";
 
-            //check if empty and makes red * visible to user as a must complete field if not
-            lbl_error1.Visible = false;
+            string intDesc = cmb_Interventions.Text;
+            string intervType = cmb_TypesOfIntervention.Text;
+            string actComms = rtx_actionTaken.Text;
+            string inspectComms = rtx_comments.Text;
+            string pics=   lst_pics.Text;
 
-            if (cmb_Interventions.SelectedIndex != -1)
+            //string workArea = "";
+            //string inspectCommsSummary = "";
+            string workArea = rtb_WorkArea.Text;
+            string inspectCommsSummary = rtb_InspectCommsSummary.Text;
+
+            IMethods im = new Methods();
+            if (im.isEmptyTextFieldForm2(workArea,intDesc, intervType) == false)
             {
-                intDesc = cmb_Interventions.Text;
+                try
+                {
+                    //create new intervention obj, 
+                    Intervention interv = new Intervention(intDesc, intervType, actComms, inspectComms, pics);
+
+                    //create new workarea 
+                    wa = new WorkArea(workArea, inspectCommsSummary);
+                    //call addinterv to add intervention to workarea
+                    wa.addInterv(interv);
+
+                    //add an interv to total interventions 
+                    numTotalInterv++;
+                    rtx_displayTotalInterv.Text = numTotalInterv.ToString();
+
+                    lst_interventions.Items.Add(im.displayInterventions(interv));
+
+                    //functional tests 
+                    Console.WriteLine(interv.testString()); //print subheading
+                    Console.WriteLine(wa.testString()); //print workarea
+                }
+                catch (NullReferenceException ex)
+                {
+                    Console.WriteLine(ex.Message+" The list is empty,please check all fields are filled.");
+                    
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("An unexpected error occured: "+ex.Message);
+                }
+                
+                //clear fields
+                cmb_Interventions.Text="";
+                cmb_TypesOfIntervention.Text = "";
+                rtx_actionTaken.Text = "";
+                rtx_comments.Text = "";
+               
             }
-            else { lbl_error1.Visible = true; }
-            if (cmb_TypesOfIntervention.SelectedIndex != -1)
-            {
-                intervType = cmb_TypesOfIntervention.Text;
-            }
-            else { lbl_error2.Visible = true; }
-            actComms = rtx_actionTaken.Text;
-            inspectComms = rtx_comments.Text; ;
-
-            //Image pics=  pic_viewer.Image;
             
-            //create new intervention obj, 
-            Intervention interv = new Intervention(intDesc,intervType,actComms,inspectComms);
-
-            string workArea = "";
-            string inspectCommsSummary = "";
-            // add workarea to inspection
-            workArea = rtb_WorkArea.Text;
-            inspectCommsSummary = rtb_InspectCommsSummary.Text;
-            //create new workarea 
-            WorkArea wa = new WorkArea(workArea, inspectCommsSummary);
-            
-            //add an interv to total interventions 
-            numTotalInterv++;
-            rtx_displayTotalInterv.Text = numTotalInterv.ToString();
-            //call addinterv to add intervention to workarea
-            wa.addInterv(interv);
-
-            //functional tests
-            Console.WriteLine(interv.testString()); //print subheading
-            Console.WriteLine(wa.testString()); //print workarea
-            //clear
-            cmb_Interventions.Text = "";
-            cmb_TypesOfIntervention.Text = "";
-            rtx_actionTaken.Text="";
-            rtx_comments.Text="";
-
         }
 
         private void btn_ExitNoSave_Click(object sender, EventArgs e)
@@ -152,17 +156,77 @@ namespace SE_CWA2020ASN1_Prog
         private void btn_Submit_Click(object sender, EventArgs e)
         {
             // second redesign is okay!
-            //add summary to workarea and add 'insp'
-            
-            
-            
-            //send
+            //// add workarea to inspection
+            //string workArea = "";
+            //string inspectCommsSummary = "";
+            string workArea = rtb_WorkArea.Text;
+            string inspectCommsSummary = rtb_InspectCommsSummary.Text;
+            //create new workarea 
+            try
+            {
+                wa = new WorkArea(workArea, inspectCommsSummary);
+                //functional test
+                Console.WriteLine(wa.testString());
+                //send
+            } catch(NullReferenceException ex)
+            {
+                Console.WriteLine(ex.Message + " The list is empty,please check all fields are filled.");
+            }
 
             this.Close();
 
         }
 
-        
+        private void lst_pics_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                string imageName = "";
+
+                if (lst_pics.Items[lst_pics.SelectedIndex].ToString() == "img1")
+                {
+                    imageName = "img1.jpg";
+                }
+                else if (lst_pics.Items[lst_pics.SelectedIndex].ToString() == "img2")
+                {
+                    imageName = "img2.jpg";
+                }
+                else if (lst_pics.Items[lst_pics.SelectedIndex].ToString() == "img3")
+                {
+                    imageName = "img3.jpg";
+                }
+
+                //imageString = lst_pics.SelectedItems.ToString();
+                //save images to bin/debug
+                Image image = Image.FromFile(imageName);
+                //if selected from list display in pic viewer
+                pic_intervPics.Image = image;
+                pic_intervPics.SizeMode = PictureBoxSizeMode.StretchImage;
+            }catch(FileNotFoundException ex)
+            {
+                Console.WriteLine("Missing file: " + ex.Message);
+            }
+
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string fileImage = "";
+                fileImage = lst_pics.SelectedItem.ToString() + ".jpg";
+                File.Delete(Application.StartupPath + @fileImage.ToString());
+                Console.WriteLine("deleted file I think");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("error trying to delete file: " + ex.Message);
+            }
+            Console.WriteLine("delete finished");
+        }
+
+
 
         /**********************************************
 *
@@ -185,3 +249,9 @@ testDialog.Dispose();
 */
     }
 }
+
+//An error occured when trying to save image: A generic error occurred in GDI+.
+//Exception thrown: 'System.Threading.ThreadAbortException' in OpenCvSharp.dll
+
+
+
