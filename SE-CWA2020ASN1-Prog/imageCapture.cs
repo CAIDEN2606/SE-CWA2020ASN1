@@ -1,6 +1,7 @@
 ﻿using OpenCvSharp;
 using OpenCvSharp.Extensions;
 using System;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +13,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 //many thanks to //stackoverflow.com/questions/50812961/simple-camera-capture-in-winforms and lavahasif (@github) for the code
 namespace SE_CWA2020ASN1_Prog
 {
@@ -19,10 +21,11 @@ namespace SE_CWA2020ASN1_Prog
     {
         // Create class-level accesible variables
         VideoCapture capture;
-        Mat frame;
-        Bitmap image;
+        private Mat frame;
+        private Bitmap image;
         private Thread camera;
-        bool isCameraRunning = false;
+        private bool isCameraRunning = false;
+        public string filePath = Application.StartupPath + @"\inspectImages\";
 
         // Declare required methods
         private void CaptureCamera()
@@ -57,7 +60,7 @@ namespace SE_CWA2020ASN1_Prog
                         
                     }catch (ArgumentException ex)
                     {
-                        Console.WriteLine("Error: " + ex.Message);
+                        Debug.WriteLine("Error: " + ex.Message);
                     }
                 }
             }
@@ -97,7 +100,7 @@ namespace SE_CWA2020ASN1_Prog
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex.Message);
             }
         }
 
@@ -112,7 +115,7 @@ namespace SE_CWA2020ASN1_Prog
             }
             else
             {
-                Console.WriteLine("Cannot take picture if the camera isn't capturing image!");
+                Debug.WriteLine("Cannot take picture if the camera isn't capturing image!");
             }
         }
         public void saveImage()
@@ -122,33 +125,44 @@ namespace SE_CWA2020ASN1_Prog
             try
             {
                 Bitmap snapshot = new Bitmap(pic_captureImage.Image);
+                string file1 = filePath + @"img1.jpg";
+                string file2 = filePath + @"img2.jpg";
+                string file3 = filePath + @"img3.jpg";
                 //NEED TO CHECK IF EXISTS IMG1,2,3 
-                if (Application.StartupPath.Contains("img1.jpg") == false)
+                if (!File.Exists(file1))
                 {
-                    snapshot.Save(string.Format(Application.StartupPath + @"\\img1.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
+                    snapshot.Save(string.Format(filePath + @"img1.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
                     //System.Runtime.InteropServices.ExternalException: 'A generic error occurred in GDI+.'
                 }
-                else if (Application.StartupPath.Contains("img2.jpg") == false)
+                else if (!File.Exists(file2))
                 {
-                    snapshot.Save(string.Format(Application.StartupPath + @"\\img2.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
+                    snapshot.Save(string.Format(filePath + @"img2.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
                     //System.Runtime.InteropServices.ExternalException: 'A generic error occurred in GDI+.'
                 }
-                else if (Application.StartupPath.Contains("img3.jpg") == false)
+                else if (!File.Exists(file3))
                 {
-                    snapshot.Save(string.Format(Application.StartupPath + @"\\img3.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
+                    snapshot.Save(string.Format(filePath + @"img3.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
                     //System.Runtime.InteropServices.ExternalException: 'A generic error occurred in GDI+.'
                 }
                 else
                 {
+                    Debug.WriteLine("Max pics reached");
                     MessageBox.Show("Cannot take any more pictures, max has been reached.");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("An error occured when trying to save image: " + ex.Message);
+                Debug.WriteLine("An error occured when trying to save image: " + ex.Message);
             }
-            
+            //Max pics reached
+            //Exception thrown: 'System.ArgumentException' in System.Drawing.dll
+            //Error: Parameter is not valid.
+            //not closing cleanly
         }
-        
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

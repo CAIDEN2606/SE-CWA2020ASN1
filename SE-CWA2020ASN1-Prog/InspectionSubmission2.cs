@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 
@@ -12,7 +13,7 @@ namespace SE_CWA2020ASN1_Prog
     {
         private int numTotalInterv = 0;
         private WorkArea wa;
-        
+        private string filePath = Application.StartupPath + @"\inspectImages\";
 
         public InspectionSubmission2(Inspection insp)
         {
@@ -81,10 +82,79 @@ namespace SE_CWA2020ASN1_Prog
             this.Show();
         }
 
-        
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string filelst = "";
+                filelst = lst_pics.Items[lst_pics.SelectedIndex].ToString() + ".jpg";
+                string file = filePath + filelst;
+                pic_intervPics.Image.Dispose();
+                File.Delete(file);
+                //Error trying to delete file: The process cannot access the file 'C:\Users\labuj\Documents\GitHub\SE-CWA2020ASN1\SE-CWA2020ASN1-Prog\bin\Debug\inspectImages\img3.jpg' because it is being used by another process.
+
+                Console.WriteLine(file);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error trying to delete file: " + ex.Message);
+                MessageBox.Show("Sorry, didn't delete the file, please select a file and try again");
+            }
+            Console.WriteLine("delete finished");
+        }
+
+
+
+
+
+        private void lst_pics_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            Image image;
+            string imageName = "";
+            Image defaultImage = Image.FromFile(filePath+@"defaultImage.jpg");
+            if (lst_pics.Items[lst_pics.SelectedIndex].ToString() == "img1")
+            {
+                imageName = "img1.jpg";
+            }
+            else if (lst_pics.Items[lst_pics.SelectedIndex].ToString() == "img2")
+            {
+                imageName = "img2.jpg";
+            }
+            else if (lst_pics.Items[lst_pics.SelectedIndex].ToString() == "img3")
+            {
+                imageName = "img3.jpg";
+            }
+
+            try
+            {
+                image = Image.FromFile(filePath + @imageName);
+                //exits with filenotfoundexception if file not exist so doesnt execute below
+            }
+//######################## yuk #####################
+            catch (FileNotFoundException ex)
+            {
+                Debug.WriteLine("Missing file: " + ex.Message);
+                image = null;
+            }
+            if (image == null)
+                {
+                    pic_intervPics.Image = defaultImage;
+                }
+                else
+                {
+                    pic_intervPics.Image = image;
+                }
+                //if selected from list display in pic viewer
+                
+                pic_intervPics.SizeMode = PictureBoxSizeMode.StretchImage;
+            
+
+        }
 
         
-        
+
         private void btn_saveIntervention_Click(object sender, EventArgs e)
         {
             //makes up an intervention
@@ -97,7 +167,7 @@ namespace SE_CWA2020ASN1_Prog
             string intervType = cmb_TypesOfIntervention.Text;
             string actComms = rtx_actionTaken.Text;
             string inspectComms = rtx_comments.Text;
-            string pics=   lst_pics.Text;
+            string pics = lst_pics.Text;
 
             //string workArea = "";
             //string inspectCommsSummary = "";
@@ -105,7 +175,7 @@ namespace SE_CWA2020ASN1_Prog
             string inspectCommsSummary = rtb_InspectCommsSummary.Text;
 
             IMethods im = new Methods();
-            if (im.isEmptyTextFieldForm2(workArea,intDesc, intervType) == false)
+            if (im.isEmptyTextFieldForm2(workArea, intDesc, intervType) == false)
             {
                 try
                 {
@@ -129,29 +199,24 @@ namespace SE_CWA2020ASN1_Prog
                 }
                 catch (NullReferenceException ex)
                 {
-                    Console.WriteLine(ex.Message+" The list is empty,please check all fields are filled.");
-                    
+                    Debug.WriteLine(ex.Message + " The list is empty,please check all fields are filled.");
+
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("An unexpected error occured: "+ex.Message);
+                    Debug.WriteLine("An unexpected error occured: " + ex.Message);
                 }
-                
+
                 //clear fields
-                cmb_Interventions.Text="";
+                cmb_Interventions.Text = "";
                 cmb_TypesOfIntervention.Text = "";
                 rtx_actionTaken.Text = "";
                 rtx_comments.Text = "";
-               
+
             }
-            
+
         }
 
-        private void btn_ExitNoSave_Click(object sender, EventArgs e)
-        {
-            // second redisign is okay!
-            this.Close();
-        }
 
         private void btn_Submit_Click(object sender, EventArgs e)
         {
@@ -168,66 +233,20 @@ namespace SE_CWA2020ASN1_Prog
                 //functional test
                 Console.WriteLine(wa.testString());
                 //send
-            } catch(NullReferenceException ex)
+            }
+            catch (NullReferenceException ex)
             {
-                Console.WriteLine(ex.Message + " The list is empty,please check all fields are filled.");
+                Debug.WriteLine(ex.Message + " The list is empty,please check all fields are filled.");
             }
 
             this.Close();
 
         }
-
-        private void lst_pics_SelectedIndexChanged(object sender, EventArgs e)
+        private void btn_ExitNoSave_Click(object sender, EventArgs e)
         {
-            
-            try
-            {
-                string imageName = "";
-
-                if (lst_pics.Items[lst_pics.SelectedIndex].ToString() == "img1")
-                {
-                    imageName = "img1.jpg";
-                }
-                else if (lst_pics.Items[lst_pics.SelectedIndex].ToString() == "img2")
-                {
-                    imageName = "img2.jpg";
-                }
-                else if (lst_pics.Items[lst_pics.SelectedIndex].ToString() == "img3")
-                {
-                    imageName = "img3.jpg";
-                }
-
-                //imageString = lst_pics.SelectedItems.ToString();
-                //save images to bin/debug
-                Image image = Image.FromFile(imageName);
-                //if selected from list display in pic viewer
-                pic_intervPics.Image = image;
-                pic_intervPics.SizeMode = PictureBoxSizeMode.StretchImage;
-            }catch(FileNotFoundException ex)
-            {
-                Console.WriteLine("Missing file: " + ex.Message);
-            }
-
+            // second redisign is okay!
+            this.Close();
         }
-
-        private void btn_delete_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string fileImage = "";
-                fileImage = lst_pics.SelectedItem.ToString() + ".jpg";
-                File.Delete(Application.StartupPath + @fileImage.ToString());
-                Console.WriteLine("deleted file I think");
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine("error trying to delete file: " + ex.Message);
-            }
-            Console.WriteLine("delete finished");
-        }
-
-
-
         /**********************************************
 *
 *
