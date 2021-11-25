@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Aspose.Html;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,8 +12,10 @@ using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
 {
+
     public partial class SafetyInspection1 : Form
     {
+        private Inspection insp;
         
         public SafetyInspection1()
         {
@@ -109,7 +112,7 @@ namespace SE_CWA2020ASN1_Prog
             if (im.isEmptyTextFieldForm1(siteName, inspectorName, jobType, jobDesc, supervisor) == false)
             {
                 //create object of type inspection_area and pass to safetyInspection2
-                Inspection insp = new Inspection(siteName, date, inspectorName, jobType, jobDesc, supervisor);
+                insp = new Inspection(siteName, date, inspectorName, jobType, jobDesc, supervisor);
                 InspectionSubmission2 frmIS2 = new InspectionSubmission2(insp);
                 //clear all input fields
                 clearFields();
@@ -126,8 +129,37 @@ namespace SE_CWA2020ASN1_Prog
             amusk.ShowDialog();
             
         }
-        
-        
+
+        private void btn_SaveToPdf_Click(object sender, EventArgs e)
+        {
+            // Prepare a simple Markdown example
+
+
+
+
+            // Create a Markdown file
+            try
+            {
+
+                System.IO.File.WriteAllText("document.md", insp.pdfformat());
+
+                //MessageBox.Show(insp.teststring());
+
+                // Convert Markdown to HTML document
+                //Aspose.Html.Converters.Converter.ConvertMarkdown("document.md", "document.html");
+                HTMLDocument document = Aspose.Html.Converters.Converter.ConvertMarkdown("document.md");
+
+                // Invoke the ConvertHTML method to convert the HTML to PDF.
+                Aspose.Html.Converters.Converter.ConvertHTML(document, new Aspose.Html.Saving.PdfSaveOptions(), "Report.pdf");
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+            }
+            
+            
+        }
     }
 }
 
