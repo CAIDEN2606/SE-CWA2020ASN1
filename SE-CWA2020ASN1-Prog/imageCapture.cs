@@ -1,4 +1,12 @@
-﻿using OpenCvSharp;
+﻿//##############################################//
+//                                              //
+//      Module: 2021 MOD003263 TRI1 FO1CAM      //
+//              Team name: CWA                  //
+//          Control system: Github              //
+//              Date:14/12/2021                 //
+//##############################################//
+
+using OpenCvSharp;
 using OpenCvSharp.Extensions;
 using System;
 using System.IO;
@@ -8,13 +16,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
-//many thanks to //stackoverflow.com/questions/50812961/simple-camera-capture-in-winforms and lavahasif (@github) for the code
+
+//many thanks to //stackoverflow.com/questions/50812961/simple-camera-capture-in-winforms and lavahasif (@github) for the initial code
+//added exception handling and adjusted image capture to handle 3 images and save to path
 namespace SE_CWA2020ASN1_Prog
 {
     public partial class ImageCapture : Form
@@ -26,14 +34,20 @@ namespace SE_CWA2020ASN1_Prog
         private Thread camera;
         private bool isCameraRunning = false;
         public string filePath = Application.StartupPath + @"\inspectImages\";
+        
 
-        // Declare required methods
+        /// <summary>
+        /// Start camera for image capture
+        /// </summary>
+
         private void CaptureCamera()
         {
             camera = new Thread(new ThreadStart(CaptureCameraCallback));
             camera.Start();
         }
-
+        /// <summary>
+        /// Capture an image when snapshot button actioned
+        /// </summary>
         private void CaptureCameraCallback()
         {
             frame = new Mat();
@@ -54,10 +68,8 @@ namespace SE_CWA2020ASN1_Prog
                         {
                             pic_captureImage.Image.Dispose();
                         }
-                        
                         //System.ArgumentException: 'Parameter is not valid
                         pic_captureImage.Image = image;
-                        
                     }catch (ArgumentException ex)
                     {
                         Debug.WriteLine("Error: " + ex.Message);
@@ -74,6 +86,11 @@ namespace SE_CWA2020ASN1_Prog
             isCameraRunning = true;
         }
 
+        /// <summary>
+        /// Stop and start the camera if required via a button operation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_start_Click(object sender, EventArgs e)
         {
             if (btn_start.Text.Equals("Start"))
@@ -90,6 +107,10 @@ namespace SE_CWA2020ASN1_Prog
             }
         }
 
+        /// <summary>
+        /// Close the camera when exit form
+        /// </summary>
+        /// <param name="e"></param>
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);
@@ -103,7 +124,11 @@ namespace SE_CWA2020ASN1_Prog
                 Debug.WriteLine(ex.Message);
             }
         }
-
+        /// <summary>
+        /// Call save image method and close the camera
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_save_Click(object sender, EventArgs e)
         {
             if (isCameraRunning)
@@ -115,15 +140,19 @@ namespace SE_CWA2020ASN1_Prog
             }
             else
             {
-                Debug.WriteLine("Cannot take picture if the camera isn't capturing image!");
+                Debug.WriteLine("Cannot take picture as the camera is not running");
             }
         }
+        /// <summary>
+        /// Save max of 3 images to designated file path to add to intervention list in form2
+        /// </summary>
         public void saveImage()
         {
             
             //C:\Users\labuj\Documents\GitHub\SE-CWA2020ASN1\SE-CWA2020ASN1-Prog\bin\Debug
             try
             {
+                //use properties.resources
                 Bitmap snapshot = new Bitmap(pic_captureImage.Image);
                 string file1 = filePath + @"img1.jpg";
                 string file2 = filePath + @"img2.jpg";
@@ -154,12 +183,14 @@ namespace SE_CWA2020ASN1_Prog
             {
                 Debug.WriteLine("An error occured when trying to save image: " + ex.Message);
             }
-            //Max pics reached
-            //Exception thrown: 'System.ArgumentException' in System.Drawing.dll
-            //Error: Parameter is not valid.
-            //not closing cleanly
+            
         }
 
+        /// <summary>
+        /// Close the camera capture form if no images are required
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             this.Close();

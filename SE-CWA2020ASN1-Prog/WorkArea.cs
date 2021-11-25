@@ -1,4 +1,12 @@
-﻿using System;
+﻿//##############################################//
+//                                              //
+//      Module: 2021 MOD003263 TRI1 FO1CAM      //
+//              Team name: CWA                  //
+//          Control system: Github              //
+//                                              //
+//##############################################//
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +37,10 @@ namespace SE_CWA2020ASN1_Prog
 
         private string m_inspectionSummary;
         public string Inspection_Summary { get { return m_inspectionSummary; } set { m_inspectionSummary = value; } }
+        /// <summary>
+        /// Used to test if data is correct in wa list
+        /// </summary>
+        /// <returns></returns>
         public string testString()
         {
             return "Work area --> work area= "+m_workarea + ",Inspection summary= "+ m_inspectionSummary;

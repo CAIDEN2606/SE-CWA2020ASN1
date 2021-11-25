@@ -1,4 +1,11 @@
-﻿using System;
+﻿//##############################################//
+//                                              //
+//      Module: 2021 MOD003263 TRI1 FO1CAM      //
+//              Team name: CWA                  //
+//          Control system: Github              //
+//              Date:14/12/2021                 //
+//##############################################//
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,11 +28,19 @@ namespace SE_CWA2020ASN1_Prog
             m_workAreaList = new List<WorkArea>();
             m_inspectionList = new List<Inspection>();
         }
-
+        /// <summary>
+        /// Adding a workarea object to the workarea list 
+        /// </summary>
+        /// <param name="waObj"></param>
         public void addWorkArea(WorkArea waObj)
         {
             m_workAreaList.Add(waObj);
         }
+
+        /// <summary>
+        /// Adding an inspection to a list
+        /// </summary>
+        /// <param name="insp"></param>
         public void addInsp(Inspection insp)
         {
             m_inspectionList.Add(insp);
@@ -48,6 +63,10 @@ namespace SE_CWA2020ASN1_Prog
         private string m_supervisorName;
         public string Supervisor_Name { get { return m_supervisorName; } set { m_supervisorName = value; } }
     
+        /// <summary>
+        /// Used to test print to console to confirm contains data 
+        /// </summary>
+        /// <returns></returns>
         public string teststring()
         {
             return "Inspection --> Site: "+ m_siteName + ", date: " + m_inspectionDate + ", Inspected by: " + m_inspectorName;
