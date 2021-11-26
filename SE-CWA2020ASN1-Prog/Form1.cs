@@ -20,50 +20,13 @@ namespace SE_CWA2020ASN1_Prog
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            try
-            {
-
-                //createTables
-
-                MessageBox.Show("Tables created");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error creating tables: "+ex.ToString());
-                
-            }
+            
             
         }
 
-        private void btn_exitSystem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        
 
        
-        //1st form
-        private void btn_goSafetyInspection_Click(object sender, EventArgs e)
-        {
-            SafetyInspection SafetyInspection = new SafetyInspection();
-            this.Hide();
-            SafetyInspection.ShowDialog();
-            this.Show();
-        }
-        //2nd form
-        private void btn_InspectionSubmission_Click(object sender, EventArgs e)
-        {
-            InspectionSubmission frmActComm = new InspectionSubmission();
-            this.Hide();
-            frmActComm.ShowDialog();
-            this.Show();
-        }
-        //3rd form
-        private void btn_actionComments_Click(object sender, EventArgs e)
-        {
-            ActionComments frmActComm = new ActionComments();
-            this.Hide();
-            frmActComm.ShowDialog();
-            this.Show();
-        }
+        
     }
 }
