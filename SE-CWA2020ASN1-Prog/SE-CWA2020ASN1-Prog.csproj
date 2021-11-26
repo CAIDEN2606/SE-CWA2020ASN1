@@ -151,7 +151,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Instruction.txt" />
     <Content Include="Resources\musk-logo.jpg" />
     <None Include="Resources\Planet9.jpg" />
   </ItemGroup>

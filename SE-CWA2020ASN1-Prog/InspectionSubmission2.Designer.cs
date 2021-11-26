@@ -100,6 +100,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // cmb_Interventions
             // 
+            this.cmb_Interventions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_Interventions.FormattingEnabled = true;
             this.cmb_Interventions.Location = new System.Drawing.Point(164, 102);
             this.cmb_Interventions.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -122,7 +123,7 @@ namespace SE_CWA2020ASN1_Prog
             this.rtb_WorkArea.Location = new System.Drawing.Point(164, 64);
             this.rtb_WorkArea.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtb_WorkArea.Name = "rtb_WorkArea";
-            this.rtb_WorkArea.Size = new System.Drawing.Size(209, 30);
+            this.rtb_WorkArea.Size = new System.Drawing.Size(272, 30);
             this.rtb_WorkArea.TabIndex = 63;
             this.rtb_WorkArea.Text = "";
             // 
@@ -147,6 +148,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // cmb_TypesOfIntervention
             // 
+            this.cmb_TypesOfIntervention.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_TypesOfIntervention.FormattingEnabled = true;
             this.cmb_TypesOfIntervention.Items.AddRange(new object[] {
             "Best practice",
@@ -170,10 +172,10 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_takePic
             // 
-            this.btn_takePic.Location = new System.Drawing.Point(17, 420);
+            this.btn_takePic.Location = new System.Drawing.Point(41, 317);
             this.btn_takePic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_takePic.Name = "btn_takePic";
-            this.btn_takePic.Size = new System.Drawing.Size(196, 39);
+            this.btn_takePic.Size = new System.Drawing.Size(81, 63);
             this.btn_takePic.TabIndex = 73;
             this.btn_takePic.Text = "Take a picture";
             this.btn_takePic.UseVisualStyleBackColor = true;
@@ -253,9 +255,9 @@ namespace SE_CWA2020ASN1_Prog
             "img1",
             "img2",
             "img3"});
-            this.lst_pics.Location = new System.Drawing.Point(17, 328);
+            this.lst_pics.Location = new System.Drawing.Point(145, 353);
             this.lst_pics.Name = "lst_pics";
-            this.lst_pics.Size = new System.Drawing.Size(115, 84);
+            this.lst_pics.Size = new System.Drawing.Size(78, 84);
             this.lst_pics.Sorted = true;
             this.lst_pics.TabIndex = 85;
             this.lst_pics.SelectedIndexChanged += new System.EventHandler(this.lst_pics_SelectedIndexChanged);
@@ -282,7 +284,7 @@ namespace SE_CWA2020ASN1_Prog
             // lbl_listOfPics
             // 
             this.lbl_listOfPics.AutoSize = true;
-            this.lbl_listOfPics.Location = new System.Drawing.Point(20, 305);
+            this.lbl_listOfPics.Location = new System.Drawing.Point(139, 330);
             this.lbl_listOfPics.Name = "lbl_listOfPics";
             this.lbl_listOfPics.Size = new System.Drawing.Size(112, 20);
             this.lbl_listOfPics.TabIndex = 88;
@@ -290,22 +292,23 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // pic_intervPics
             // 
+            this.pic_intervPics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pic_intervPics.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pic_intervPics.Image = global::SE_CWA2020ASN1_Prog.Properties.Resources.musk_logo;
-            this.pic_intervPics.Location = new System.Drawing.Point(235, 317);
+            this.pic_intervPics.Location = new System.Drawing.Point(271, 330);
             this.pic_intervPics.Name = "pic_intervPics";
-            this.pic_intervPics.Size = new System.Drawing.Size(201, 142);
+            this.pic_intervPics.Size = new System.Drawing.Size(168, 135);
             this.pic_intervPics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_intervPics.TabIndex = 89;
             this.pic_intervPics.TabStop = false;
             // 
             // btn_delete
             // 
-            this.btn_delete.Location = new System.Drawing.Point(142, 328);
+            this.btn_delete.Location = new System.Drawing.Point(41, 402);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(71, 84);
+            this.btn_delete.Size = new System.Drawing.Size(81, 63);
             this.btn_delete.TabIndex = 90;
-            this.btn_delete.Text = "Delete a picture";
+            this.btn_delete.Text = "delete";
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
@@ -314,7 +317,8 @@ namespace SE_CWA2020ASN1_Prog
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(473, 801);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(491, 801);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.pic_intervPics);
             this.Controls.Add(this.lbl_listOfPics);
@@ -342,6 +346,7 @@ namespace SE_CWA2020ASN1_Prog
             this.Controls.Add(this.rtb_InspectCommsSummary);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "InspectionSubmission2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Inspection Main";
             ((System.ComponentModel.ISupportInitialize)(this.pic_intervPics)).EndInit();
             this.ResumeLayout(false);

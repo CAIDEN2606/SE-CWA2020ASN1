@@ -1,4 +1,13 @@
-﻿using System;
+﻿//##############################################//
+//                                              //
+//      Module: 2021 MOD003263 TRI1 FO1CAM      //
+//              Team name: CWA                  //
+//          Control system: Github              //
+//              Date:14/12/2021                 //
+//##############################################//
+
+using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +22,7 @@ namespace SE_CWA2020ASN1_Prog
 {
     public partial class SafetyInspection1 : Form
     {
-        
+        private Inspection insp;
         public SafetyInspection1()
         {
             InitializeComponent();
@@ -109,11 +118,11 @@ namespace SE_CWA2020ASN1_Prog
             if (im.isEmptyTextFieldForm1(siteName, inspectorName, jobType, jobDesc, supervisor) == false)
             {
                 //create object of type inspection_area and pass to safetyInspection2
-                Inspection insp = new Inspection(siteName, date, inspectorName, jobType, jobDesc, supervisor);
+                insp = new Inspection(siteName, date, inspectorName, jobType, jobDesc, supervisor);
                 InspectionSubmission2 frmIS2 = new InspectionSubmission2(insp);
                 //clear all input fields
                 clearFields();
-                frmIS2.ShowDialog();
+                frmIS2.ShowDialog(); 
                 this.Show();
             }
             
