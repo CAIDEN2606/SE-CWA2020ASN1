@@ -10,14 +10,9 @@ using OpenCvSharp;
 using OpenCvSharp.Extensions;
 using System;
 using System.IO;
-using System.Runtime.InteropServices;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
@@ -34,8 +29,7 @@ namespace SE_CWA2020ASN1_Prog
         private Thread camera;
         private bool isCameraRunning = false;
         public string filePath = Application.StartupPath + @"\inspectImages\";
-        
-
+       
         /// <summary>
         /// Start camera for image capture
         /// </summary>
@@ -148,11 +142,8 @@ namespace SE_CWA2020ASN1_Prog
         /// </summary>
         public void saveImage()
         {
-            
-            //C:\Users\labuj\Documents\GitHub\SE-CWA2020ASN1\SE-CWA2020ASN1-Prog\bin\Debug
             try
             {
-                //use properties.resources
                 Bitmap snapshot = new Bitmap(pic_captureImage.Image);
                 string file1 = filePath + @"img1.jpg";
                 string file2 = filePath + @"img2.jpg";
@@ -161,17 +152,14 @@ namespace SE_CWA2020ASN1_Prog
                 if (!File.Exists(file1))
                 {
                     snapshot.Save(string.Format(filePath + @"img1.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
-                    //System.Runtime.InteropServices.ExternalException: 'A generic error occurred in GDI+.'
                 }
                 else if (!File.Exists(file2))
                 {
                     snapshot.Save(string.Format(filePath + @"img2.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
-                    //System.Runtime.InteropServices.ExternalException: 'A generic error occurred in GDI+.'
                 }
                 else if (!File.Exists(file3))
                 {
                     snapshot.Save(string.Format(filePath + @"img3.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
-                    //System.Runtime.InteropServices.ExternalException: 'A generic error occurred in GDI+.'
                 }
                 else
                 {
@@ -183,7 +171,6 @@ namespace SE_CWA2020ASN1_Prog
             {
                 Debug.WriteLine("An error occured when trying to save image: " + ex.Message);
             }
-            
         }
 
         /// <summary>

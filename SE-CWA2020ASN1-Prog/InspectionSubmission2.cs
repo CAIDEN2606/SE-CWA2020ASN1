@@ -15,7 +15,6 @@
 
 using SE_CWA2020ASN1_Prog.Properties;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -31,10 +30,8 @@ namespace SE_CWA2020ASN1_Prog
         private IMethods im = new Methods();
         string filePath = Application.StartupPath + @"\inspectImages\";
         private Intervention interv;
-        Bitmap bmp;
-
+    
         public InspectionSubmission2(Inspection insp)
-            
         {
             InitializeComponent();
             popInterventionCombo();
@@ -132,19 +129,14 @@ namespace SE_CWA2020ASN1_Prog
         /// <param name="e"></param>
         private void btn_delete_Click(object sender, EventArgs e)
         {
+            Debug.WriteLine("delete process started");
             try
             {
-                //string filelst = "";
                 string filelst = lst_pics.Items[lst_pics.SelectedIndex].ToString() + ".jpg";
                 string file = filePath + filelst;
-                //pic_intervPics.Image = Resources.musk_logo;
-                FileInfo img1 = new FileInfo(file);
-                img1.Delete();
-                //extra dispose
-                //pic_intervPics.Dispose();
-                //im.deleteImg(file);
+                im.deleteImg(file);
                                
-                Console.WriteLine(file);
+                Debug.WriteLine(file+" deleted.");
             }
             catch (Exception ex)
             {
@@ -223,9 +215,7 @@ namespace SE_CWA2020ASN1_Prog
             Image img3 = null;
             int i = numTotalInterv + 1;
             string ID = i.ToString();
-
-            //pic_intervPics.Dispose();
-
+    
             //check if images exist else save as null to keep to class structure
             //rename images with intervID which makes unavailable in pic_viewer
             //so new pics can be taken.

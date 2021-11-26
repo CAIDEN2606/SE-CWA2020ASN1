@@ -32,15 +32,9 @@ namespace SE_CWA2020ASN1_Prog
     {
         public void deleteImg(string file)
         {
-            try
-            {
-                //FileInfo runs dispose to release resources so can get access to file
-                FileInfo img1 = new FileInfo(file);
-                img1.Delete();
-            }catch(Exception ex)
-            {
-                Debug.WriteLine("Cannot delete file: " + ex.ToString());
-            }
+            FileInfo img1 = new FileInfo(file);
+            img1.Delete();
+            
         }
         //call to clear folder 
         public void deleteImages()
