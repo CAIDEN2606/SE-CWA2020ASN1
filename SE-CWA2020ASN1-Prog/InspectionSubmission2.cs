@@ -31,7 +31,10 @@ namespace SE_CWA2020ASN1_Prog
         private IMethods im = new Methods();
         string filePath = Application.StartupPath + @"\inspectImages\";
         private Intervention interv;
+        Bitmap bmp;
+
         public InspectionSubmission2(Inspection insp)
+            
         {
             InitializeComponent();
             popInterventionCombo();
@@ -115,7 +118,7 @@ namespace SE_CWA2020ASN1_Prog
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("An error occured: " + ex.ToString());
+                Debug.WriteLine("An error occured: " + ex.Message);
             }
             ImageCapture imc = new ImageCapture();
             imc.ShowDialog();
@@ -134,10 +137,12 @@ namespace SE_CWA2020ASN1_Prog
                 //string filelst = "";
                 string filelst = lst_pics.Items[lst_pics.SelectedIndex].ToString() + ".jpg";
                 string file = filePath + filelst;
-                pic_intervPics.Image = Resources.musk_logo;
+                //pic_intervPics.Image = Resources.musk_logo;
+                FileInfo img1 = new FileInfo(file);
+                img1.Delete();
                 //extra dispose
                 //pic_intervPics.Dispose();
-                im.deleteImg(file);
+                //im.deleteImg(file);
                                
                 Console.WriteLine(file);
             }
@@ -173,11 +178,14 @@ namespace SE_CWA2020ASN1_Prog
             //set image to file path of selected item above
             try
             {
-                image = Image.FromFile(filePath + @imageName);
+                using (var bmpTemp = new Bitmap(filePath + @imageName))
+                {
+                    image = new Bitmap(bmpTemp);
+                }
             }
             catch (Exception ex)
             {
-                Debug.WriteLine("Error getting image file: " + ex.Message);
+                Debug.WriteLine("File not found: " + ex.Message);
             }
             //display image selected in pic viewer if exists, if not display default logo
             if (image == null)
@@ -188,7 +196,8 @@ namespace SE_CWA2020ASN1_Prog
             {
                 pic_intervPics.Image = image;
             }
-            
+
+
             //if selected from list display to fill pic viewer
             pic_intervPics.SizeMode = PictureBoxSizeMode.StretchImage;
             //image.Dispose(); //crashes the program to form1
@@ -222,25 +231,30 @@ namespace SE_CWA2020ASN1_Prog
             //check if images exist else save as null to keep to class structure
             //rename images with intervID which makes unavailable in pic_viewer
             //so new pics can be taken.
-            if (File.Exists(filePath + @"img1.jpg"))
+            try
             {
-                FileInfo fi = new FileInfo(filePath + @"img1.jpg");
-                fi.MoveTo(filePath + @ID + @"img1.jpg");
-                img1 = Image.FromFile(filePath + @ID + @"img1.jpg");
-            }
-            if (File.Exists(filePath + @"img2.jpg"))
+                if (File.Exists(filePath + @"img1.jpg"))
+                {
+                    FileInfo fi = new FileInfo(filePath + @"img1.jpg");
+                    fi.MoveTo(filePath + @ID + @"img1.jpg");
+                    img1 = Image.FromFile(filePath + @ID + @"img1.jpg");
+                }
+                if (File.Exists(filePath + @"img2.jpg"))
+                {
+                    FileInfo fi = new FileInfo(filePath + @"img2.jpg");
+                    fi.MoveTo(filePath + @ID + @"img2.jpg");
+                    img2 = Image.FromFile(filePath + @ID + @"img2.jpg");
+                }
+                if (File.Exists(filePath + @"img3.jpg"))
+                {
+                    FileInfo fi = new FileInfo(filePath + @"img3.jpg");
+                    fi.MoveTo(filePath + @ID + @"img3.jpg");
+                    img3 = Image.FromFile(filePath + @ID + @"img3.jpg");
+                }
+            }catch(Exception ex)
             {
-                FileInfo fi = new FileInfo(filePath + @"img2.jpg");
-                fi.MoveTo(filePath + @ID + @"img2.jpg");
-                img2 = Image.FromFile(filePath + @ID + @"img2.jpg");
+                Debug.WriteLine("error renaiming files: " + ex.Message);
             }
-            if (File.Exists(filePath + @"img3.jpg"))
-            {
-                FileInfo fi = new FileInfo(filePath + @"img3.jpg");
-                fi.MoveTo(filePath + @ID + @"img3.jpg");
-                img3 = Image.FromFile(filePath + @ID + @"img3.jpg");
-            }
-
             //check all necessary fields are completed, can only continue if filled.
             if (im.isEmptyTextFieldForm2(workArea, intDesc, intervType) == false)
             {
@@ -271,7 +285,7 @@ namespace SE_CWA2020ASN1_Prog
                 }
                 catch (Exception ex)
                 {
-                    Debug.WriteLine("An unexpected error occured: " + ex.Message);
+                    Debug.WriteLine("An unexpected error occured saving intervention: " + ex.Message);
                 }
 
                 //clear fields

@@ -295,9 +295,9 @@ namespace SE_CWA2020ASN1_Prog
             this.pic_intervPics.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pic_intervPics.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pic_intervPics.Image = global::SE_CWA2020ASN1_Prog.Properties.Resources.musk_logo;
-            this.pic_intervPics.Location = new System.Drawing.Point(257, 317);
+            this.pic_intervPics.Location = new System.Drawing.Point(271, 330);
             this.pic_intervPics.Name = "pic_intervPics";
-            this.pic_intervPics.Size = new System.Drawing.Size(182, 138);
+            this.pic_intervPics.Size = new System.Drawing.Size(168, 135);
             this.pic_intervPics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_intervPics.TabIndex = 89;
             this.pic_intervPics.TabStop = false;

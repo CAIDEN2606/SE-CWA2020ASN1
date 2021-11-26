@@ -42,7 +42,7 @@ namespace SE_CWA2020ASN1_Prog
                 Debug.WriteLine("Cannot delete file: " + ex.ToString());
             }
         }
-
+        //call to clear folder 
         public void deleteImages()
         {
             try
