@@ -196,11 +196,9 @@ namespace SE_CWA2020ASN1_Prog
             {
                 pic_intervPics.Image = image;
             }
-
-
-            //if selected from list display to fill pic viewer
+              //if selected from list display to fill pic viewer
             pic_intervPics.SizeMode = PictureBoxSizeMode.StretchImage;
-            //image.Dispose(); //crashes the program to form1
+           
         }
 
         
