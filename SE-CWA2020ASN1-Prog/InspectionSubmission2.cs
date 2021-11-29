@@ -6,14 +6,14 @@
 //              Date:14/12/2021                 //
 //##############################################//
 
-using Aspose.Html;
+
 // Class purpose:
 // Collect workarea and intervention details including call to cature image class
 // Submit work area inspection at the end 
 // Methods are displayed in the order as they appear on the form to help with class navigation
 // 
 //
-
+using Aspose.Html;
 using SE_CWA2020ASN1_Prog.Properties;
 using System;
 using System.Collections.Generic;
@@ -32,7 +32,7 @@ namespace SE_CWA2020ASN1_Prog
         private IMethods im = new Methods();
         string filePath = Application.StartupPath + @"\inspectImages\";
         private Intervention interv;
-        Bitmap bmp;
+        private Inspection insp;
 
         public InspectionSubmission2(Inspection insp)
             
@@ -245,7 +245,7 @@ namespace SE_CWA2020ASN1_Prog
                 }
             }catch(Exception ex)
             {
-                Debug.WriteLine("error renaiming files: " + ex.Message);
+                Debug.WriteLine("error renaming files: " + ex.Message);
             }
             //check all necessary fields are completed, can only continue if filled.
             if (im.isEmptyTextFieldForm2(workArea, intDesc, intervType) == false)
@@ -305,7 +305,10 @@ namespace SE_CWA2020ASN1_Prog
             {
                 wa = new WorkArea(workArea, inspectCommsSummary);
                 //functional test
-                Console.WriteLine(wa.testString());
+                Debug.WriteLine(wa.testString());
+                
+                //insp.addWorkArea(wa);
+               //Debug.WriteLine(insp.teststring());
             }
             catch (NullReferenceException ex)
             {
@@ -323,6 +326,8 @@ namespace SE_CWA2020ASN1_Prog
             this.Close();
         }
 
+ /*
+ //dont know why 2 deletes
         private void btn_delete_Click(object sender, EventArgs e)
         {
             try
@@ -337,44 +342,11 @@ namespace SE_CWA2020ASN1_Prog
                 Console.WriteLine("error trying to delete file: " + ex.Message);
             }
             Console.WriteLine("delete finished");
-        }
+        }*/
 
-        
-
-
-            
-        
-
-
-
-
-        /**********************************************
-*
-*
-Form2 testDialog = new Form2();
-// Create your comments object 
-// Show testDialog as a modal dialog and determine if DialogResult = OK.
-if (testDialog.ShowDialog(this, myObject) == DialogResult.OK)
-{
-// Read the contents of testDialog's TextBox.
-this.txtResult.Text = testDialog.TextBox1.Text;
-// Add comments to your intervention
-intervention.addComment(myObject);
-}
-else
-{
-this.txtResult.Text = "Cancelled";
-}
-testDialog.Dispose();
-*/
-        
-
-        
     }
 }
 
-//An error occured when trying to save image: A generic error occurred in GDI+.
-//Exception thrown: 'System.Threading.ThreadAbortException' in OpenCvSharp.dll
 
 
 

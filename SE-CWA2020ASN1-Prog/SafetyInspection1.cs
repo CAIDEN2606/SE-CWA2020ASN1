@@ -1,4 +1,4 @@
-﻿using Aspose.Html;
+﻿
 //##############################################//
 //                                              //
 //      Module: 2021 MOD003263 TRI1 FO1CAM      //
@@ -6,17 +6,11 @@
 //          Control system: Github              //
 //              Date:14/12/2021                 //
 //##############################################//
-
+using SE_CWA2020ASN1_Prog.Properties;
+using Aspose.Html;
 using System;
 using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 //using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
@@ -24,14 +18,15 @@ namespace SE_CWA2020ASN1_Prog
     public partial class SafetyInspection1 : Form
     {
         private Inspection insp;
+        public SafetyInspection1(Inspection insp)
         {
             InitializeComponent();
             clearFields();
             addComboData();
             //clears input fields
-            
         }
-        
+
+
         private void addComboData()
         {
             cmb_EnterSite.Items.Add("Weetabix Burton AP1 / Main");
@@ -55,7 +50,7 @@ namespace SE_CWA2020ASN1_Prog
             txt_jobDescription.Text = "";
             txt_supervisor.Text = "";
         }
-        
+
         public string m_siteName
         {
             get { return cmb_EnterSite.Text; }
@@ -75,19 +70,19 @@ namespace SE_CWA2020ASN1_Prog
         {
             get { return txt_jobDescription.Text; }
             set { txt_jobDescription.Text = value; }
-        } 
+        }
         public string m_jobType
         {
             get { return cmb_EnterType.Text; }
             set { cmb_EnterType.Text = value; }
-        } 
+        }
         public string m_supervisor
         {
             get { return txt_supervisor.Text; }
             set { txt_supervisor.Text = value; }
-        } 
+        }
 
-                
+
 
         //###########################################################
         //                              buttons
@@ -98,16 +93,10 @@ namespace SE_CWA2020ASN1_Prog
         {
             this.Close();
         }
-        
-        private void btn_Enter_Click(object sender, EventArgs e )
-        {
-            //string siteName = "";
-            //DateTime date;
-            //string inspectorName = "";
-            //string jobDesc = "";
-            //string jobType = "";
-            //string supervisor = "";
 
+        private void btn_Enter_Click(object sender, EventArgs e)
+        {
+            
             string siteName = cmb_EnterSite.Text;
             DateTime date = dateTimePicker1.Value;
             string inspectorName = txt_inspectorName.Text;
@@ -119,21 +108,22 @@ namespace SE_CWA2020ASN1_Prog
             {
                 //create object of type inspection_area and pass to safetyInspection2
                 insp = new Inspection(siteName, date, inspectorName, jobType, jobDesc, supervisor);
-                Inspection insp = new Inspection(siteName, date, inspectorName, jobType, jobDesc, supervisor);
+
                 //clear all input fields
                 clearFields();
-                frmIS2.ShowDialog(); 
+                InspectionSubmission2 frmIS2 = new InspectionSubmission2(insp);
+                frmIS2.ShowDialog();
                 this.Show();
             }
-            
-                
+
+
         }
 
         private void btn_about_Click(object sender, EventArgs e)
         {
             AboutMusk amusk = new AboutMusk();
             amusk.ShowDialog();
-            
+
         }
 
         private void btn_SaveToPdf_Click(object sender, EventArgs e)
@@ -166,6 +156,8 @@ namespace SE_CWA2020ASN1_Prog
 
 
         }
+
+        
     }
 }
 

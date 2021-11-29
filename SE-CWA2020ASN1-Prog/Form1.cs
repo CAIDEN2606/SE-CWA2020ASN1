@@ -16,12 +16,10 @@ namespace SE_CWA2020ASN1_Prog
 {
     public partial class Form1 : Form
     {
-        
+        private Inspection insp;
         private IMethods im = new Methods();
-        string filePath = Application.StartupPath + @"\inspectImages\";
+        private string filePath = Application.StartupPath + @"\inspectImages\";
         
-        Bitmap bmp;
-
         public Form1()
         {
             InitializeComponent();
@@ -38,7 +36,8 @@ namespace SE_CWA2020ASN1_Prog
         //1st form
         private void btn_goSafetyInspection_Click(object sender, EventArgs e)
         {
-            SafetyInspection1 frmSafetyInspection = new SafetyInspection1();
+           
+            SafetyInspection1 frmSafetyInspection = new SafetyInspection1(insp);
             this.Hide();
             frmSafetyInspection.ShowDialog();
             this.Show();
