@@ -28,6 +28,11 @@ namespace SE_CWA2020ASN1_Prog
             m_workAreaList = new List<WorkArea>();
             m_inspectionList = new List<Inspection>();
         }
+        public List<WorkArea> RetrieveWaList(WorkArea wa)
+        {
+            return m_workAreaList;
+        }
+
         /// <summary>
         /// Adding a workarea object to the workarea list 
         /// </summary>
@@ -71,9 +76,21 @@ namespace SE_CWA2020ASN1_Prog
         {
             return "Inspection --> Site: "+ m_siteName + ", date: " + m_inspectionDate + ", Inspected by: " + m_inspectorName;
         }
+        public string pdfformat()
+        {
+            return
+            "Site name: "+ m_siteName +
+            "\nDate: " + m_inspectionDate +
+            "\nInspector Name: " + m_inspectorName +
+            "\nJob Type: " + m_jobType +
+            "\nJob Description: " + m_jobDescription +
+            "\nSupervisor's name: " + m_supervisorName;
+            
+        }
 
-        
-        
+
+
+
     }
 
 }

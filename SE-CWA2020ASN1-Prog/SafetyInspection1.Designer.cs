@@ -47,6 +47,7 @@ namespace SE_CWA2020ASN1_Prog
             this.txt_supervisor = new System.Windows.Forms.TextBox();
             this.pic_logo = new System.Windows.Forms.PictureBox();
             this.btn_about = new System.Windows.Forms.Button();
+            this.btn_SaveToPdf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,9 +134,10 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(321, 462);
+            this.btn_exit.Location = new System.Drawing.Point(335, 462);
+            this.btn_exit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(152, 34);
+            this.btn_exit.Size = new System.Drawing.Size(171, 42);
             this.btn_exit.TabIndex = 9;
             this.btn_exit.Text = "Exit";
             this.btn_exit.UseVisualStyleBackColor = true;
@@ -143,30 +145,34 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // cmb_EnterSite
             // 
+            this.cmb_EnterSite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_EnterSite.FormattingEnabled = true;
-            this.cmb_EnterSite.Location = new System.Drawing.Point(180, 172);
+            this.cmb_EnterSite.Location = new System.Drawing.Point(182, 173);
             this.cmb_EnterSite.Name = "cmb_EnterSite";
-            this.cmb_EnterSite.Size = new System.Drawing.Size(198, 24);
+            this.cmb_EnterSite.Size = new System.Drawing.Size(222, 28);
             this.cmb_EnterSite.TabIndex = 10;
             // 
             // txt_inspectorName
             // 
-            this.txt_inspectorName.Location = new System.Drawing.Point(182, 258);
+            this.txt_inspectorName.Location = new System.Drawing.Point(205, 323);
+            this.txt_inspectorName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_inspectorName.MaxLength = 20;
             this.txt_inspectorName.Name = "txt_inspectorName";
-            this.txt_inspectorName.Size = new System.Drawing.Size(198, 22);
+            this.txt_inspectorName.Size = new System.Drawing.Size(222, 26);
             this.txt_inspectorName.TabIndex = 11;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(182, 222);
+            this.dateTimePicker1.Location = new System.Drawing.Point(205, 277);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(198, 22);
             this.dateTimePicker1.TabIndex = 13;
             // 
             // txt_jobDescription
             // 
-            this.txt_jobDescription.Location = new System.Drawing.Point(182, 338);
+            this.txt_jobDescription.Location = new System.Drawing.Point(205, 423);
+            this.txt_jobDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_jobDescription.MaxLength = 20;
             this.txt_jobDescription.Name = "txt_jobDescription";
             this.txt_jobDescription.Size = new System.Drawing.Size(198, 22);
@@ -174,6 +180,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // cmb_EnterType
             // 
+            this.cmb_EnterType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_EnterType.FormattingEnabled = true;
             this.cmb_EnterType.Location = new System.Drawing.Point(182, 300);
             this.cmb_EnterType.Name = "cmb_EnterType";
@@ -201,20 +208,31 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_about
             // 
-            this.btn_about.Location = new System.Drawing.Point(406, 10);
+            this.btn_about.Location = new System.Drawing.Point(457, 12);
             this.btn_about.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_about.Name = "btn_about";
-            this.btn_about.Size = new System.Drawing.Size(67, 25);
+            this.btn_about.Size = new System.Drawing.Size(75, 31);
             this.btn_about.TabIndex = 39;
             this.btn_about.Text = "About";
             this.btn_about.UseVisualStyleBackColor = true;
             this.btn_about.Click += new System.EventHandler(this.btn_about_Click);
+            // 
+            // btn_SaveToPdf
+            // 
+            this.btn_SaveToPdf.Location = new System.Drawing.Point(202, 462);
+            this.btn_SaveToPdf.Name = "btn_SaveToPdf";
+            this.btn_SaveToPdf.Size = new System.Drawing.Size(111, 34);
+            this.btn_SaveToPdf.TabIndex = 40;
+            this.btn_SaveToPdf.Text = "PDF";
+            this.btn_SaveToPdf.UseVisualStyleBackColor = true;
+            this.btn_SaveToPdf.Click += new System.EventHandler(this.btn_SaveToPdf_Click);
             // 
             // SafetyInspection1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 534);
+            this.Controls.Add(this.btn_SaveToPdf);
             this.Controls.Add(this.btn_about);
             this.Controls.Add(this.pic_logo);
             this.Controls.Add(this.txt_supervisor);
@@ -261,5 +279,6 @@ namespace SE_CWA2020ASN1_Prog
         private System.Windows.Forms.TextBox txt_supervisor;
         private System.Windows.Forms.PictureBox pic_logo;
         private System.Windows.Forms.Button btn_about;
+        private System.Windows.Forms.Button btn_SaveToPdf;
     }
 }

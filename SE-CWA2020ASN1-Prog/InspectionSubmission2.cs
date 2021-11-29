@@ -6,6 +6,7 @@
 //              Date:14/12/2021                 //
 //##############################################//
 
+using Aspose.Html;
 // Class purpose:
 // Collect workarea and intervention details including call to cature image class
 // Submit work area inspection at the end 
@@ -322,6 +323,50 @@ namespace SE_CWA2020ASN1_Prog
             this.Close();
         }
 
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string fileImage = "";
+                fileImage = lst_pics.SelectedItem.ToString() + ".jpg";
+                File.Delete(Application.StartupPath + @fileImage.ToString());
+                Console.WriteLine("deleted file I think");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("error trying to delete file: " + ex.Message);
+            }
+            Console.WriteLine("delete finished");
+        }
+
+        
+
+
+            
+        
+
+
+
+
+        /**********************************************
+*
+*
+Form2 testDialog = new Form2();
+// Create your comments object 
+// Show testDialog as a modal dialog and determine if DialogResult = OK.
+if (testDialog.ShowDialog(this, myObject) == DialogResult.OK)
+{
+// Read the contents of testDialog's TextBox.
+this.txtResult.Text = testDialog.TextBox1.Text;
+// Add comments to your intervention
+intervention.addComment(myObject);
+}
+else
+{
+this.txtResult.Text = "Cancelled";
+}
+testDialog.Dispose();
+*/
         
 
         

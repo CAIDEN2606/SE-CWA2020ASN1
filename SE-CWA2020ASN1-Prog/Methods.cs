@@ -18,6 +18,7 @@ using System.Windows.Forms;
 namespace SE_CWA2020ASN1_Prog
 {
 
+
     interface IMethods
     {
         void deleteImg(string file);
@@ -30,6 +31,10 @@ namespace SE_CWA2020ASN1_Prog
 
     class Methods : IMethods
     {
+        
+
+        
+        
         public void deleteImg(string file)
         {
             try
@@ -149,6 +154,9 @@ namespace SE_CWA2020ASN1_Prog
             
             return ans;
         }
+
+
+
 
         
 
