@@ -21,6 +21,10 @@ namespace SE_CWA2020ASN1_Prog
             m_workAreaList = new List<WorkArea>();
             m_inspectionList = new List<Inspection>();
         }
+        public List<WorkArea> RetrieveWaList(WorkArea wa)
+        {
+            return m_workAreaList;
+        }
 
         public void addWorkArea(WorkArea waObj)
         {

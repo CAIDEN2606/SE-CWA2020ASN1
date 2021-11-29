@@ -17,6 +17,7 @@ namespace SE_CWA2020ASN1_Prog
     {
         private Inspection insp;
         
+
         public SafetyInspection1()
         {
             InitializeComponent();
@@ -132,7 +133,7 @@ namespace SE_CWA2020ASN1_Prog
 
         private void btn_SaveToPdf_Click(object sender, EventArgs e)
         {
-            // Prepare a simple Markdown example
+            //Prepare a simple Markdown example
 
 
 
@@ -157,8 +158,8 @@ namespace SE_CWA2020ASN1_Prog
 
                 Console.WriteLine(ex.ToString());
             }
-            
-            
+
+
         }
     }
 }

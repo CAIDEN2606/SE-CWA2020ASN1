@@ -1,4 +1,5 @@
 ﻿
+using Aspose.Html;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -97,7 +98,7 @@ namespace SE_CWA2020ASN1_Prog
             string intervType = cmb_TypesOfIntervention.Text;
             string actComms = rtx_actionTaken.Text;
             string inspectComms = rtx_comments.Text;
-            string pics=   lst_pics.Text;
+            string pics = lst_pics.Text;
 
             //string workArea = "";
             //string inspectCommsSummary = "";
@@ -225,6 +226,13 @@ namespace SE_CWA2020ASN1_Prog
             }
             Console.WriteLine("delete finished");
         }
+
+        
+
+
+            
+        
+
 
 
 

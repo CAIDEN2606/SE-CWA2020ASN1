@@ -8,6 +8,7 @@ using System.Windows.Forms;
 namespace SE_CWA2020ASN1_Prog
 {
 
+
     interface IMethods
     {
         
@@ -19,7 +20,9 @@ namespace SE_CWA2020ASN1_Prog
 
     class Methods : IMethods
     {
+        
 
+        
         
         ///// <summary>
         ///// Display list of inspections and some details in rich text box as required by project reqs.

@@ -33,6 +33,11 @@ namespace SE_CWA2020ASN1_Prog
         {
             return "Work area --> work area= "+m_workarea + ",Inspection summary= "+ m_inspectionSummary;
         }
+
+        internal string pdfformat()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

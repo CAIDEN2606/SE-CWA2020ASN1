@@ -144,6 +144,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // cmb_EnterSite
             // 
+            this.cmb_EnterSite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_EnterSite.FormattingEnabled = true;
             this.cmb_EnterSite.Location = new System.Drawing.Point(182, 173);
             this.cmb_EnterSite.Name = "cmb_EnterSite";
@@ -175,6 +176,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // cmb_EnterType
             // 
+            this.cmb_EnterType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_EnterType.FormattingEnabled = true;
             this.cmb_EnterType.Location = new System.Drawing.Point(182, 300);
             this.cmb_EnterType.Name = "cmb_EnterType";
