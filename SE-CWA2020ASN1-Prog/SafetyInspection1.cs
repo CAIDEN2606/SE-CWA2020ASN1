@@ -1,4 +1,13 @@
-﻿using System;
+﻿//##############################################//
+//                                              //
+//      Module: 2021 MOD003263 TRI1 FO1CAM      //
+//              Team name: CWA                  //
+//          Control system: Github              //
+//              Date:14/12/2021                 //
+//##############################################//
+
+using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +22,14 @@ namespace SE_CWA2020ASN1_Prog
 {
     public partial class SafetyInspection1 : Form
     {
-    public SafetyInspection1()
+        private Inspection insp;
+        public SafetyInspection1()
         {
             InitializeComponent();
-            
+            clearFields();
             addComboData();
-
+            //clears input fields
+            
         }
         
         private void addComboData()
@@ -36,9 +47,16 @@ namespace SE_CWA2020ASN1_Prog
             cmb_EnterType.Items.Add("Repairing");
 
         }
-
+        public void clearFields()
+        {
+            cmb_EnterSite.Text = "";
+            txt_inspectorName.Text = "";
+            cmb_EnterType.Text = "";
+            txt_jobDescription.Text = "";
+            txt_supervisor.Text = "";
+        }
         
-        public string m_site
+        public string m_siteName
         {
             get { return cmb_EnterSite.Text; }
             set { cmb_EnterSite.Text = value; }
@@ -83,88 +101,41 @@ namespace SE_CWA2020ASN1_Prog
         
         private void btn_Enter_Click(object sender, EventArgs e )
         {
-            string siteName = "";
-            DateTime date;
-            string inspectorName = "";
-            string jobDesc = "";
-            string jobType = "";
-            string supervisor = "";
+            //string siteName = "";
+            //DateTime date;
+            //string inspectorName = "";
+            //string jobDesc = "";
+            //string jobType = "";
+            //string supervisor = "";
 
-            siteName = cmb_EnterSite.Text;
-            date = dateTimePicker1.Value;
-            inspectorName = txt_inspectorName.Text;
-            jobType = cmb_EnterType.Text;
-            jobDesc = txt_jobDescription.Text;
-            supervisor = txt_supervisor.Text;
-
-            //create object of type inspection_area
-            //pass to safetyInspection2
-            Inspection insp = new Inspection(siteName, date, inspectorName, jobType, jobDesc, supervisor);
-
-            InspectionSubmission2 frmIS2 = new InspectionSubmission2(insp);
-            frmIS2.ShowDialog();
+            string siteName = cmb_EnterSite.Text;
+            DateTime date = dateTimePicker1.Value;
+            string inspectorName = txt_inspectorName.Text;
+            string jobType = cmb_EnterType.Text;
+            string jobDesc = txt_jobDescription.Text;
+            string supervisor = txt_supervisor.Text;
+            IMethods im = new Methods();
+            if (im.isEmptyTextFieldForm1(siteName, inspectorName, jobType, jobDesc, supervisor) == false)
+            {
+                //create object of type inspection_area and pass to safetyInspection2
+                insp = new Inspection(siteName, date, inspectorName, jobType, jobDesc, supervisor);
+                InspectionSubmission2 frmIS2 = new InspectionSubmission2(insp);
+                //clear all input fields
+                clearFields();
+                frmIS2.ShowDialog(); 
                 this.Show();
+            }
+            
+                
         }
 
         private void btn_about_Click(object sender, EventArgs e)
         {
             AboutMusk amusk = new AboutMusk();
-            //this.Hide();
             amusk.ShowDialog();
-            //this.Show();
+            
         }
-
-        //  doesn't do anything yet  /////////////////////////////////////
-        private void txt_name_TextChanged(object sender, EventArgs e)
-        {
-            //if (!System.Text.RegularExpressions.Regex.IsMatch(txt_name.Text, "^[a-zA-Z ]"))
-            //{
-            //    MessageBox.Show("This textbox accepts only alphabetical characters");
-            //    txt_name.Text.Remove(txt_name.Text.Length - 1);
-            //}
-            //else
-            if (txt_inspectorName.Text == "")
-            {
-                MessageBox.Show("Please, Enter your full name");
-            }
-        }
-
-        private void txt_workArea_TextChanged(object sender, EventArgs e)
-        {
-           
-            if (txt_inspectorName.Text == "")
-            {
-                MessageBox.Show("Please, Enter Work Area");
-            }
-        }
-
-        private void txt_jobDescription_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_inspectorName.Text == "")
-            {
-                MessageBox.Show("Please, Enter Job Description");
-            }
-        }
-
-        private void txt_supervisor_TextChanged(object sender, EventArgs e)
-        {
-            //if (!System.Text.RegularExpressions.Regex.IsMatch(txt_name.Text, "^[a-zA-Z ]"))
-            //{
-            //    MessageBox.Show("This textbox accepts only alphabetical characters");
-            //    txt_name.Text.Remove(txt_name.Text.Length - 1);
-            //}
-            //else
-            if (txt_inspectorName.Text == "")
-            {
-                MessageBox.Show("Please, Enter your supervisor's name");
-            }
-        }
-
-        private void SafetyInspection_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         
     }
 }

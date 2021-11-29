@@ -1,4 +1,11 @@
-﻿using System;
+﻿//##############################################//
+//                                              //
+//      Module: 2021 MOD003263 TRI1 FO1CAM      //
+//              Team name: CWA                  //
+//          Control system: Github              //
+//              Date:14/12/2021                 //
+//##############################################//
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -15,11 +22,14 @@ namespace SE_CWA2020ASN1_Prog
         {
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
-            this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.labelCompanyName.Text = AssemblyCompany;
-            this.textBoxDescription.Text = AssemblyDescription;
+            this.labelProductName.Text = "Product Name: Inspection Form";
+            this.labelVersion.Text = String.Format("Version 1.0.1", AssemblyVersion);
+            this.labelCopyright.Text = "Copyright ©Edwin James Group 2020";
+            this.labelCompanyName.Text = "Company Name : Musk Process Services";
+            this.textBoxDescription.Text = "Description : Mobile electronic form for completing site inspections. " +
+                "Enables inspectors to record different intervention types and provide picture evidence. " +
+                "On successful submission it will provide back office staff with immediate access to the inspectors findings.";
+
         }
 
         #region Assembly Attribute Accessors

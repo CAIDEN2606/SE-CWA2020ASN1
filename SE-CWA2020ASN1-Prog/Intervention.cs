@@ -1,4 +1,12 @@
-﻿using System;
+﻿//##############################################//
+//                                              //
+//      Module: 2021 MOD003263 TRI1 FO1CAM      //
+//              Team name: CWA                  //
+//          Control system: Github              //
+//              Date:14/12/2021                 //
+//##############################################//
+
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -9,19 +17,31 @@ namespace SE_CWA2020ASN1_Prog
 {
     public class Intervention
     {
-       public Intervention(string subName, string type, string aComments, string iComments)
+        private List<Image> m_pics;
+
+       public Intervention(int intervID, string subName, string type, string aComments, string iComments,Image img1, Image img2,Image img3)
         {
+            m_intervID = intervID;
             m_subheadingName = subName;
             m_interventionType = type;
             m_actionComments = aComments;
             m_inspectionComments = iComments;
-            //m_inspectionPicture = iPicture;
+            m_img1 = img1;
+            m_img2 = img2;
+            m_img3 = img3;
+            m_pics = new List<Image>();
         }
-        public void makeInterv(string subName, string type, string aComments, string iComments)
-        {
-             
 
+        //adding individual pics to a list
+        public void addImage(Image img1,Image img2,Image img3)
+        {
+            m_pics.Add(m_img1);
+            m_pics.Add(m_img2);
+            m_pics.Add(m_img3);
         }
+        private int m_intervID;
+        public int Interv_ID { get { return m_intervID; } set { m_intervID = value; } }
+
         private string m_subheadingName;
         public string Subheading_Name { get { return m_subheadingName; } set { m_subheadingName = value; } }
 
@@ -34,12 +54,21 @@ namespace SE_CWA2020ASN1_Prog
         private string m_inspectionComments;
         public string Inspection_Comments { get { return m_inspectionComments; } set { m_inspectionComments = value; } }
 
-        //private Image m_inspectionPicture;
-        //public Image Inspection_Picture { get { return m_inspectionPicture; } set { m_inspectionPicture = value; } }
+        private Image m_img1;
+        public Image Img_1 { get { return m_img1; } set { m_img1 = value; } }
+        private Image m_img2;
+        public Image Img_2 { get { return m_img2; } set { m_img2 = value; } }
+        private Image m_img3;
+        public Image Img_3 { get { return m_img3; } set { m_img3 = value; } }
+
+        /// <summary>
+        /// Used to test if data in the list is correct
+        /// </summary>
+        /// <returns></returns>
         public string testString()
         {
-            return "Intervention --> subheading: " + m_subheadingName;
+            return "Intervention --> ID: "+m_intervID+ "subheading: " + m_subheadingName+"Images --> "+m_img1+", "+m_img2+", "+m_img3;
         }
-        
+                
     }
 }
