@@ -34,8 +34,7 @@ namespace SE_CWA2020ASN1_Prog
         {
             try
             {
-                //FileInfo runs dispose to release resources so can get access to file
-                FileInfo img1 = new FileInfo(file);
+                 FileInfo img1 = new FileInfo(file);
                 img1.Delete();
             }catch(Exception ex)
             {

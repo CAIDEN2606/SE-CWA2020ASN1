@@ -132,25 +132,21 @@ namespace SE_CWA2020ASN1_Prog
         /// <param name="e"></param>
         private void btn_delete_Click(object sender, EventArgs e)
         {
+            Debug.WriteLine("delete started");
             try
             {
                 //string filelst = "";
                 string filelst = lst_pics.Items[lst_pics.SelectedIndex].ToString() + ".jpg";
                 string file = filePath + filelst;
-                //pic_intervPics.Image = Resources.musk_logo;
-                FileInfo img1 = new FileInfo(file);
-                img1.Delete();
-                //extra dispose
-                //pic_intervPics.Dispose();
-                //im.deleteImg(file);
+                im.deleteImg(file);
                                
-                Console.WriteLine(file);
+                Debug.WriteLine(file + " deleted.");
             }
             catch (Exception ex)
             {
                 Debug.WriteLine("Error trying to delete file: " + ex.Message);
             }
-            Console.WriteLine("delete finished");
+            Debug.WriteLine("delete finished");
         }
 
         /// <summary>
@@ -198,7 +194,6 @@ namespace SE_CWA2020ASN1_Prog
             }
               //if selected from list display to fill pic viewer
             pic_intervPics.SizeMode = PictureBoxSizeMode.StretchImage;
-           
         }
 
         
@@ -223,8 +218,6 @@ namespace SE_CWA2020ASN1_Prog
             Image img3 = null;
             int i = numTotalInterv + 1;
             string ID = i.ToString();
-
-            //pic_intervPics.Dispose();
 
             //check if images exist else save as null to keep to class structure
             //rename images with intervID which makes unavailable in pic_viewer
