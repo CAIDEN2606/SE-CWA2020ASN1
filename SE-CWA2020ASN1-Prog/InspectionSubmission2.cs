@@ -31,7 +31,7 @@ namespace SE_CWA2020ASN1_Prog
         private IMethods im = new Methods();
         string filePath = Application.StartupPath + @"\inspectImages\";
         private Intervention interv;
-        Bitmap bmp;
+        
 
         public InspectionSubmission2(Inspection insp)
             
@@ -244,7 +244,7 @@ namespace SE_CWA2020ASN1_Prog
                 }
             }catch(Exception ex)
             {
-                Debug.WriteLine("error renaiming files: " + ex.Message);
+                Debug.WriteLine("error renaming files: " + ex.Message);
             }
             //check all necessary fields are completed, can only continue if filled.
             if (im.isEmptyTextFieldForm2(workArea, intDesc, intervType) == false)
@@ -304,7 +304,10 @@ namespace SE_CWA2020ASN1_Prog
             {
                 wa = new WorkArea(workArea, inspectCommsSummary);
                 //functional test
-                Console.WriteLine(wa.testString());
+                Debug.WriteLine(wa.testString());
+                //add wa to inspection.md file
+                im.appendWorkAreaPDF(wa);
+                Debug.WriteLine("Work area pdf created from submit from2");
             }
             catch (NullReferenceException ex)
             {

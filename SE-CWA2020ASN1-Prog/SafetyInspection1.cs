@@ -19,12 +19,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Aspose;
 using Aspose.Html;
+using System.Diagnostics;
 
 namespace SE_CWA2020ASN1_Prog
 {
     public partial class SafetyInspection1 : Form
     {
         private Inspection insp;
+        IMethods im = new Methods();
+
         public SafetyInspection1()
         {
             InitializeComponent();
@@ -121,9 +124,21 @@ namespace SE_CWA2020ASN1_Prog
             {
                 //create object of type inspection_area and pass to safetyInspection2
                 insp = new Inspection(siteName, date, inspectorName, jobType, jobDesc, supervisor);
-                InspectionSubmission2 frmIS2 = new InspectionSubmission2(insp);
+                
+                try
+                {
+                    Debug.WriteLine("Creating insp md file");
+                    //create inspection.md file
+                    im.createInspMDfile(insp);
+                    Debug.WriteLine("insp md file created, \ndetails= "+insp.teststring());
+
+                }catch(Exception ex)
+                {
+                    Debug.WriteLine("error creating inspMDfile: " + ex.Message);
+                }
                 //clear all input fields
                 clearFields();
+                InspectionSubmission2 frmIS2 = new InspectionSubmission2(insp);
                 frmIS2.ShowDialog(); 
                 this.Show();
             }
@@ -140,6 +155,8 @@ namespace SE_CWA2020ASN1_Prog
 
         private void btn_pdf_Click(object sender, EventArgs e)
         {
+
+            string filePath = Application.StartupPath;
             //Prepare a simple Markdown example
 
 
@@ -149,21 +166,20 @@ namespace SE_CWA2020ASN1_Prog
             try
             {
 
-                System.IO.File.WriteAllText("document.md", insp.pdfformat());
-
-                //MessageBox.Show(insp.teststring());
+                //File.WriteAllText("document.md", insp.pdfInspFormat());
+                
 
                 // Convert Markdown to HTML document
                 //Aspose.Html.Converters.Converter.ConvertMarkdown("document.md", "document.html");
-                HTMLDocument document = Aspose.Html.Converters.Converter.ConvertMarkdown("document.md");
+                HTMLDocument document = Aspose.Html.Converters.Converter.ConvertMarkdown(filePath+@"inspection.md");
 
                 // Invoke the ConvertHTML method to convert the HTML to PDF.
-                Aspose.Html.Converters.Converter.ConvertHTML(document, new Aspose.Html.Saving.PdfSaveOptions(), "Report.pdf");
+                Aspose.Html.Converters.Converter.ConvertHTML(document, new Aspose.Html.Saving.PdfSaveOptions(), filePath + @"Report.pdf");
             }
             catch (Exception ex)
             {
 
-                Console.WriteLine(ex.ToString());
+                Debug.WriteLine(ex.ToString());
             }
 
         }

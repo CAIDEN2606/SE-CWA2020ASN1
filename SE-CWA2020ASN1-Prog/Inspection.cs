@@ -34,6 +34,7 @@ namespace SE_CWA2020ASN1_Prog
         /// <param name="waObj"></param>
         public void addWorkArea(WorkArea waObj)
         {
+            
             m_workAreaList.Add(waObj);
         }
 
@@ -72,7 +73,16 @@ namespace SE_CWA2020ASN1_Prog
             return "Inspection --> Site: "+ m_siteName + ", date: " + m_inspectionDate + ", Inspected by: " + m_inspectorName;
         }
 
-        
+        public string pdfInspFormat()
+        {
+            return
+            "Site name: " + m_siteName +
+            "\nDate: " + m_inspectionDate +
+            "\nInspector Name: " + m_inspectorName +
+            "\nJob Type: " + m_jobType +
+            "\nJob Description: " + m_jobDescription +
+            "\nSupervisor's name: " + m_supervisorName;
+        }
         
     }
 

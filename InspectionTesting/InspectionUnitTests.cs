@@ -3,7 +3,7 @@ using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SE_CWA2020ASN1_Prog;
 using SE_CWA2020ASN1_Prog.Properties;
-using System.Windows.Forms;
+
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -34,8 +34,8 @@ namespace InspectionTesting
         public void TestMethod1()
         {
             //arrange
-            int interventionTotal = 1;
-            string fileName = Application.StartupPath + @"\inspectImages\";
+            //int interventionTotal = 1;
+            //string fileName = Application.StartupPath + @"\inspectImages\";
 
 
             //act
@@ -54,7 +54,7 @@ namespace InspectionTesting
         public void TestMethod2()
         {
             ImageCapture ic = new ImageCapture();
-            ic.
+            
 
         }
 
