@@ -45,6 +45,13 @@ namespace SE_CWA2020ASN1_Prog
         {
             return "Work area --> work area= "+m_workarea + ",Inspection summary= "+ m_inspectionSummary;
         }
+
+        public string pdfWaFormat()
+        {
+            string ans ="\nwork area: "+m_workarea + "\nInspection summary = "+ m_inspectionSummary;
+
+            return ans;
+        }
     }
 }
 

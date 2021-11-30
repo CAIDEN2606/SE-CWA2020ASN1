@@ -182,5 +182,7 @@ namespace SE_CWA2020ASN1_Prog
         {
             this.Close();
         }
+
+        
     }
 }

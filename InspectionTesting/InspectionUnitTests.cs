@@ -1,5 +1,12 @@
 ﻿using System;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using SE_CWA2020ASN1_Prog;
+using SE_CWA2020ASN1_Prog.Properties;
+
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
 
 namespace InspectionTesting
 {
@@ -20,33 +27,65 @@ namespace InspectionTesting
 
 
         /// <summary>
-        /// 
+        ///test if a file is renamed with a prefix of an integer 
         /// </summary>
         [TestMethod]
         //rename according to test type
         public void TestMethod1()
         {
+            //arrange
+            //int interventionTotal = 1;
+            //string fileName = Application.StartupPath + @"\inspectImages\";
 
+
+            //act
+
+
+            //assert
+            Assert.AreEqual(5,5);
 
         }
 
         /// <summary>
-        /// Testing function...
+        /// Testing function to open and close the camera
         /// </summary>
         [TestMethod]
         //rename according to test type
         public void TestMethod2()
+        {
+            ImageCapture ic = new ImageCapture();
+            
+
+        }
+
+        /// <summary>
+        /// Method to test if a file is deleted from folder
+        /// </summary>
+        [TestMethod]
+        //rename according to test type
+        public void TestMethod3()
         {
 
 
         }
 
         /// <summary>
-        /// Method to test..
+        /// Method to test if data is saved to the work area list
         /// </summary>
         [TestMethod]
         //rename according to test type
-        public void TestMethod3()
+        public void TestMethod4()
+        {
+
+
+        }
+
+        /// <summary>
+        /// Method to test if data is saved to an inspection list
+        /// </summary>
+        [TestMethod]
+        //rename according to test type
+        public void TestMethod5()
         {
 
 

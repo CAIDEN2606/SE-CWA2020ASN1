@@ -20,7 +20,7 @@ namespace SE_CWA2020ASN1_Prog
         private IMethods im = new Methods();
         string filePath = Application.StartupPath + @"\inspectImages\";
         
-        Bitmap bmp;
+        
 
         public Form1()
         {

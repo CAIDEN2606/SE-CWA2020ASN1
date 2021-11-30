@@ -15,6 +15,7 @@
 
 using SE_CWA2020ASN1_Prog.Properties;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -30,8 +31,10 @@ namespace SE_CWA2020ASN1_Prog
         private IMethods im = new Methods();
         string filePath = Application.StartupPath + @"\inspectImages\";
         private Intervention interv;
-    
+        
+
         public InspectionSubmission2(Inspection insp)
+            
         {
             InitializeComponent();
             popInterventionCombo();
@@ -129,20 +132,21 @@ namespace SE_CWA2020ASN1_Prog
         /// <param name="e"></param>
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            Debug.WriteLine("delete process started");
+            Debug.WriteLine("delete started");
             try
             {
+                //string filelst = "";
                 string filelst = lst_pics.Items[lst_pics.SelectedIndex].ToString() + ".jpg";
                 string file = filePath + filelst;
                 im.deleteImg(file);
                                
-                Debug.WriteLine(file+" deleted.");
+                Debug.WriteLine(file + " deleted.");
             }
             catch (Exception ex)
             {
                 Debug.WriteLine("Error trying to delete file: " + ex.Message);
             }
-            Console.WriteLine("delete finished");
+            Debug.WriteLine("delete finished");
         }
 
         /// <summary>
@@ -190,7 +194,6 @@ namespace SE_CWA2020ASN1_Prog
             }
               //if selected from list display to fill pic viewer
             pic_intervPics.SizeMode = PictureBoxSizeMode.StretchImage;
-           
         }
 
         
@@ -215,7 +218,7 @@ namespace SE_CWA2020ASN1_Prog
             Image img3 = null;
             int i = numTotalInterv + 1;
             string ID = i.ToString();
-    
+
             //check if images exist else save as null to keep to class structure
             //rename images with intervID which makes unavailable in pic_viewer
             //so new pics can be taken.
@@ -241,7 +244,7 @@ namespace SE_CWA2020ASN1_Prog
                 }
             }catch(Exception ex)
             {
-                Debug.WriteLine("error renaiming files: " + ex.Message);
+                Debug.WriteLine("error renaming files: " + ex.Message);
             }
             //check all necessary fields are completed, can only continue if filled.
             if (im.isEmptyTextFieldForm2(workArea, intDesc, intervType) == false)
@@ -301,7 +304,10 @@ namespace SE_CWA2020ASN1_Prog
             {
                 wa = new WorkArea(workArea, inspectCommsSummary);
                 //functional test
-                Console.WriteLine(wa.testString());
+                Debug.WriteLine(wa.testString());
+                //add wa to inspection.md file
+                im.appendWorkAreaPDF(wa);
+                Debug.WriteLine("Work area pdf created from submit from2");
             }
             catch (NullReferenceException ex)
             {
