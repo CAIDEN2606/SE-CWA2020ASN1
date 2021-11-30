@@ -17,6 +17,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Aspose;
+using Aspose.Html;
 
 namespace SE_CWA2020ASN1_Prog
 {
@@ -135,8 +137,36 @@ namespace SE_CWA2020ASN1_Prog
             amusk.ShowDialog();
             
         }
-        
-        
+
+        private void btn_pdf_Click(object sender, EventArgs e)
+        {
+            //Prepare a simple Markdown example
+
+
+
+
+            // Create a Markdown file
+            try
+            {
+
+                System.IO.File.WriteAllText("document.md", insp.pdfformat());
+
+                //MessageBox.Show(insp.teststring());
+
+                // Convert Markdown to HTML document
+                //Aspose.Html.Converters.Converter.ConvertMarkdown("document.md", "document.html");
+                HTMLDocument document = Aspose.Html.Converters.Converter.ConvertMarkdown("document.md");
+
+                // Invoke the ConvertHTML method to convert the HTML to PDF.
+                Aspose.Html.Converters.Converter.ConvertHTML(document, new Aspose.Html.Saving.PdfSaveOptions(), "Report.pdf");
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.ToString());
+            }
+
+        }
     }
 }
 
