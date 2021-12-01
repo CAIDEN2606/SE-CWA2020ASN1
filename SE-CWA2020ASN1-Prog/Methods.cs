@@ -20,6 +20,8 @@ namespace SE_CWA2020ASN1_Prog
 
     interface IMethods
     {
+        void createInspMDfile(Inspection insp);
+        void appendWorkAreaPDF(WorkArea wa);
         void deleteImg(string file);
         void deleteImages();
         string displayInterventions(Intervention interv);
@@ -30,6 +32,39 @@ namespace SE_CWA2020ASN1_Prog
 
     class Methods : IMethods
     {
+        public void createInspMDfile(Inspection insp)
+        {
+            string path = Application.StartupPath + @"\inspection.md";
+
+            if (File.Exists(path) == true)
+            {
+                File.Delete(path);
+                File.WriteAllText(path, insp.pdfInspFormat());
+                Debug.WriteLine("Inspection File found, deleted and new file created");
+            }
+            else
+            {
+                File.WriteAllText(path, insp.pdfInspFormat());
+                Debug.WriteLine("No Inspection file found so new file created");
+            }
+        }
+
+        public void appendWorkAreaPDF(WorkArea wa)
+        {
+
+            string path = Application.StartupPath + @"\inspection.md";
+            if (File.Exists(path) == true)
+            {
+                File.AppendAllText(path, wa.pdfWaFormat());
+            }
+            else
+            {
+                File.WriteAllText(path, wa.pdfWaFormat());
+                Debug.WriteLine("New pdf inspection file appended to with WA details.\nMissing insp details");
+            }
+
+        }
+
         public void deleteImg(string file)
         {
             FileInfo img1 = new FileInfo(file);
