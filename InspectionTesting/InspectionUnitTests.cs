@@ -3,10 +3,11 @@ using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SE_CWA2020ASN1_Prog;
 using SE_CWA2020ASN1_Prog.Properties;
-
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+
+
 
 namespace InspectionTesting
 {
@@ -34,15 +35,36 @@ namespace InspectionTesting
         public void TestMethod1()
         {
             //arrange
-            //int interventionTotal = 1;
-            //string fileName = Application.StartupPath + @"\inspectImages\";
+            Intervention intv;
+            WorkArea war;
+            Bitmap bm;
+            string filePath =  @".\inspectImages\";
+            int id = 2;
+            string name = "test name";
+            string type = "test type";
+            string acomms = "test acomments";
+            string icomms = "test icomments";
+            Image img1 = null;
+            Image img2 = null;
+            Image img3 = null;
+            String filenames = filePath + @"1img1.jpg";
+            var bm1 = new Bitmap(filenames);
+            img1 = new Bitmap(bm1);
+            var bm2 = new Bitmap(filePath + @"1img2.jpg");
+            img2 = new Bitmap(bm2);
+            var bm3 = new Bitmap(filePath + @"1img3.jpg");
+            img3 = new Bitmap(bm3);
 
-
+            string worka = "test work area";
+            string summ = "test summary";
             //act
-
-
+            intv = new Intervention(id, name, type, acomms, icomms, img1, img2, img3);
+            war = new WorkArea(worka, summ);
+            war.addInterv(intv);
+            
             //assert
-            Assert.AreEqual(5,5);
+            Assert.AreEqual(id,intv.Interv_ID);
+            Assert.AreEqual(worka, war.Work_Area);
 
         }
 
@@ -53,7 +75,12 @@ namespace InspectionTesting
         //rename according to test type
         public void TestMethod2()
         {
-            ImageCapture ic = new ImageCapture();
+            Inspection insp;
+
+
+
+            insp = new Inspection();
+
             
 
         }
