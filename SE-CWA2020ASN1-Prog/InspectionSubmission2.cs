@@ -308,6 +308,10 @@ namespace SE_CWA2020ASN1_Prog
                 //add wa to inspection.md file
                 im.appendWorkAreaPDF(wa);
                 Debug.WriteLine("Work area pdf created from submit from2");
+                //clear images from folder that are not saved as intervention images
+                //and do not contain prefix number.
+                im.deleteImages();
+                Debug.WriteLine("temp images deleted");
             }
             catch (NullReferenceException ex)
             {

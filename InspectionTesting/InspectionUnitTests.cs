@@ -35,8 +35,8 @@ namespace InspectionTesting
         public void TestMethod1()
         {
             //arrange
-            Intervention intv;
-            WorkArea war;
+            Intervention testintv;
+            WorkArea testwar;
             Bitmap bm;
             string filePath =  @".\inspectImages\";
             int id = 2;
@@ -55,16 +55,18 @@ namespace InspectionTesting
             var bm3 = new Bitmap(filePath + @"1img3.jpg");
             img3 = new Bitmap(bm3);
 
+            
+            //act
+            testintv = new Intervention(id, name, type, acomms, icomms, img1, img2, img3);
+
             string worka = "test work area";
             string summ = "test summary";
-            //act
-            intv = new Intervention(id, name, type, acomms, icomms, img1, img2, img3);
-            war = new WorkArea(worka, summ);
-            war.addInterv(intv);
+            testwar = new WorkArea(worka, summ);
+            testwar.addInterv(testintv);
             
             //assert
-            Assert.AreEqual(id,intv.Interv_ID);
-            Assert.AreEqual(worka, war.Work_Area);
+            Assert.AreEqual(id,testintv.Interv_ID);
+           
 
         }
 
@@ -75,14 +77,19 @@ namespace InspectionTesting
         //rename according to test type
         public void TestMethod2()
         {
-            Inspection insp;
+            Inspection testinsp;
+            string siteName = "site";
+            DateTime date = DateTime.Now;
+            string inspName = "inspectorName";
+            string jobType = "job type";
+            string jobDesc = "job descr";
+            string supervisor = "supervisor";
 
+            testinsp = new Inspection(siteName,date, inspName, jobType, jobDesc, supervisor);
 
-
-            insp = new Inspection();
-
-            
-
+            Assert.AreEqual(siteName, testinsp.Site_Name);
+            Assert.AreEqual(supervisor.Length, testinsp.Supervisor_Name.Length);
+            Assert.IsNotNull(date);
         }
 
         /// <summary>
@@ -92,8 +99,14 @@ namespace InspectionTesting
         //rename according to test type
         public void TestMethod3()
         {
+            WorkArea testwar;
+            string worka = "test work area";
+            string summ = "test summary";
 
 
+            testwar = new WorkArea(worka, summ);
+            Assert.AreEqual(worka, testwar.Work_Area);
+            Assert.AreEqual(summ.Length, testwar.Inspection_Summary.Length);
         }
 
         /// <summary>
@@ -104,6 +117,18 @@ namespace InspectionTesting
         public void TestMethod4()
         {
 
+            //test if images folder is created
+            string folderPath = @".\inspectImages";
+            if (!File.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+                Assert.IsTrue(File.Exists(folderPath));
+            }
+            else
+            {
+                Assert.IsTrue(File.Exists(folderPath));
+            }
+                
 
         }
 

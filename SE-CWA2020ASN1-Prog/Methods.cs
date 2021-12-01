@@ -67,7 +67,6 @@ namespace SE_CWA2020ASN1_Prog
         }
 
 
-
         public void deleteImg(string file)
         {
             FileInfo img1 = new FileInfo(file);
@@ -79,7 +78,6 @@ namespace SE_CWA2020ASN1_Prog
         {
             try
             {
-                
                 FileInfo img1 = new FileInfo(Application.StartupPath + @"\inspectImages\img1.jpg");
                 FileInfo img2 = new FileInfo(Application.StartupPath + @"\inspectImages\img2.jpg");
                 FileInfo img3 = new FileInfo(Application.StartupPath + @"\inspectImages\img3.jpg");
