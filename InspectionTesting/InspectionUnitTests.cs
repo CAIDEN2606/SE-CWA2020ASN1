@@ -110,7 +110,7 @@ namespace InspectionTesting
         }
 
         /// <summary>
-        /// Method to test if data is saved to the work area list
+        /// Method to test the image directory is created where the application file is contained
         /// </summary>
         [TestMethod]
         //rename according to test type
@@ -119,14 +119,14 @@ namespace InspectionTesting
 
             //test if images folder is created
             string folderPath = @".\inspectImages";
-            if (!File.Exists(folderPath))
+            if (!Directory.Exists(folderPath))
             {
                 Directory.CreateDirectory(folderPath);
                 Assert.IsTrue(File.Exists(folderPath));
             }
             else
             {
-                Assert.IsTrue(File.Exists(folderPath));
+                Assert.IsTrue(Directory.Exists(folderPath));
             }
                 
 

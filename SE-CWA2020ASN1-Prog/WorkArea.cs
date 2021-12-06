@@ -8,20 +8,26 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
 {
     public class WorkArea
     {
+        private Intervention intervs;
         private List<Intervention> m_intervention;
+        private List<WorkArea> m_wa;
         public WorkArea(string workArea, string iSummary)
         {
             m_workarea = workArea;
             m_inspectionSummary = iSummary;
             m_intervention = new List<Intervention>();
+            m_wa = new List<WorkArea>();
         }
 
         /// <summary>
@@ -37,6 +43,7 @@ namespace SE_CWA2020ASN1_Prog
 
         private string m_inspectionSummary;
         public string Inspection_Summary { get { return m_inspectionSummary; } set { m_inspectionSummary = value; } }
+        
         /// <summary>
         /// Used to test if data is correct in wa list
         /// </summary>
@@ -52,6 +59,7 @@ namespace SE_CWA2020ASN1_Prog
 
             return ans;
         }
+    
     }
 }
 

@@ -56,13 +56,10 @@ namespace SE_CWA2020ASN1_Prog
                     {
                         capture.Read(frame);
                         image = BitmapConverter.ToBitmap(frame);
-                        //System.ArgumentException' occurred in System.Drawing.dll
-
                         if (pic_captureImage.Image != null)
                         {
                             pic_captureImage.Image.Dispose();
                         }
-                        //System.ArgumentException: 'Parameter is not valid
                         pic_captureImage.Image = image;
                     }catch (ArgumentException ex)
                     {

@@ -5,6 +5,8 @@
 //          Control system: Github              //
 //              Date:14/12/2021                 //
 //##############################################//
+//
+//
 
 using System;
 using System.IO;
@@ -36,7 +38,9 @@ namespace SE_CWA2020ASN1_Prog
             //clears input fields
             
         }
-        
+        /// <summary>
+        /// 
+        /// </summary>
         private void addComboData()
         {
             cmb_EnterSite.Items.Add("Weetabix Burton AP1 / Main");

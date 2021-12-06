@@ -22,6 +22,7 @@ namespace SE_CWA2020ASN1_Prog
     {
         void createInspMDfile(Inspection insp);
         void appendWorkAreaPDF(WorkArea wa);
+        
         void deleteImg(string file);
         void deleteImages();
         string displayInterventions(Intervention interv);
@@ -57,6 +58,8 @@ namespace SE_CWA2020ASN1_Prog
             if (File.Exists(path) == true)
             {
                 File.AppendAllText(path, wa.pdfWaFormat());
+                //adds to md file return string in pdwaformat
+                File.AppendAllText(path, wa.intervFromWa());
             }
             else
             {
@@ -65,7 +68,7 @@ namespace SE_CWA2020ASN1_Prog
             }
 
         }
-
+        
 
         public void deleteImg(string file)
         {
