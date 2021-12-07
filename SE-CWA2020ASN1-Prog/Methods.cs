@@ -7,22 +7,16 @@
 //##############################################//
 //Functional purpose and responsiblies
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
 {
-
     interface IMethods
     {
         void createInspMDfile(Inspection insp);
         void appendWorkAreaPDF(WorkArea wa);
-        
         void deleteImg(string file);
         void deleteImages();
         string displayInterventions(Intervention interv);
@@ -30,14 +24,11 @@ namespace SE_CWA2020ASN1_Prog
         Boolean isEmptyTextFieldForm2(string workArea,string intDesc, string intervType);
     }
 
-
     class Methods : IMethods
     {
-
         public void createInspMDfile(Inspection insp)
         {
             string path = Application.StartupPath + @"\inspection.md";
-
             if (File.Exists(path) == true)
             {
                 File.Delete(path);
@@ -53,30 +44,29 @@ namespace SE_CWA2020ASN1_Prog
 
         public void appendWorkAreaPDF(WorkArea wa)
         {
-
             string path = Application.StartupPath + @"\inspection.md";
             if (File.Exists(path) == true)
             {
                 File.AppendAllText(path, wa.pdfWaFormat());
-                //adds to md file return string in pdwaformat
-                File.AppendAllText(path, wa.intervFromWa());
             }
             else
             {
                 File.WriteAllText(path, wa.pdfWaFormat());
                 Debug.WriteLine("New pdf inspection file appended to with WA details.\nMissing insp details");
             }
-
         }
-        
-
+        /// <summary>
+        /// Delete image file
+        /// </summary>
+        /// <param name="file"></param>
         public void deleteImg(string file)
         {
             FileInfo img1 = new FileInfo(file);
             img1.Delete();
-            
         }
-        //call to clear folder 
+        /// <summary>
+        /// call to clear folder when inspection submitted
+        /// </summary>
         public void deleteImages()
         {
             try
@@ -84,7 +74,6 @@ namespace SE_CWA2020ASN1_Prog
                 FileInfo img1 = new FileInfo(Application.StartupPath + @"\inspectImages\img1.jpg");
                 FileInfo img2 = new FileInfo(Application.StartupPath + @"\inspectImages\img2.jpg");
                 FileInfo img3 = new FileInfo(Application.StartupPath + @"\inspectImages\img3.jpg");
-                
                 img1.Delete();
                 img2.Delete();
                 img3.Delete();
@@ -93,6 +82,7 @@ namespace SE_CWA2020ASN1_Prog
                 Debug.WriteLine("Cannot delete file: " + ex.ToString());
             }
         }
+
         ///// <summary>
         ///// Display list of inspections and some details in rich text box as required by project reqs.
         ///// </summary>
@@ -100,7 +90,6 @@ namespace SE_CWA2020ASN1_Prog
         {
             string shead = interv.Subheading_Name;
             return shead;
-
         }
 
         /// <summary>
@@ -118,37 +107,30 @@ namespace SE_CWA2020ASN1_Prog
             if (siteName == "")
             {
                 MessageBox.Show("Please, enter the site name");
-                    
             }
             if (inspectorName == "")
             {
                 MessageBox.Show("Please, enter your name");
-                    
             }
             if (jobType == "")
             {
                 MessageBox.Show("Please, enter the job type");
-
             }
             if (jobDesc == "")
             {
                 MessageBox.Show("Please, enter a job description");
-
             }
-                
-                
             if (supervisor == "")
             {
                 MessageBox.Show("Please, enter the supervisor's name");
-                    
             }
             else
             {
                 ans = false;
             }
-            
             return ans;
         }
+
         /// <summary>
         /// Check to see if compulsary fields in inspectionSubmission2 are empty, displays message if it is. 
         /// Will not continue if empty
@@ -164,30 +146,20 @@ namespace SE_CWA2020ASN1_Prog
                 if (workArea == "")
                 {
                     MessageBox.Show("Please, enter the work area");
-
                 }
                 if (intDesc == "")
                 {
                     MessageBox.Show("Please, select an intervention");
-                    
                 }
                 if (intervType == "")
                 {
                     MessageBox.Show("Please, select an intervention type");
-                    
                 }
                 else
                 {
                     ans = false;
                 }
-            
             return ans;
         }
-
-        
-
-
     }
-    
-    
 }

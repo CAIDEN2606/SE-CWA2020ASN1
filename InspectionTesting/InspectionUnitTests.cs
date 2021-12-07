@@ -2,20 +2,13 @@
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SE_CWA2020ASN1_Prog;
-using SE_CWA2020ASN1_Prog.Properties;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
-
-
 
 namespace InspectionTesting
 {
     [TestClass]
     public class InspectionUnitTests
     {
-
-
         /// <summary>
         /// Test for opening sqlite connection
         /// </summary>
@@ -26,9 +19,8 @@ namespace InspectionTesting
 
         }
 
-
         /// <summary>
-        ///test if a file is renamed with a prefix of an integer 
+        ///Testing the intervention class 
         /// </summary>
         [TestMethod]
         //rename according to test type
@@ -54,7 +46,6 @@ namespace InspectionTesting
             img2 = new Bitmap(bm2);
             var bm3 = new Bitmap(filePath + @"1img3.jpg");
             img3 = new Bitmap(bm3);
-
             
             //act
             testintv = new Intervention(id, name, type, acomms, icomms, img1, img2, img3);
@@ -66,12 +57,10 @@ namespace InspectionTesting
             
             //assert
             Assert.AreEqual(id,testintv.Interv_ID);
-           
-
         }
 
         /// <summary>
-        /// Testing function to open and close the camera
+        /// Testing the inspection class
         /// </summary>
         [TestMethod]
         //rename according to test type
@@ -103,7 +92,6 @@ namespace InspectionTesting
             string worka = "test work area";
             string summ = "test summary";
 
-
             testwar = new WorkArea(worka, summ);
             Assert.AreEqual(worka, testwar.Work_Area);
             Assert.AreEqual(summ.Length, testwar.Inspection_Summary.Length);
@@ -116,7 +104,6 @@ namespace InspectionTesting
         //rename according to test type
         public void TestMethod4()
         {
-
             //test if images folder is created
             string folderPath = @".\inspectImages";
             if (!Directory.Exists(folderPath))
@@ -128,8 +115,6 @@ namespace InspectionTesting
             {
                 Assert.IsTrue(Directory.Exists(folderPath));
             }
-                
-
         }
 
         /// <summary>
@@ -153,42 +138,6 @@ namespace InspectionTesting
 
         }
 
-        /// <summary>
-        /// Prints the inspection list to console to confirm details entered
-        /// </summary>
-        //private void getInspectionTest()
-        //{
-
-        //    Console.WriteLine("Inspection details");
-        //    //printing in console
-        //    foreach (Inspection i in inspection)
-        //    {
-        //        //MessageBox.Show(i.tostring());
-        //        Console.WriteLine("Inspection name: " + i.Site_Name.ToString() + "," + i.Inspection_Date.ToString());
-        //    }
-
-        //}
-
-        /// <summary>
-        /// print intervention list contents to console
-        /// </summary>
-        //public void getInterventionTest()
-        //{
-        //    foreach (Intervention i in interv)
-        //    {
-        //        Console.WriteLine("Intervention = " + i.Heading_Name.ToString() + "," + "Subheading = " + i.Subheading_Name.ToString());
-        //    }
-        //}
-
-        ///// <summary>
-        ///// print inspectionArea objects to console
-        ///// </summary>
-        //public void getInspectionAreaTest()
-        //{
-        //    foreach (InspectionArea ia in inspArea)
-        //    {
-        //        Console.WriteLine("Inspection area = " + ia.Work_Area.ToString());
-        //    }
-        //}
+        
     }
 }
