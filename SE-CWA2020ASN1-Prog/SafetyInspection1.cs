@@ -5,6 +5,8 @@
 //          Control system: Github              //
 //              Date:14/12/2021                 //
 //##############################################//
+//
+//
 
 using System;
 using System.IO;
@@ -36,7 +38,9 @@ namespace SE_CWA2020ASN1_Prog
             //clears input fields
             
         }
-        
+        /// <summary>
+        /// 
+        /// </summary>
         private void addComboData()
         {
             cmb_EnterSite.Items.Add("Weetabix Burton AP1 / Main");
@@ -71,7 +75,7 @@ namespace SE_CWA2020ASN1_Prog
             get { return dateTimePicker1.Value; }
             set { dateTimePicker1.Value = value; }
         }
-        public string m_inspector
+        public string m_inspectorName
         {
             get { return txt_inspectorName.Text; }
             set { txt_inspectorName.Text = value; }
@@ -106,24 +110,12 @@ namespace SE_CWA2020ASN1_Prog
         
         private void btn_Enter_Click(object sender, EventArgs e )
         {
-            //string siteName = "";
-            //DateTime date;
-            //string inspectorName = "";
-            //string jobDesc = "";
-            //string jobType = "";
-            //string supervisor = "";
-
-            string siteName = cmb_EnterSite.Text;
-            DateTime date = dateTimePicker1.Value;
-            string inspectorName = txt_inspectorName.Text;
-            string jobType = cmb_EnterType.Text;
-            string jobDesc = txt_jobDescription.Text;
-            string supervisor = txt_supervisor.Text;
+            
             IMethods im = new Methods();
-            if (im.isEmptyTextFieldForm1(siteName, inspectorName, jobType, jobDesc, supervisor) == false)
+            if (im.isEmptyTextFieldForm1(m_siteName, m_inspectorName, m_jobType, m_jobDesc, m_supervisor) == false)
             {
                 //create object of type inspection_area and pass to safetyInspection2
-                insp = new Inspection(siteName, date, inspectorName, jobType, jobDesc, supervisor);
+                insp = new Inspection(m_siteName, m_date, m_inspectorName, m_jobType, m_jobDesc, m_supervisor);
                 
                 try
                 {
