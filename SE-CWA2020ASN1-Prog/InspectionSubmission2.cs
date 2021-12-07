@@ -50,8 +50,8 @@ namespace SE_CWA2020ASN1_Prog
         public string m_inspDesc { get { return cmb_Interventions.Text; }set { cmb_Interventions.Text = value; }}
         public string m_intervType {get { return cmb_TypesOfIntervention.Text; }set { cmb_TypesOfIntervention.Text = value; }}
         public string m_actionComments {get {return rtx_actionTaken.Text; }set { rtx_actionTaken.Text=value; }}
-        public string m_inspectionComments {get { return rtb_InspectCommsSummary.Text; }set { rtb_InspectCommsSummary.Text = value; }}
-        public string m_workArea { get { return rtb_InspectCommsSummary.Text; } set { rtb_InspectCommsSummary.Text = value; } }
+        public string m_inspectionComments {get { return rtx_comments.Text; }set { rtx_comments.Text = value; }}
+        public string m_workArea { get { return rtb_WorkArea.Text; } set { rtb_WorkArea.Text = value; } }
         public string m_inspectCommsSummary { get { return rtb_InspectCommsSummary.Text; } set { rtb_InspectCommsSummary.Text = value; } }
 
         /// <summary>
@@ -210,12 +210,6 @@ namespace SE_CWA2020ASN1_Prog
         private void btn_saveIntervention_Click(object sender, EventArgs e)
         {
             int intervID = numTotalInterv + 1;
-            //string intDesc = cmb_Interventions.Text;
-            //string intervType = cmb_TypesOfIntervention.Text;
-            //string actComms = rtx_actionTaken.Text;
-            //string inspectComms = rtx_comments.Text;
-            //string workArea = rtb_WorkArea.Text;
-            //string inspectCommsSummary = rtb_InspectCommsSummary.Text;
             Image img1 = null;
             Image img2 = null;
             Image img3 = null;
@@ -326,15 +320,9 @@ namespace SE_CWA2020ASN1_Prog
         {
             this.Close();
         }
-
-        
-
-        
     }
 }
 
-//An error occured when trying to save image: A generic error occurred in GDI+.
-//Exception thrown: 'System.Threading.ThreadAbortException' in OpenCvSharp.dll
 
 
 
