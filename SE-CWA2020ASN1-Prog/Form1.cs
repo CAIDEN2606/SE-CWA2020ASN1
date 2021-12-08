@@ -21,6 +21,11 @@ namespace SE_CWA2020ASN1_Prog
 {
     public partial class Form1 : Form
     {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
         /// <summary>
         /// Exit the programm
         /// </summary>

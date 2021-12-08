@@ -201,6 +201,7 @@ namespace SE_CWA2020ASN1_Prog
             this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_logo.TabIndex = 38;
             this.pic_logo.TabStop = false;
+            this.pic_logo.Click += new System.EventHandler(this.pic_logo_Click);
             // 
             // btn_about
             // 
