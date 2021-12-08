@@ -30,12 +30,16 @@ namespace SE_CWA2020ASN1_Prog
         private IMethods im = new Methods();
         string filePath = Application.StartupPath + @"\inspectImages\";
         private Intervention interv;
-    
+
+        private Inspection m_insp;
+
         public InspectionSubmission2(Inspection insp)
         {
             InitializeComponent();
             popInterventionCombo();
-             
+
+            m_insp = insp;
+
             //display total interventions
             rtx_displayTotalInterv.Text = numTotalInterv.ToString();
             //to test
@@ -294,6 +298,7 @@ namespace SE_CWA2020ASN1_Prog
         private void btn_Submit_Click(object sender, EventArgs e)
         {
             //// add workarea to inspection
+            
             string workArea = rtb_WorkArea.Text;
             string inspectCommsSummary = rtb_InspectCommsSummary.Text;
             //create new workarea 
@@ -307,6 +312,13 @@ namespace SE_CWA2020ASN1_Prog
             {
                 Debug.WriteLine(ex.Message + " The list is empty,please check all fields are filled.");
             }
+
+            //add current inspection to database
+            BusinessMetaLayer ml = BusinessMetaLayer.instance();
+
+            DbConection con = DbFactory.instance();
+            con.OpenConnection();
+
             this.Close();
         }
         /// <summary>
