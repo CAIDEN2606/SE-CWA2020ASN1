@@ -163,6 +163,11 @@ namespace SE_CWA2020ASN1_Prog
                 Debug.WriteLine(ex.ToString());
             }
         }
+
+        private void pic_logo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

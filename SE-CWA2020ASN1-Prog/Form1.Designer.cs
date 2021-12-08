@@ -29,7 +29,6 @@ namespace SE_CWA2020ASN1_Prog
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_actionComments = new System.Windows.Forms.Button();
             this.btn_exitSystem = new System.Windows.Forms.Button();
             this.btn_goSafetyInspection = new System.Windows.Forms.Button();
             this.lbl_userName = new System.Windows.Forms.Label();
@@ -39,14 +38,6 @@ namespace SE_CWA2020ASN1_Prog
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // btn_actionComments
-            // 
-            this.btn_actionComments.Location = new System.Drawing.Point(0, 0);
-            this.btn_actionComments.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_actionComments.Name = "btn_actionComments";
-            this.btn_actionComments.Size = new System.Drawing.Size(67, 18);
-            this.btn_actionComments.TabIndex = 6;
             // 
             // btn_exitSystem
             // 
@@ -134,7 +125,6 @@ namespace SE_CWA2020ASN1_Prog
             this.Controls.Add(this.lbl_userName);
             this.Controls.Add(this.btn_goSafetyInspection);
             this.Controls.Add(this.btn_exitSystem);
-            this.Controls.Add(this.btn_actionComments);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -144,7 +134,6 @@ namespace SE_CWA2020ASN1_Prog
         }
 
         #endregion
-        private System.Windows.Forms.Button btn_actionComments;
         private System.Windows.Forms.Button btn_exitSystem;
         private System.Windows.Forms.Button btn_goSafetyInspection;
         private System.Windows.Forms.Label lbl_userName;
