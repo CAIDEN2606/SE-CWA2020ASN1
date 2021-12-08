@@ -5,6 +5,14 @@
 //          Control system: Github              //
 //              Date:14/12/2021                 //
 //##############################################//
+
+// Class purpose:
+// Collect inspection details and work areas detail
+// Creates a list of inspection
+// Testing the list in console
+// Getting output to PDF
+// Methods are displayed in the order as they appear on the form to help with class navigation
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,6 +74,10 @@ namespace SE_CWA2020ASN1_Prog
             return "Inspection --> Site: "+ m_siteName + ", date: " + m_inspectionDate + ", Inspected by: " + m_inspectorName;
         }
 
+        /// <summary>
+        /// Getting output for PDF file
+        /// </summary>
+        /// <returns></returns>
         public string pdfInspFormat()
         {
             return
@@ -75,9 +87,7 @@ namespace SE_CWA2020ASN1_Prog
             "\nJob Type: " + m_jobType +
             "\nJob Description: " + m_jobDescription +
             "\nSupervisor's name: " + m_supervisorName;
-        }
-        
+        }    
     }
-
 }
 

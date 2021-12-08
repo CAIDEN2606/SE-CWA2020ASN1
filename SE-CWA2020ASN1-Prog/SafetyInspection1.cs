@@ -5,21 +5,15 @@
 //          Control system: Github              //
 //              Date:14/12/2021                 //
 //##############################################//
-//
-//
+
+// Class purpose:
+// Collect inspection details and then add to intervention
+// Creates markdown file and coverts it to PDF format
+// Methods are displayed in the order as they appear on the form to help with class navigation
 
 using System;
-using System.IO;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 //using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Aspose;
 using Aspose.Html;
 using System.Diagnostics;
 
@@ -34,12 +28,11 @@ namespace SE_CWA2020ASN1_Prog
         {
             InitializeComponent();
             clearFields();
-            addComboData();
-            //clears input fields
-            
+            addComboData();  
         }
+
         /// <summary>
-        /// 
+        /// Select inspection site and select inspection type 
         /// </summary>
         private void addComboData()
         {
@@ -48,14 +41,15 @@ namespace SE_CWA2020ASN1_Prog
             cmb_EnterSite.Items.Add("Tate and Lyle");
             cmb_EnterSite.Items.Add("Musk Design");
             cmb_EnterSite.Items.Add("AkzoNobel Stowmarket");
-
-
             cmb_EnterType.Items.Add("Installation");
             cmb_EnterType.Items.Add("General maintenance");
             cmb_EnterType.Items.Add("Building works");
             cmb_EnterType.Items.Add("Repairing");
-
         }
+
+        /// <summary>
+        /// Clears input fields
+        /// </summary>
         public void clearFields()
         {
             cmb_EnterSite.Text = "";
@@ -64,7 +58,10 @@ namespace SE_CWA2020ASN1_Prog
             txt_jobDescription.Text = "";
             txt_supervisor.Text = "";
         }
-        
+
+        /// <summary>
+        /// Getters and setters for safety inspection.
+        /// </summary>
         public string m_siteName
         {
             get { return cmb_EnterSite.Text; }
@@ -107,23 +104,23 @@ namespace SE_CWA2020ASN1_Prog
         {
             this.Close();
         }
-        
+
+        /// <summary>
+        /// cretaes an object of type inspection_area and pass to safetyInspection2y
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Enter_Click(object sender, EventArgs e )
         {
-            
             IMethods im = new Methods();
             if (im.isEmptyTextFieldForm1(m_siteName, m_inspectorName, m_jobType, m_jobDesc, m_supervisor) == false)
             {
-                //create object of type inspection_area and pass to safetyInspection2
                 insp = new Inspection(m_siteName, m_date, m_inspectorName, m_jobType, m_jobDesc, m_supervisor);
-                
                 try
                 {
                     Debug.WriteLine("Creating insp md file");
                     //create inspection.md file
                     im.createInspMDfile(insp);
                     Debug.WriteLine("insp md file created, \ndetails= "+insp.teststring());
-
                 }catch(Exception ex)
                 {
                     Debug.WriteLine("error creating inspMDfile: " + ex.Message);
@@ -133,47 +130,38 @@ namespace SE_CWA2020ASN1_Prog
                 InspectionSubmission2 frmIS2 = new InspectionSubmission2(insp);
                 frmIS2.ShowDialog(); 
                 this.Show();
-            }
-            
-                
+            }      
         }
-
+        /// <summary>
+        /// Provides system information, including version and company name.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_about_Click(object sender, EventArgs e)
         {
             AboutMusk amusk = new AboutMusk();
-            amusk.ShowDialog();
-            
+            amusk.ShowDialog(); 
         }
 
+        /// <summary>
+        /// Create markdown file and coverts it to PDF format
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_pdf_Click(object sender, EventArgs e)
-        {
-
-            string filePath = Application.StartupPath;
-            //Prepare a simple Markdown example
-
-
-
-
-            // Create a Markdown file
+        { 
+            string filePath = Application.StartupPath + @"\inspection.md";
             try
             {
-
-                //File.WriteAllText("document.md", insp.pdfInspFormat());
-                
-
                 // Convert Markdown to HTML document
-                //Aspose.Html.Converters.Converter.ConvertMarkdown("document.md", "document.html");
-                HTMLDocument document = Aspose.Html.Converters.Converter.ConvertMarkdown(filePath+@"inspection.md");
-
+                HTMLDocument document = Aspose.Html.Converters.Converter.ConvertMarkdown(filePath);
                 // Invoke the ConvertHTML method to convert the HTML to PDF.
-                Aspose.Html.Converters.Converter.ConvertHTML(document, new Aspose.Html.Saving.PdfSaveOptions(), filePath + @"Report.pdf");
+                Aspose.Html.Converters.Converter.ConvertHTML(document, new Aspose.Html.Saving.PdfSaveOptions(),@"Report.pdf");
             }
             catch (Exception ex)
             {
-
                 Debug.WriteLine(ex.ToString());
             }
-
         }
     }
 }
