@@ -24,7 +24,13 @@ namespace SE_CWA2020ASN1_Prog
     public class Inspection
     {
         private List<WorkArea> m_workAreaList;
-       
+        private List<Inspection> m_inspectionList;
+
+        public Inspection()
+        {
+
+        }
+
         public Inspection(string iName, DateTime date, string inspectorName, string jobType, string jobDescr,  string sName)
         {
             m_siteName = iName;
@@ -34,7 +40,7 @@ namespace SE_CWA2020ASN1_Prog
             m_jobDescription = jobDescr;
             m_supervisorName = sName;
             m_workAreaList = new List<WorkArea>();
-           
+            m_inspectionList = new List<Inspection>();
         }
         /// <summary>
         /// Adding a workarea object to the workarea list 
@@ -46,7 +52,14 @@ namespace SE_CWA2020ASN1_Prog
             m_workAreaList.Add(waObj);
         }
 
-        
+        /// <summary>
+        /// Adding an inspection to a list
+        /// </summary>
+        /// <param name="insp"></param>
+        public void addInsp(Inspection insp)
+        {
+            m_inspectionList.Add(insp);
+        }
         private string m_siteName;
         public string Site_Name { get { return m_siteName; } set { m_siteName = value; } }
 
@@ -64,7 +77,10 @@ namespace SE_CWA2020ASN1_Prog
 
         private string m_supervisorName;
         public string Supervisor_Name { get { return m_supervisorName; } set { m_supervisorName = value; } }
-    
+
+        private string m_workAreaName;
+        public string Work_Area_Name { get { return m_workAreaName; } set { m_workAreaName = value; } }
+
         /// <summary>
         /// Used to test print to console to confirm contains data 
         /// </summary>
