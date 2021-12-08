@@ -127,7 +127,7 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_Enter.Location = new System.Drawing.Point(12, 462);
             this.btn_Enter.Name = "btn_Enter";
             this.btn_Enter.Size = new System.Drawing.Size(136, 34);
-            this.btn_Enter.TabIndex = 8;
+            this.btn_Enter.TabIndex = 11;
             this.btn_Enter.Text = "Add intervention";
             this.btn_Enter.UseVisualStyleBackColor = true;
             this.btn_Enter.Click += new System.EventHandler(this.btn_Enter_Click);
@@ -137,7 +137,7 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_exit.Location = new System.Drawing.Point(272, 462);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(152, 34);
-            this.btn_exit.TabIndex = 9;
+            this.btn_exit.TabIndex = 13;
             this.btn_exit.Text = "Exit";
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
@@ -149,7 +149,7 @@ namespace SE_CWA2020ASN1_Prog
             this.cmb_EnterSite.Location = new System.Drawing.Point(180, 172);
             this.cmb_EnterSite.Name = "cmb_EnterSite";
             this.cmb_EnterSite.Size = new System.Drawing.Size(198, 24);
-            this.cmb_EnterSite.TabIndex = 10;
+            this.cmb_EnterSite.TabIndex = 5;
             // 
             // txt_inspectorName
             // 
@@ -157,14 +157,14 @@ namespace SE_CWA2020ASN1_Prog
             this.txt_inspectorName.MaxLength = 20;
             this.txt_inspectorName.Name = "txt_inspectorName";
             this.txt_inspectorName.Size = new System.Drawing.Size(198, 22);
-            this.txt_inspectorName.TabIndex = 11;
+            this.txt_inspectorName.TabIndex = 7;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(182, 222);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(198, 22);
-            this.dateTimePicker1.TabIndex = 13;
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // txt_jobDescription
             // 
@@ -172,7 +172,7 @@ namespace SE_CWA2020ASN1_Prog
             this.txt_jobDescription.MaxLength = 20;
             this.txt_jobDescription.Name = "txt_jobDescription";
             this.txt_jobDescription.Size = new System.Drawing.Size(198, 22);
-            this.txt_jobDescription.TabIndex = 14;
+            this.txt_jobDescription.TabIndex = 9;
             // 
             // cmb_EnterType
             // 
@@ -181,14 +181,14 @@ namespace SE_CWA2020ASN1_Prog
             this.cmb_EnterType.Location = new System.Drawing.Point(182, 300);
             this.cmb_EnterType.Name = "cmb_EnterType";
             this.cmb_EnterType.Size = new System.Drawing.Size(198, 24);
-            this.cmb_EnterType.TabIndex = 15;
+            this.cmb_EnterType.TabIndex = 8;
             // 
             // txt_supervisor
             // 
             this.txt_supervisor.Location = new System.Drawing.Point(182, 378);
             this.txt_supervisor.Name = "txt_supervisor";
             this.txt_supervisor.Size = new System.Drawing.Size(198, 22);
-            this.txt_supervisor.TabIndex = 16;
+            this.txt_supervisor.TabIndex = 10;
             // 
             // pic_logo
             // 
@@ -219,7 +219,7 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_pdf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_pdf.Name = "btn_pdf";
             this.btn_pdf.Size = new System.Drawing.Size(88, 34);
-            this.btn_pdf.TabIndex = 40;
+            this.btn_pdf.TabIndex = 12;
             this.btn_pdf.Text = "PDF";
             this.btn_pdf.UseVisualStyleBackColor = true;
             this.btn_pdf.Click += new System.EventHandler(this.btn_pdf_Click);

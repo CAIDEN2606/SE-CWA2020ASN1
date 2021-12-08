@@ -54,7 +54,7 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_exitSystem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_exitSystem.Name = "btn_exitSystem";
             this.btn_exitSystem.Size = new System.Drawing.Size(157, 57);
-            this.btn_exitSystem.TabIndex = 3;
+            this.btn_exitSystem.TabIndex = 4;
             this.btn_exitSystem.Text = "Exit system";
             this.btn_exitSystem.UseVisualStyleBackColor = true;
             this.btn_exitSystem.Click += new System.EventHandler(this.btn_exitSystem_Click);
@@ -64,7 +64,7 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_goSafetyInspection.Location = new System.Drawing.Point(21, 528);
             this.btn_goSafetyInspection.Name = "btn_goSafetyInspection";
             this.btn_goSafetyInspection.Size = new System.Drawing.Size(159, 56);
-            this.btn_goSafetyInspection.TabIndex = 4;
+            this.btn_goSafetyInspection.TabIndex = 3;
             this.btn_goSafetyInspection.Text = "Login";
             this.btn_goSafetyInspection.UseVisualStyleBackColor = true;
             this.btn_goSafetyInspection.Click += new System.EventHandler(this.btn_goSafetyInspection_Click);
@@ -92,14 +92,14 @@ namespace SE_CWA2020ASN1_Prog
             this.textBox1.Location = new System.Drawing.Point(155, 305);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(150, 22);
-            this.textBox1.TabIndex = 99;
+            this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(155, 381);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(150, 22);
-            this.textBox2.TabIndex = 100;
+            this.textBox2.TabIndex = 2;
             // 
             // label2
             // 
