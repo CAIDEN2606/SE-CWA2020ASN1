@@ -7,25 +7,25 @@
 //##############################################//
 
 // Class purpose:
-// Collect workarea and intervention details including call to cature image class
-// Submit work area inspection at the end 
-// Methods are displayed in the order as they appear on the form to help with class navigation
+// Collect workarea and intervention details including call to cature image class to take a picture
+// via the devices camera.
+// Submit work area inspection at the end. 
+// Methods are displayed in the order as they appear on the form to help with class navigation.
 // 
 //
 
 using SE_CWA2020ASN1_Prog.Properties;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-
 using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
 {
     public partial class InspectionSubmission2 : Form
     {
+        //class variables
         private int numTotalInterv = 0;
         private WorkArea wa;
         private IMethods im = new Methods();
@@ -46,11 +46,14 @@ namespace SE_CWA2020ASN1_Prog
             Debug.WriteLine("print insp teststring"+ insp.teststring());
         }
 
-        public string m_subheadings {get { return cmb_Interventions.Text; }set { cmb_Interventions.Text = value; }}
+        
+        public string m_inspDesc { get { return cmb_Interventions.Text; }set { cmb_Interventions.Text = value; }}
         public string m_intervType {get { return cmb_TypesOfIntervention.Text; }set { cmb_TypesOfIntervention.Text = value; }}
         public string m_actionComments {get {return rtx_actionTaken.Text; }set { rtx_actionTaken.Text=value; }}
-        public string m_inspectionComments {get { return rtb_InspectCommsSummary.Text; }set { rtb_InspectCommsSummary.Text = value; }}
-        
+        public string m_inspectionComments {get { return rtx_comments.Text; }set { rtx_comments.Text = value; }}
+        public string m_workArea { get { return rtb_WorkArea.Text; } set { rtb_WorkArea.Text = value; } }
+        public string m_inspectCommsSummary { get { return rtb_InspectCommsSummary.Text; } set { rtb_InspectCommsSummary.Text = value; } }
+
         /// <summary>
         /// Add all intervention subheadings to a combo box for easier user selection
         /// </summary>
@@ -207,12 +210,6 @@ namespace SE_CWA2020ASN1_Prog
         private void btn_saveIntervention_Click(object sender, EventArgs e)
         {
             int intervID = numTotalInterv + 1;
-            string intDesc = cmb_Interventions.Text;
-            string intervType = cmb_TypesOfIntervention.Text;
-            string actComms = rtx_actionTaken.Text;
-            string inspectComms = rtx_comments.Text;
-            string workArea = rtb_WorkArea.Text;
-            string inspectCommsSummary = rtb_InspectCommsSummary.Text;
             Image img1 = null;
             Image img2 = null;
             Image img3 = null;
@@ -247,15 +244,15 @@ namespace SE_CWA2020ASN1_Prog
                 Debug.WriteLine("error renaming files: " + ex.Message);
             }
             //check all necessary fields are completed, can only continue if filled.
-            if (im.isEmptyTextFieldForm2(workArea, intDesc, intervType) == false)
+            if (im.isEmptyTextFieldForm2(m_workArea, m_inspDesc, m_intervType) == false)
             {
                 try
                 {
                    //create new intervention obj, 
-                    interv = new Intervention(intervID, intDesc, intervType, actComms, inspectComms, img1, img2, img3);
+                    interv = new Intervention(intervID, m_inspDesc, m_intervType, m_actionComments, m_inspectionComments, img1, img2, img3);
 
                     //create new workarea 
-                    wa = new WorkArea(workArea, inspectCommsSummary);
+                    wa = new WorkArea(m_workArea, m_inspectCommsSummary);
                     //call addinterv to add intervention to workarea
                     wa.addInterv(interv);
 
@@ -272,7 +269,6 @@ namespace SE_CWA2020ASN1_Prog
                 catch (NullReferenceException ex)
                 {
                     Debug.WriteLine(ex.Message + " The list is empty,please check all fields are filled.");
-
                 }
                 catch (Exception ex)
                 {
@@ -284,7 +280,6 @@ namespace SE_CWA2020ASN1_Prog
                 cmb_TypesOfIntervention.Text = "";
                 rtx_actionTaken.Text = "";
                 rtx_comments.Text = "";
-                //im.deleteImages(); //access denied exception images need dispose?
                 Debug.WriteLine(interv.testString());
             }
         }
@@ -296,18 +291,19 @@ namespace SE_CWA2020ASN1_Prog
         /// <param name="e"></param>
         private void btn_Submit_Click(object sender, EventArgs e)
         {
-            //// add workarea to inspection
-            string workArea = rtb_WorkArea.Text;
-            string inspectCommsSummary = rtb_InspectCommsSummary.Text;
             //create new workarea 
             try
             {
-                wa = new WorkArea(workArea, inspectCommsSummary);
+                wa = new WorkArea(m_workArea, m_inspectCommsSummary);
                 //functional test
                 Debug.WriteLine(wa.testString());
                 //add wa to inspection.md file
                 im.appendWorkAreaPDF(wa);
                 Debug.WriteLine("Work area pdf created from submit from2");
+                //clear images from folder that are not saved as intervention images
+                //and do not contain prefix number.
+                im.deleteImages();
+                Debug.WriteLine("temp images deleted");
             }
             catch (NullReferenceException ex)
             {
