@@ -50,6 +50,7 @@ namespace SE_CWA2020ASN1_Prog
         {
             string ans ="\nwork area: "+m_workarea + "\nInspection summary = "+ m_inspectionSummary;
 
+
             return ans;
         }
     }

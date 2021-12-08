@@ -67,7 +67,7 @@ namespace SE_CWA2020ASN1_Prog
         /// <returns></returns>
         public string testString()
         {
-            return "Intervention --> ID: "+m_intervID+ "subheading: " + m_subheadingName+"Images --> "+m_img1+", "+m_img2+", "+m_img3;
+            return "Intervention --> ID: " + m_intervID + "subheading: " + m_subheadingName + "Images --> " + m_img1 + ", " + m_img2 + ", " + m_img3 + ",  Intervention_Type" + m_interventionType + ", Action_Comments " + m_actionComments + ", Inspection_Comments" + m_inspectionComments;
         }
                 
     }

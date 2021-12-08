@@ -6,6 +6,11 @@
 //              Date:14/12/2021                 //
 //##############################################//
 
+// Class purpose:
+// Collect inspection details and then add intervention
+// Creates markdown file and coverts it to PDF format
+// Methods are displayed in the order as they appear on the form to help with class navigation
+
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -33,10 +38,13 @@ namespace SE_CWA2020ASN1_Prog
             InitializeComponent();
             clearFields();
             addComboData();
-            //clears input fields
+            
             
         }
-        
+
+        /// <summary>
+        /// Select inspection site and select inspection type 
+        /// </summary>
         private void addComboData()
         {
             cmb_EnterSite.Items.Add("Weetabix Burton AP1 / Main");
@@ -52,6 +60,9 @@ namespace SE_CWA2020ASN1_Prog
             cmb_EnterType.Items.Add("Repairing");
 
         }
+        /// <summary>
+        /// Clears input fields
+        /// </summary>
         public void clearFields()
         {
             cmb_EnterSite.Text = "";
@@ -71,7 +82,7 @@ namespace SE_CWA2020ASN1_Prog
             get { return dateTimePicker1.Value; }
             set { dateTimePicker1.Value = value; }
         }
-        public string m_inspector
+        public string m_inspectorName
         {
             get { return txt_inspectorName.Text; }
             set { txt_inspectorName.Text = value; }
@@ -103,27 +114,19 @@ namespace SE_CWA2020ASN1_Prog
         {
             this.Close();
         }
-        
+
+
+        /// <summary>
+        /// cretaes an object of type inspection_area and pass to safetyInspection2y
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_Enter_Click(object sender, EventArgs e )
         {
-            //string siteName = "";
-            //DateTime date;
-            //string inspectorName = "";
-            //string jobDesc = "";
-            //string jobType = "";
-            //string supervisor = "";
-
-            string siteName = cmb_EnterSite.Text;
-            DateTime date = dateTimePicker1.Value;
-            string inspectorName = txt_inspectorName.Text;
-            string jobType = cmb_EnterType.Text;
-            string jobDesc = txt_jobDescription.Text;
-            string supervisor = txt_supervisor.Text;
             IMethods im = new Methods();
-            if (im.isEmptyTextFieldForm1(siteName, inspectorName, jobType, jobDesc, supervisor) == false)
+            if (im.isEmptyTextFieldForm1(m_siteName, m_inspectorName, m_jobType, m_jobDesc, m_supervisor) == false)
             {
-                //create object of type inspection_area and pass to safetyInspection2
-                insp = new Inspection(siteName, date, inspectorName, jobType, jobDesc, supervisor);
+               
+                insp = new Inspection(m_siteName, m_date, m_inspectorName, m_jobType, m_jobDesc, m_supervisor);
                 
                 try
                 {
@@ -153,32 +156,27 @@ namespace SE_CWA2020ASN1_Prog
             
         }
 
+        /// <summary>
+        /// Create markdown file and coverts it to PDF format
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_pdf_Click(object sender, EventArgs e)
         {
 
-            string filePath = Application.StartupPath;
-            //Prepare a simple Markdown example
-
-
-
+            string filePath = Application.StartupPath + @"\inspection.md";
 
             // Create a Markdown file
             try
             {
-
-                //File.WriteAllText("document.md", insp.pdfInspFormat());
-                
-
                 // Convert Markdown to HTML document
-                //Aspose.Html.Converters.Converter.ConvertMarkdown("document.md", "document.html");
-                HTMLDocument document = Aspose.Html.Converters.Converter.ConvertMarkdown(filePath+@"inspection.md");
+                HTMLDocument document = Aspose.Html.Converters.Converter.ConvertMarkdown(filePath);
 
                 // Invoke the ConvertHTML method to convert the HTML to PDF.
-                Aspose.Html.Converters.Converter.ConvertHTML(document, new Aspose.Html.Saving.PdfSaveOptions(), filePath + @"Report.pdf");
+                Aspose.Html.Converters.Converter.ConvertHTML(document, new Aspose.Html.Saving.PdfSaveOptions(),@"Report.pdf");
             }
             catch (Exception ex)
             {
-
                 Debug.WriteLine(ex.ToString());
             }
 
