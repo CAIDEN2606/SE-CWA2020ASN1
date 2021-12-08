@@ -72,7 +72,7 @@ namespace SE_CWA2020ASN1_Prog
             // lbl_userName
             // 
             this.lbl_userName.AutoSize = true;
-            this.lbl_userName.Location = new System.Drawing.Point(38, 310);
+            this.lbl_userName.Location = new System.Drawing.Point(177, 161);
             this.lbl_userName.Name = "lbl_userName";
             this.lbl_userName.Size = new System.Drawing.Size(77, 17);
             this.lbl_userName.TabIndex = 97;
@@ -81,7 +81,7 @@ namespace SE_CWA2020ASN1_Prog
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 386);
+            this.label1.Location = new System.Drawing.Point(177, 262);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 17);
             this.label1.TabIndex = 98;
@@ -89,14 +89,14 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(155, 305);
+            this.textBox1.Location = new System.Drawing.Point(139, 212);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(150, 22);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(155, 381);
+            this.textBox2.Location = new System.Drawing.Point(139, 315);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(150, 22);
             this.textBox2.TabIndex = 2;
@@ -113,11 +113,12 @@ namespace SE_CWA2020ASN1_Prog
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 206);
+            this.label3.Location = new System.Drawing.Point(31, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(367, 29);
+            this.label3.Size = new System.Drawing.Size(375, 29);
             this.label3.TabIndex = 102;
-            this.label3.Text = "Please enter your ligin details!";
+            this.label3.Text = "Please enter your login details!";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
