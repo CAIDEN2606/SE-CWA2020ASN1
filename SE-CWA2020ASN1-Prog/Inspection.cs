@@ -25,6 +25,12 @@ namespace SE_CWA2020ASN1_Prog
     {
         private List<WorkArea> m_workAreaList;
         private List<Inspection> m_inspectionList;
+
+        public Inspection()
+        {
+
+        }
+
         public Inspection(string iName, DateTime date, string inspectorName, string jobType, string jobDescr,  string sName)
         {
             m_siteName = iName;
@@ -71,7 +77,10 @@ namespace SE_CWA2020ASN1_Prog
 
         private string m_supervisorName;
         public string Supervisor_Name { get { return m_supervisorName; } set { m_supervisorName = value; } }
-    
+
+        private string m_workAreaName;
+        public string Work_Area_Name { get { return m_workAreaName; } set { m_workAreaName = value; } }
+
         /// <summary>
         /// Used to test print to console to confirm contains data 
         /// </summary>

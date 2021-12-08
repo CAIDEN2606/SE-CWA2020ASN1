@@ -12,6 +12,7 @@
 // Methods are displayed in the order as they appear on the form to help with class navigation
 using SE_CWA2020ASN1_Prog.Properties;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -43,6 +44,7 @@ namespace SE_CWA2020ASN1_Prog
         /// <param name="e"></param>
         private void btn_goSafetyInspection_Click(object sender, EventArgs e)
         {
+            List<Inspection> inspections = BusinessMetaLayer.instance().getInspections();
             SafetyInspection1 frmSafetyInspection = new SafetyInspection1();
             this.Hide();
             frmSafetyInspection.ShowDialog();
