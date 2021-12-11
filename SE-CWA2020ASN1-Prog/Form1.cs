@@ -36,7 +36,7 @@ namespace SE_CWA2020ASN1_Prog
         {
             this.Close();
         }
-        
+
         /// <summary>
         /// This button allows us to continiue
         /// </summary>
@@ -45,21 +45,15 @@ namespace SE_CWA2020ASN1_Prog
         private void btn_goSafetyInspection_Click(object sender, EventArgs e)
         {
             //clear login fields
-            textBox1.Text = "";
-            textBox2.Text = "";
+            txt_user.Text = "";
+            txt_password.Text = "";
             // Note this is a test of db conectivity not currently being used
             //List<Inspection> inspections = BusinessMetaLayer.instance().getInspections();
             SafetyInspection1 frmSafetyInspection = new SafetyInspection1();
             this.Hide();
             frmSafetyInspection.ShowDialog();
             this.Show();
-            clearFields();
-        }
-        public void clearFields()
-        {
-            txt_user.Text = "";
-            txt_password.Text = "";
-        }
+        } 
     }
 }   
        
