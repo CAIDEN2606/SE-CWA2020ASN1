@@ -44,6 +44,9 @@ namespace SE_CWA2020ASN1_Prog
         /// <param name="e"></param>
         private void btn_goSafetyInspection_Click(object sender, EventArgs e)
         {
+            //clear login fields
+            textBox1.Text = "";
+            textBox2.Text = "";
             // Note this is a test of db conectivity not currently being used
             //List<Inspection> inspections = BusinessMetaLayer.instance().getInspections();
             SafetyInspection1 frmSafetyInspection = new SafetyInspection1();

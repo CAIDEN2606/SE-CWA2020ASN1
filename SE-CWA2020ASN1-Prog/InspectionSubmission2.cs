@@ -36,11 +36,11 @@ namespace SE_CWA2020ASN1_Prog
         {
             InitializeComponent();
             popInterventionCombo();
+            popIntervTypesCombo();
             //display total interventions
             rtx_displayTotalInterv.Text = numTotalInterv.ToString();
-            //to test
-            Debug.WriteLine(filePath);
-            Debug.WriteLine("print insp teststring"+ insp.teststring());
+            
+           
         }
         
         public string m_inspDesc { get { return cmb_Interventions.Text; }set { cmb_Interventions.Text = value; }}
@@ -86,6 +86,14 @@ namespace SE_CWA2020ASN1_Prog
             cmb_Interventions.Items.Add("23.Fire precautions");
             cmb_Interventions.Items.Add("24.Workshop conditions");
       
+        }
+
+        public void popIntervTypesCombo()
+        {
+            cmb_TypesOfIntervention.Items.Add("Best practice");
+            cmb_TypesOfIntervention.Items.Add("Positive intervention");
+            cmb_TypesOfIntervention.Items.Add("SubContractor");
+
         }
         //#######################################################
         //
@@ -276,6 +284,9 @@ namespace SE_CWA2020ASN1_Prog
                 cmb_TypesOfIntervention.Items.Clear();
                 rtx_actionTaken.Text = "";
                 rtx_comments.Text = "";
+                //re-pop combo boxes
+                popInterventionCombo();
+                popIntervTypesCombo();
                 Debug.WriteLine(interv.testString());
             }
         }
