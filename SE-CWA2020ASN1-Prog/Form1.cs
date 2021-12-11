@@ -50,6 +50,12 @@ namespace SE_CWA2020ASN1_Prog
             this.Hide();
             frmSafetyInspection.ShowDialog();
             this.Show();
+            clearFields();
+        }
+        public void clearFields()
+        {
+            txt_user.Text = "";
+            txt_password.Text = "";
         }
     }
 }   
