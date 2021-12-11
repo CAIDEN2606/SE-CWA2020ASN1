@@ -57,6 +57,7 @@ namespace SE_CWA2020ASN1_Prog
             cmb_EnterType.Items.Clear();
             txt_jobDescription.Text = "";
             txt_supervisor.Text = "";
+            addComboData();
         }
 
         /// <summary>
