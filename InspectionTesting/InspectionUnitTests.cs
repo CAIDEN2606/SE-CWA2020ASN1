@@ -15,8 +15,7 @@ namespace InspectionTesting
         [TestMethod]
         public void SetUp()
         {
-
-
+            
         }
 
         /// <summary>
@@ -24,11 +23,12 @@ namespace InspectionTesting
         /// </summary>
         [TestMethod]
         //rename according to test type
-        public void TestMethod1()
+        public void TestInterventionClass()
         {
             //arrange
             Intervention testintv;
             WorkArea testwar;
+            
             Bitmap bm;
             string filePath =  @".\inspectImages\";
             int id = 2;
@@ -64,7 +64,7 @@ namespace InspectionTesting
         /// </summary>
         [TestMethod]
         //rename according to test type
-        public void TestMethod2()
+        public void TestInspectionClass()
         {
             Inspection testinsp;
             string siteName = "site";
@@ -82,11 +82,11 @@ namespace InspectionTesting
         }
 
         /// <summary>
-        /// Method to test if a file is deleted from folder
+        /// Test work area class
         /// </summary>
         [TestMethod]
         //rename according to test type
-        public void TestMethod3()
+        public void TestWorkAreaClass()
         {
             WorkArea testwar;
             string worka = "test work area";
@@ -102,7 +102,7 @@ namespace InspectionTesting
         /// </summary>
         [TestMethod]
         //rename according to test type
-        public void TestMethod4()
+        public void TestCreateImageDir()
         {
             //test if images folder is created
             string folderPath = @".\inspectImages";
@@ -122,9 +122,16 @@ namespace InspectionTesting
         /// </summary>
         [TestMethod]
         //rename according to test type
-        public void TestMethod5()
+        public void TestOpenDBConn()
         {
-
+            DbConection con = DbFactory.instance();
+            con.OpenConnection();
+            Assert.IsTrue(con.OpenConnection());
+            if (con.OpenConnection() == true)
+            {
+                //cleanup
+                con.CloseConnection();
+            }
 
         }
 
@@ -134,7 +141,7 @@ namespace InspectionTesting
         [TestMethod]
         public void TearDown()
         {
-
+        
 
         }
 

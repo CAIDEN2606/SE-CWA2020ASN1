@@ -31,21 +31,17 @@ namespace SE_CWA2020ASN1_Prog
         private IMethods im = new Methods();
         string filePath = Application.StartupPath + @"\inspectImages\";
         private Intervention interv;
-        
-
+  
         public InspectionSubmission2(Inspection insp)
-            
         {
             InitializeComponent();
             popInterventionCombo();
-             
             //display total interventions
             rtx_displayTotalInterv.Text = numTotalInterv.ToString();
             //to test
             Debug.WriteLine(filePath);
             Debug.WriteLine("print insp teststring"+ insp.teststring());
         }
-
         
         public string m_inspDesc { get { return cmb_Interventions.Text; }set { cmb_Interventions.Text = value; }}
         public string m_intervType {get { return cmb_TypesOfIntervention.Text; }set { cmb_TypesOfIntervention.Text = value; }}
@@ -276,8 +272,8 @@ namespace SE_CWA2020ASN1_Prog
                 }
 
                 //clear fields
-                cmb_Interventions.Text = "";
-                cmb_TypesOfIntervention.Text = "";
+                cmb_Interventions.Items.Clear();
+                cmb_TypesOfIntervention.Items.Clear();
                 rtx_actionTaken.Text = "";
                 rtx_comments.Text = "";
                 Debug.WriteLine(interv.testString());
@@ -320,15 +316,5 @@ namespace SE_CWA2020ASN1_Prog
         {
             this.Close();
         }
-
-        
-
-        
     }
 }
-
-//An error occured when trying to save image: A generic error occurred in GDI+.
-//Exception thrown: 'System.Threading.ThreadAbortException' in OpenCvSharp.dll
-
-
-
