@@ -124,7 +124,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_Enter
             // 
-            this.btn_Enter.Location = new System.Drawing.Point(12, 462);
+            this.btn_Enter.Location = new System.Drawing.Point(29, 543);
             this.btn_Enter.Name = "btn_Enter";
             this.btn_Enter.Size = new System.Drawing.Size(136, 34);
             this.btn_Enter.TabIndex = 11;
@@ -134,7 +134,7 @@ namespace SE_CWA2020ASN1_Prog
             // 
             // btn_exit
             // 
-            this.btn_exit.Location = new System.Drawing.Point(272, 462);
+            this.btn_exit.Location = new System.Drawing.Point(243, 543);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(152, 34);
             this.btn_exit.TabIndex = 13;
@@ -201,7 +201,6 @@ namespace SE_CWA2020ASN1_Prog
             this.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_logo.TabIndex = 38;
             this.pic_logo.TabStop = false;
-            this.pic_logo.Click += new System.EventHandler(this.pic_logo_Click);
             // 
             // btn_about
             // 
