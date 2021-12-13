@@ -21,6 +21,7 @@ using System.IO;
 
 namespace SE_CWA2020ASN1_Prog
 {
+    // This class will create instances for the database 
     public class DbFactory
     {
         private static DbConection m_instance = null;
@@ -41,6 +42,8 @@ namespace SE_CWA2020ASN1_Prog
             }
             return m_instance;
         }
+
+        // Gets the connection
         private DbConection getConection()
         {
             DbConection connection = null;
@@ -72,6 +75,7 @@ namespace SE_CWA2020ASN1_Prog
             return connection;
         }
 
+        // Gets the properties file
         private Dictionary<string, string> getProperties()
         {
             string fileData = "";
@@ -95,6 +99,7 @@ namespace SE_CWA2020ASN1_Prog
         public DBException(string message) : base(message) { }
     }
 
+    // Interface for connection & database items
     public interface DbConection
     {
         bool OpenConnection();

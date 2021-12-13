@@ -15,10 +15,13 @@ using System.Threading.Tasks;
 
 namespace SE_CWA2020ASN1_Prog
 {
+
+    // Gives names for anything included in the database 
     public class Intervention
     {
         private List<Image> m_pics;
 
+        // All database item declarations
        public Intervention(int intervID, string subName, string type, string aComments, string iComments,Image img1, Image img2,Image img3)
         {
             m_intervID = intervID;
@@ -39,6 +42,8 @@ namespace SE_CWA2020ASN1_Prog
             m_pics.Add(m_img2);
             m_pics.Add(m_img3);
         }
+
+        // Following lines for returning all of these values
         private int m_intervID;
         public int Interv_ID { get { return m_intervID; } set { m_intervID = value; } }
 

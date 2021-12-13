@@ -18,6 +18,7 @@ using System.Data.Common;
 
 namespace SE_CWA2020ASN1_Prog
 {
+    // Reading items in the database
     public class BusinessMetaLayer
     {
         static private BusinessMetaLayer m_instance = null;
@@ -34,6 +35,7 @@ namespace SE_CWA2020ASN1_Prog
         }
 
         
+        // Gets the lists of inspections
         public List<Inspection> getInspections()
         {
             List<Inspection> inspections = new List<Inspection>();

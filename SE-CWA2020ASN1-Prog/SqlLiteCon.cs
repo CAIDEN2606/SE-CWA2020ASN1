@@ -21,6 +21,8 @@ using System.Windows.Forms;
 
 namespace SE_CWA2020ASN1_Prog
 {
+
+    // This class will establish the properties file
     class SqlLiteCon : DbConection
     {
         Dictionary<string, string> m_properties;
@@ -41,6 +43,7 @@ namespace SE_CWA2020ASN1_Prog
             setConection();
         }
 
+        // Sets the connection
         private void setConection()
         {
             string connectionString;
@@ -48,6 +51,8 @@ namespace SE_CWA2020ASN1_Prog
             connection = new SQLiteConnection(connectionString);
 
         }
+
+        // Closes the connection
         public bool CloseConnection()
         {
             try
@@ -75,6 +80,8 @@ namespace SE_CWA2020ASN1_Prog
             return dataSet;
         }
 
+
+        // Opens the connection 
         public bool OpenConnection()
         {
             bool connected = false;
@@ -90,6 +97,7 @@ namespace SE_CWA2020ASN1_Prog
             return connected;
         }
 
+        // Reads the database
         public DbDataReader Select(string query)
         {
             DbDataReader dr = null;
