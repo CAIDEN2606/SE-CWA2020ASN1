@@ -1,10 +1,20 @@
-﻿//using InspectionTesting;
+﻿//##############################################//
+//                                              //
+//      Module: 2021 MOD003263 TRI1 FO1CAM      //
+//              Team name: CWA                  //
+//          Control system: Github              //
+//              Date:14/12/2021                 //
+//##############################################//
+
+// Class purpose:
+// Layer class between SQLite and DBFactory
+// Contains sql insert and fetch statements 
+//
+
+//using InspectionTesting;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SE_CWA2020ASN1_Prog
 {
@@ -23,7 +33,7 @@ namespace SE_CWA2020ASN1_Prog
             return m_instance;
         }
 
-        // Could just have a set of static helper methods rather than a singleton!
+        
         public List<Inspection> getInspections()
         {
             List<Inspection> inspections = new List<Inspection>();

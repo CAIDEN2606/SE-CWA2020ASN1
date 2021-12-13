@@ -52,11 +52,12 @@ namespace SE_CWA2020ASN1_Prog
         /// </summary>
         public void clearFields()
         {
-            cmb_EnterSite.Text = "";
+            cmb_EnterSite.Items.Clear();
             txt_inspectorName.Text = "";
-            cmb_EnterType.Text = "";
+            cmb_EnterType.Items.Clear();
             txt_jobDescription.Text = "";
             txt_supervisor.Text = "";
+            addComboData();
         }
 
         /// <summary>
@@ -162,11 +163,6 @@ namespace SE_CWA2020ASN1_Prog
             {
                 Debug.WriteLine(ex.ToString());
             }
-        }
-
-        private void pic_logo_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

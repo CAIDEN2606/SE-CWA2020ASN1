@@ -33,8 +33,8 @@ namespace SE_CWA2020ASN1_Prog
             this.btn_goSafetyInspection = new System.Windows.Forms.Button();
             this.lbl_userName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_user = new System.Windows.Forms.TextBox();
+            this.txt_password = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -78,19 +78,19 @@ namespace SE_CWA2020ASN1_Prog
             this.label1.TabIndex = 98;
             this.label1.Text = "Password";
             // 
-            // textBox1
+            // txt_user
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 212);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 22);
-            this.textBox1.TabIndex = 1;
+            this.txt_user.Location = new System.Drawing.Point(139, 212);
+            this.txt_user.Name = "txt_user";
+            this.txt_user.Size = new System.Drawing.Size(150, 22);
+            this.txt_user.TabIndex = 1;
             // 
-            // textBox2
+            // txt_password
             // 
-            this.textBox2.Location = new System.Drawing.Point(139, 315);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 22);
-            this.textBox2.TabIndex = 2;
+            this.txt_password.Location = new System.Drawing.Point(139, 315);
+            this.txt_password.Name = "txt_password";
+            this.txt_password.Size = new System.Drawing.Size(150, 22);
+            this.txt_password.TabIndex = 2;
             // 
             // label2
             // 
@@ -119,8 +119,8 @@ namespace SE_CWA2020ASN1_Prog
             this.ClientSize = new System.Drawing.Size(436, 641);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_password);
+            this.Controls.Add(this.txt_user);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_userName);
             this.Controls.Add(this.btn_goSafetyInspection);
@@ -138,8 +138,8 @@ namespace SE_CWA2020ASN1_Prog
         private System.Windows.Forms.Button btn_goSafetyInspection;
         private System.Windows.Forms.Label lbl_userName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_user;
+        private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
     }

@@ -36,7 +36,7 @@ namespace SE_CWA2020ASN1_Prog
         {
             this.Close();
         }
-        
+
         /// <summary>
         /// This button allows us to continiue
         /// </summary>
@@ -44,12 +44,16 @@ namespace SE_CWA2020ASN1_Prog
         /// <param name="e"></param>
         private void btn_goSafetyInspection_Click(object sender, EventArgs e)
         {
-            List<Inspection> inspections = BusinessMetaLayer.instance().getInspections();
+            //clear login fields
+            txt_user.Text = "";
+            txt_password.Text = "";
+            // Note this is a test of db conectivity not currently being used
+            //List<Inspection> inspections = BusinessMetaLayer.instance().getInspections();
             SafetyInspection1 frmSafetyInspection = new SafetyInspection1();
             this.Hide();
             frmSafetyInspection.ShowDialog();
             this.Show();
-        }
+        } 
     }
 }   
        
