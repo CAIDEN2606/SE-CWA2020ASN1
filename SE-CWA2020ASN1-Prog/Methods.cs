@@ -17,6 +17,7 @@ namespace SE_CWA2020ASN1_Prog
     {
         void createInspMDfile(Inspection insp);
         void appendWorkAreaPDF(WorkArea wa);
+        void appendIntervPDF(Intervention interv);
         void deleteImg(string file);
         void deleteImages();
         string displayInterventions(Intervention interv);
@@ -64,6 +65,26 @@ namespace SE_CWA2020ASN1_Prog
             FileInfo img1 = new FileInfo(file);
             img1.Delete();
         }
+
+        /// <summary>
+        /// Append each intervention to file
+        /// </summary>
+        /// <param name="interv"></param>
+        public void appendIntervPDF(Intervention interv)
+        {
+            string path = Application.StartupPath + @"\inspection.md";
+            if (File.Exists(path) == true)
+            {
+                File.AppendAllText(path, interv.addIntervToPdf());
+                //File.AppendAllLines(path, (System.Collections.Generic.IEnumerable<string>)wa);
+            }
+            else
+            {
+                File.WriteAllText(path, interv.testString());
+                Debug.WriteLine("New pdf inspection file appended to with WA details.\nMissing insp details");
+            }
+        }
+
         /// <summary>
         /// call to clear folder when inspection submitted
         /// </summary>

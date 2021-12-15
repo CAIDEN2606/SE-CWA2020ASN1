@@ -74,6 +74,18 @@ namespace SE_CWA2020ASN1_Prog
         {
             return "Intervention --> ID: " + m_intervID + "subheading: " + m_subheadingName + "Images --> " + m_img1 + ", " + m_img2 + ", " + m_img3 + ",  Intervention_Type" + m_interventionType + ", Action_Comments " + m_actionComments + ", Inspection_Comments" + m_inspectionComments;
         }
-                
+
+        public string addIntervToPdf()
+        {
+            string ans = "\nID= " + Interv_ID +
+                "\nsubhead= " + Subheading_Name +
+                "\ntype= " + Intervention_Type +
+                "\ncomms= " + Inspection_Comments +
+                "\nact comms= " + Action_Comments +
+                "\nimg1= " + Img_1 +
+                "\nimg2= " + Img_2 +
+                "\nimg3= " + Img_3;
+            return ans;
+        }
     }
 }

@@ -265,7 +265,8 @@ namespace SE_CWA2020ASN1_Prog
                     rtx_displayTotalInterv.Text = numTotalInterv.ToString();
 
                     lst_interventions.Items.Add(im.displayInterventions(interv));
-
+                    //add each intervention to md file
+                    im.appendIntervPDF(interv);
                     //functional tests to console 
                     Console.WriteLine(interv.testString()); //print subheading
                     Console.WriteLine(wa.testString()); //print workarea
