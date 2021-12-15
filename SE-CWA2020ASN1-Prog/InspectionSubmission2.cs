@@ -285,6 +285,7 @@ namespace SE_CWA2020ASN1_Prog
                 cmb_TypesOfIntervention.Items.Clear();
                 rtx_actionTaken.Text = "";
                 rtx_comments.Text = "";
+                pic_intervPics.Image.Dispose();
                 //re-pop combo boxes
                 popInterventionCombo();
                 popIntervTypesCombo();
